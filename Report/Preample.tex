@@ -1,0 +1,236 @@
+% Title: Report LaTex File: Preample
+% Auther: DC Eksteen
+% Student Number: 22623906
+% Contact: 22623906@sun.ac.za
+% Date: 2022/09/14
+% Version: 2.0
+
+\usepackage{babel} 						%.. Language setup
+% \usepackage[latin1]{inputenc}			%.. Recognizes ê, ë, etc
+\usepackage{amsmath} 					%.. Advanced maths (before fonts)
+\usepackage{ebgaramond}
+\usepackage[T1]{fontenc}	 			%.. Type 1 fonts for proper hyphenation
+\usepackage{textcomp} 					%.. Additional text characters
+\usepackage{fourier} 					%.. Utopia (if you want a different font)
+\usepackage{bm} 						%.. Bold math characters (after fonts)
+\usepackage{graphicx}					%.. Inclusion of images
+\usepackage{color} 						%.. Color management options ... or xcolor
+\usepackage[onehalfspacing]{setspace}	%.. Line spacing
+\usepackage{parskip}					%......... Paragraph spacing + zero indent
+\usepackage{ussummary}
+\usepackage{hyphenat}
+\usepackage{lscape}
+
+\usepackage{tabto}
+\usepackage{enumitem}
+\usepackage{mfirstuc}
+\MFUnocap{and}\MFUnocap{is}\MFUnocap{a}\MFUnocap{an}\MFUnocap{of}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{acro} % To create acronyms lists
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{pythontex}
+
+\usepackage{float}
+\usepackage{tabularx}
+
+\usepackage{usbib}
+\bibliographystyle{usmeg-a}
+\renewcommand\bibfont{\footnotesize}
+\addto{\captionsenglish}{\renewcommand{\bibname}{List of References}}
+
+\hypersetup{
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = black, %Colour for external hyperlinks
+	linkcolor    = black, %Colour of internal links
+	citecolor   = black %Colour of citations
+}
+
+\hyphenpenalty = 10000
+\emergencystretch = 100pt
+
+\graphicspath{{graphics/}}
+
+\addto\captionsenglish{%
+	\renewcommand{\appendixname}%
+	{Appendix}%
+}
+
+\acsetup{make-links}
+\input{Nomenclature.tex}
+
+\newcommand{\acrosecondcolumn}[1]{
+	\acroextra{\makebox[55mm][l]{#1}}
+}
+
+\makeatletter
+\newcommand\studentnumber[1]{
+	\gdef\US@studentnumber{#1}}
+\newcommand\US@studentnumber{%
+	\PackageWarning{usthesis}{No student number supplied}%
+}
+\makeatother
+
+\makeatletter
+\renewcommand{\TitlePage}{%
+	\begingroup
+	\let\footnote\relax
+	\begin{US@titlepage}{2cm}{1cm}{2.5cm}{2.5cm}%
+		\centering
+		\if@Report
+			\includegraphics[width=67.7mm]{D:/texlive/2022/texmf-dist/tex/latex/stellenbosch/logos/SU_logo.eps}\par
+			\vfill
+		\else
+			\includegraphics[width=88mm]{UScrest-top}\par
+			\vfill
+		\fi
+		\vspace{4em}
+		{\LARGE\bfseries \@title \par}
+		\vspace{1em}
+		\if@Authorpresent
+		{\large \AuthByTxt\par}
+		\vspace{1em}
+		{\Large
+			\lineskip .75em\relax%
+			\begin{tabular}[t]{c}%
+				\US@authorlong \\
+				\US@studentnumber
+			\end{tabular}\par}%
+		\vfill
+		\vfill
+		\fi
+		\if@Report\if@Subjectpresent
+		{\large\DegreeNameLong\par}
+		\fi\fi
+		{\large\slshape
+			\begin{US@adjustwidth}{1.5cm}{1.5cm}
+				\centering\US@ThesisDescript
+			\end{US@adjustwidth}\par}
+		\vfill
+		\vfill
+		{\normalsize \US@spvset \par}
+		{\normalsize \US@date\par}%
+		{\vspace{6em}}
+		{\ebgaramond\itshape\bfseries\footnotesize\textcolor{darkgray}{
+			forward together • saam vorentoe • masiye phambili\\
+			\vspace{1em}
+		}}
+		{\footnotesize\textcolor{darkgray}{ Department of Mechanical and Mechatronic Engineering\\
+			Departement Meganiese en Megatroniese Ingenieurswese\\
+			Privaat Sak X1, Private Bag X1, Matieland, 7602\\
+			Tel: +27 21 808 4204 | www.eng.sun.ac.za\\
+			\vspace{4em}
+		}}
+		%		{
+		%			\footnotesize\textcolor{gray}{
+		%				Department of Mechanical and Mechatronic Engineering\\
+		%				Departement Meganiese en Megatroniese Ingenieurswese \vspace{2em}
+		%			}
+		%		}
+		%		\includegraphics[width=\textwidth]{D:/texlive/2022/texmf-dist/tex/latex/stellenbosch/logos/USfooter.eps}\par
+	\end{US@titlepage}%
+	\endgroup
+	\clearpage
+	\global\let\TitlePage\relax
+	\setcounter{footnote}{0}%
+	\global\let\thanks\relax
+	\global\let\@thanks\@empty
+}
+\makeatother
+
+\makeatletter
+\renewcommand\US@putdecldate{%
+	\vspace{1cm}
+	\noindent
+	\begin{minipage}{.6\textwidth}
+		\noindent
+		\phantom{\Signat:}~\hfill\makebox[0pt][c]{\includegraphics[height=0.6cm]{Signature.jpg}}\hfill\mbox{}\\[-.5\baselineskip]
+		\Signat:~ \dotfill\mbox{}\par\vspace{10pt}
+		\ifx\US@DeclDate\@empty\relax\else
+		\phantom{\Signat:}~\hfill\makebox[0pt][c]{\US@DeclDate}\hfill\mbox{}\\[-.5\baselineskip]
+		\Datetxt:~ \dotfill\mbox{}\par\vspace{10pt}
+		\phantom{\Signat:}~\hfill\makebox[0pt][c]{\US@author}\hfill\mbox{}\\[-.5\baselineskip]
+		Student Name:~ \dotfill\mbox{}\par\vspace{10pt}
+		\phantom{\Signat:}~\hfill\makebox[0pt][c]{\US@studentnumber}\hfill\mbox{}\\[-.5\baselineskip]
+		Student Number:~ \dotfill\mbox{}\par
+	\end{minipage}
+	\par}
+\makeatother
+
+\makeatletter
+\renewcommand{\DeclarationPage}[1][\ThesisDeclare]{%
+	\if@twocolumn
+		\@restonecoltrue\onecolumn
+	\else
+		\@restonecolfalse
+	\fi
+	\par
+	\thispagestyle{plain}%
+	\chapter*{\DeclarationName}%
+	\declaremark
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\DeclarationName}%
+	#1\par
+	\US@putdecldate
+	\ifUS@Copyright
+		\mbox{}\par
+		\vfill
+		\vfill
+		\noindent\CopyrightTxt\ \copyright\ \number\US@year\ \CopyrightHolder\\
+		\noindent\CopyrightAnot
+		\vfill
+		\mbox{}\par
+	\fi
+	\if@restonecol\twocolumn\fi}
+\makeatother
+
+\makeatletter
+\def\nobreakhline{%
+	\noalign{\ifnum0=`}\fi
+		\penalty\@M
+		\futurelet\@let@token\LT@@nobreakhline}
+	\def\LT@@nobreakhline{%
+		\ifx\@let@token\hline
+			\global\let\@gtempa\@gobble
+			\gdef\LT@sep{\penalty\@M\vskip\doublerulesep}% <-- change here
+		\else
+			\global\let\@gtempa\@empty
+			\gdef\LT@sep{\penalty\@M\vskip-\arrayrulewidth}% <-- change here
+		\fi
+		\ifnum0=`{\fi}%
+	\multispan\LT@cols
+	\unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+	\noalign{\LT@sep}%
+	\multispan\LT@cols
+	\unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+	\noalign{\penalty\@M}%
+	\@gtempa}
+\makeatother
+
+\newcommand{\SSignatures}{%
+	\noindent
+	\begin{minipage}[t]{3cm}
+		\centering\includegraphics[height=0.6cm]{Signature.jpg}\\
+		\hrulefill\\
+		\centering{Student}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{3cm}
+		\centering \today \\
+		\hrulefill\\
+		\centering{Date}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{3cm}
+		\vspace{0.6cm}
+		\hrulefill\\
+		\centering{Lecturer}
+	\end{minipage}
+}
+
+\input{ExecutiveSummery.tex}
+\input{ECSAEvaluation.tex}
+
+

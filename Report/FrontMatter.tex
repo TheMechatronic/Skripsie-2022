@@ -1,0 +1,31 @@
+% Title: Report LaTex File: Front Matter
+% Auther: DC Eksteen
+% Student Number: 22623906
+% Contact: 22623906@sun.ac.za
+% Date: 2022/09/14
+% Version: 2.0
+
+\begin{singlespace}
+	\TitlePage
+\end{singlespace}
+
+\begin{pycode}
+import os
+from Python import *
+\end{pycode}
+
+
+\DeclarationDate{\today}
+\DeclarationPage
+
+\SummeryPage
+\ECSApage
+\ECSApageInfo
+\tableofcontents
+\listoftables
+\listoffigures
+
+\newpage
+\printacronyms[include=abbrev,name={List of Abbreviations}, heading=chapter, template=tabular]
+\newpage
+\printacronyms[include=symbol,name={List of Symbols}, heading=chapter, template=tabular]

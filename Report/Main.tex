@@ -1,0 +1,30 @@
+% Title: Report LaTex File: Main File
+% Auther: DC Eksteen
+% Student Number: 22623906
+% Contact: 22623906@sun.ac.za
+% Date: 2022/09/14
+% Version: 2.0
+
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[report, 					%.. Document type
+12pt,oneside,openany,a4paper,goldenblock,	%.. Layout
+afrikaans,english, 						%.. Global lang drivers
+]{usthesis}
+
+\input{Preample.tex}
+\input{ProjectOverview.tex}
+
+\begin{document}
+\frontmatter
+\input{FrontMatter.tex}
+
+\mainmatter
+\justifying
+\input{Introduction.tex}
+\input{Literature Review.tex}
+\input{Software Development.tex}
+\input{Hardware Development.tex}
+
+\backmatter
+\bibliography{References.bib}
+\end{document}

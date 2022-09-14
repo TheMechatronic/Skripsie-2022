@@ -1,0 +1,149 @@
+% Title: Report LaTex File: Executive Summery Table
+% Auther: DC Eksteen
+% Student Number: 22623906
+% Contact: 22623906@sun.ac.za
+% Date: 2022/09/14
+% Version: 2.0
+
+\makeatletter
+\renewenvironment{Summary}[2][\USS@default]
+{	\clearpage
+	\setlength{\USS@tdima}{15mm - 1in-\voffset-\topmargin-\headheight-\headsep-\topskip}%
+	\vspace*{\USS@tdima}%
+	\thispagestyle{plain}%
+	\phantomsection
+	\@ifundefined{chapter}
+	{\addcontentsline{toc}{section}{Executive Summary}}%
+	{\addcontentsline{toc}{chapter}{Executive Summary}}%
+	\markboth{#2}{#2}%
+	\begin{USS@SetMargins}{20mm}{20mm}
+		{\centering\large\USS@HeadFnt\MakeUppercase{#2}\par}}
+		{\end{USS@SetMargins}
+	\clearpage}
+\makeatother
+
+\makeatletter
+\renewenvironment{SumTable}
+{\setlength\LTleft{\leftmargin}%
+	\setlength\LTright{\rightmargin}%
+	\setlength{\arrayrulewidth}{1pt}%
+	\renewcommand{\arraystretch}{1.25}%
+	\small
+	\begin{longtable}{@{\extracolsep{\fill}}|@{}p{\linewidth}|}}%
+		{\end{longtable}}
+\makeatother
+
+\makeatletter
+\renewcommand{\SumHead}[1]{%
+\multicolumn{1}
+{|>{\small\USS@HeadFnt\columncolor[gray]{.8}}c|}%
+{#1}}
+\makeatother
+
+\makeatletter
+\newcommand\Objectives[1]{
+	\gdef\US@Objectives{#1}}
+\newcommand\US@Objectives{%
+	\PackageWarning{usthesis}{No objectives supplied}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\CurrentPractice[1]{
+	\gdef\US@CurrentPractice{#1}}
+\newcommand\US@CurrentPractice{%
+	\PackageWarning{usthesis}{Current Practice Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\NewInProject[1]{
+	\gdef\US@NewInProject{#1}}
+\newcommand\US@NewInProject{%
+	\PackageWarning{usthesis}{New In Project Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\ProjectDifference[1]{
+	\gdef\US@ProjectDifference{#1}}
+\newcommand\US@ProjectDifference{%
+	\PackageWarning{usthesis}{Project Difference Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\ProjectRisks[1]{
+	\gdef\US@ProjectRisks{#1}}
+\newcommand\US@ProjectRisks{%
+	\PackageWarning{usthesis}{Project Risks Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\Credits[1]{
+	\gdef\US@Credits{#1}}
+\newcommand\US@Credits{%
+	\PackageWarning{usthesis}{Credits Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\Continuation[1]{
+	\gdef\US@Continuation{#1}}
+\newcommand\US@Continuation{%
+	\PackageWarning{usthesis}{Continuation Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand\ContinuationArrangements[1]{
+	\gdef\US@ContinuationArrangements{#1}}
+\newcommand\US@ContinuationArrangements{%
+	\PackageWarning{usthesis}{Continuation Arrangements Field Empty}%
+}
+\makeatother
+
+\makeatletter
+\newcommand{\SumCell}[2]
+{
+\SumHead{#1}\\
+\nobreakhline%-------------------------------------------------------------
+\multicolumn{1}{|>{\justifying}p{\linewidth-6pt}|}{#2}\\
+}
+\makeatother
+
+\makeatletter
+\newcommand{\SummeryPage}{%
+	\centering
+	\begin{Summary}{\DegreeNameLong: \\Executive Summary}
+		\noindent
+		\begin{tabular}{@{}ll@{}}
+			\textsf{Student:} & \US@author
+		\end{tabular}
+		\par
+		\begin{SumTable}
+			\hline%-------------------------------------------------------------
+			\SumCell{Title of Project}{\@title}
+			\hline%-------------------------------------------------------------
+			\SumCell{Objectives}{\US@Objectives}
+			\hline%-------------------------------------------------------------
+			\SumCell{What is current practice and what are its limitations?}{\US@CurrentPractice}
+			\hline%-------------------------------------------------------------
+			\SumCell{What is new in this project?}{\US@NewInProject}
+			\hline%-------------------------------------------------------------
+			\SumCell{If the project is successful, how will it make a difference?}{\US@ProjectDifference}
+			\hline%-------------------------------------------------------------
+			\SumCell{What are the risks to the project being a success? Why is it expected to be successful?}{\US@ProjectRisks}
+			\hline%-------------------------------------------------------------
+			\SumCell{What contributions have other students made?}{\US@Credits}
+			\hline%-------------------------------------------------------------
+			\SumCell{Which aspects of the project will carry on after completion and why?}{\US@Continuation}
+			\hline%-------------------------------------------------------------
+			\SumCell{What arrangements have been made to expedite continuation?}{\US@ContinuationArrangements}
+			\hline%-------------------------------------------------------------
+		\end{SumTable}
+		\vspace{1.5cm}
+		\SSignatures
+	\end{Summary}}
+\makeatother
