@@ -26,5 +26,5 @@
 \contentsline {section}{\numberline {3.2}\ac {ble} Handler}{14}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Hardware Development}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Expected Operating Conditions}{17}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{18}{section.4.2}%
-\contentsline {chapter}{List of References}{20}{section*.17}%
+\contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{19}{section.4.2}%
+\contentsline {chapter}{List of References}{21}{section*.17}%
