@@ -1,0 +1,30 @@
+\acswitchoff 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Declaration}{i}{section*.2}%
+\contentsline {chapter}{Executive Summary}{ii}{section*.3}%
+\contentsline {chapter}{ECSA Exit Level Outcome Evaluation}{iv}{section*.4}%
+\contentsline {chapter}{Contents}{vii}{section*.6}%
+\contentsline {chapter}{List of Tables}{ix}{section*.8}%
+\contentsline {chapter}{List of Figures}{x}{section*.10}%
+\contentsline {chapter}{List of Abbreviations}{xi}{chapter*.11}%
+\contentsline {chapter}{List of Symbols}{xii}{chapter*.12}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aim and Objectives}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Motivation}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Literature Review}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Requirements to connect to Zwift}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Basic Requirements}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}\ac {ble} vs ANT+}{5}{subsection.2.2.2}%
+\contentsline {subsubsection}{\ac {ble} for Fitness Devices}{6}{section*.13}%
+\contentsline {section}{\numberline {2.3}\ac {ble} Communication}{8}{section.2.3}%
+\contentsline {subsubsection}{\ac {ftms} Protocol}{9}{section*.14}%
+\contentsline {subsubsection}{\ac {sim} mode}{11}{section*.15}%
+\contentsline {chapter}{\numberline {3}Software Development}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Structure}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}\ac {ble} Handler}{14}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Hardware Development}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Expected Operating Conditions}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{18}{section.4.2}%
+\contentsline {chapter}{List of References}{20}{section*.17}%

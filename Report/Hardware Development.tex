@@ -7,7 +7,27 @@
 
 \chapter{Hardware Development}
 
-\section{Expected Force Calculations}
+\section{Expected Operating Conditions}
+The expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{60}{\kilo\meter\per\hour}.
+
+Typical Bicycle measurements are as seen in Table \ref{tab:bikesize} below.
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.2}
+	\centering
+	\caption{Summery of Typical Bicycle Dimensions}
+	\begin{tabularx}{\textwidth}{p{1.4cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
+		\toprule
+		Size & Wheel Diameter & Wheelbase\\
+		\midrule
+		1 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
+		2 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
+		3 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
+		13 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:bikesize}
+\end{table}
 
 \newpage
 \section{Eddy Current Brake Design}
