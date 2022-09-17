@@ -4,11 +4,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \ac {ble} Star Network Topology}}{8}{figure.2.1}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \ac {ble} Star Network Topology\relax }}{8}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Bicycle Dimensions\relax }}{12}{figure.caption.23}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of General Software Structure}}{14}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \ac {ble} Protocol Stack}}{15}{figure.3.2}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of General Software Structure\relax }}{15}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{16}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison}}{18}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Magnetic Flux Density of Disc Magnet (adapted from: \citep {Supermagnete:2010})}}{19}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Magnetic Flux Density as Phase Changes}}{20}{figure.4.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{19}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Magnetic Flux Density of Disc Magnet\relax }}{20}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Magnetic Flux Density as Phase Changes\relax }}{21}{figure.caption.31}%

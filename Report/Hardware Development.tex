@@ -7,23 +7,52 @@
 
 \chapter{Hardware Development}
 
+\color{red} % Comment if section finalized
+
+% Section overview: Hardware development.
+For the project, hardware was developed with the aim of achieving the objectives shown in \ref{tab:devgoals} below:
+
+\begin{table}[H]
+	\color{red} % Comment if section finalized
+	\renewcommand{\arraystretch}{1.2}
+	\centering
+	\caption{Objectives of Hardware Development}
+	\begin{tabularx}{\textwidth}{p{2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
+		\toprule
+		Outcome Number & Description          & Required Outcome            \\
+		\midrule
+		H 1            & Versatile Usage      & Design for adaptable length \\
+		H 2            & Wide Operating Range & Adequate Braking Force      \\
+		H 3            & Outcome 3            & Description                 \\
+		H 4            & Outcome 4            & Description                 \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:devgoals}
+\end{table}
+
+\color{black}
+\newpage
+
 \section{Expected Operating Conditions}
+\color{red} % Comment if section finalized
+
 The expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{60}{\kilo\meter\per\hour}.
 
 Typical bicycle measurements are as seen in Table \ref{tab:bikesize} below.
 
 \begin{table}[H]
+	\color{red} % Comment if section finalized
 	\renewcommand{\arraystretch}{1.2}
 	\centering
 	\caption{Summery of Typical Bicycle Dimensions}
 	\begin{tabularx}{\textwidth}{p{1.4cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
 		\toprule
-		Size & Wheel Diameter & Wheelbase\\
+		Size & Wheel Diameter         & Wheelbase              \\
 		\midrule
-		1 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
-		2 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
-		3 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
-		13 & \SI{115}{\milli\meter} & \SI{115}{\milli\meter}\\
+		1    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
+		2    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
+		3    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
+		13   & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:bikesize}
@@ -37,8 +66,11 @@ Typical bicycle measurements are as seen in Table \ref{tab:bikesize} below.
 	\end{center}
 \end{figure}
 
+\color{black}
 \newpage
+
 \section{Eddy Current Brake Design}
+\color{red} % Comment if section finalized
 
 The Eddy Currents in the Aluminium disc will be:
 \[
@@ -70,7 +102,8 @@ By integrating, we get:
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Bfieldcalc.jpg}
-		\caption{Magnetic Flux Density of Disc Magnet (adapted from: \citep{Supermagnete:2010})}
+		\caption{Magnetic Flux Density of Disc Magnet}
+		\citep[Addapted from][]{Supermagnete:2010}
 		\label{fig:B0}
 	\end{center}
 \end{figure}
@@ -85,3 +118,5 @@ By integrating, we get:
 
 
 $\frac{0.65\,{\left(0.001\,x-0.014\right)}}{\sqrt{{{\left(0.001\,x-0.014\right)}}^2 +0.000056249999999999998460432915070584}}-\frac{0.65\,{\left(0.001\,x-0.019\right)}}{\sqrt{{{\left(0.001\,x-0.019\right)}}^2 +0.000056249999999999998460432915070584}}$
+
+\color{black}

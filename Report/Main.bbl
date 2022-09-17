@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -23,27 +23,57 @@
   Specification()}]{BLSIG:2017}
 Bluetooth\textsuperscript \textregistered \space Service Specification (2017
   \bblfeb{}~14).
-\newblock Fitness machine service v1.0.
-\newline\bblurlpre\url{https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=423422}
+\newblock Fitness machine service v1.0 [online].
+\newblock \newline Availible at:
+  \url{https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=423422}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
 
 \bibitem[{\citenamefont{Lee}(2020)}]{Lee:2020}
 \bibnamefont{Lee}, \bibfnamefont{A.} (2020 \bbljun{}~29).
-\newblock Creating a ble peripheral with bluez.
-\newline\bblurlpre\url{https://punchthrough.com/creating-a-ble-peripheral-with-bluez}
+\newblock Creating a ble peripheral with bluez [online].
+\newblock \newline Availible at:
+  \url{https://punchthrough.com/creating-a-ble-peripheral-with-bluez}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{\citenamefont{Lin}(2021)}]{Lin:2021}
+\bibnamefont{Lin}, \bibfnamefont{B.} (2021 \bbldec{}~27).
+\newblock The pro's closet. [online].
+\newblock \newline Availible at:
+  \url{https://www.theproscloset.com/blogs/news/best-selling-bikes-2021}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{\citenamefont{Morozev}(2017)}]{Morozev:2017}
+\bibnamefont{Morozev}, \bibfnamefont{M.} (2017 \bbldec{}~30).
+\newblock Grabcad [online].
+\newblock \newline Availible at:
+  \url{https://grabcad.com/library/road-bike-12}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{\citenamefont{Pratama}(2021)}]{Pratama:2021}
+\bibnamefont{Pratama}, \bibfnamefont{M.R.R.} (2021 \bblnov{}~20).
+\newblock Grabcad [online].
+\newblock \newline Availible at: \url{https://grabcad.com/library/am-ht-1}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
 
 \bibitem[{Supermagnete()}]{Supermagnete:2010}
 Supermagnete (2010 \bbljan{}~1).
-\newblock Faq: How do you calculate the magnetic flux density?
-\newline\bblurlpre\url{https://www.supermagnete.de/eng/faq/How-do-you-calculate-the-magnetic-flux-density}
+\newblock Faq: How do you calculate the magnetic flux density? [online].
+\newblock \newline Availible at:
+  \url{https://www.supermagnete.de/eng/faq/How-do-you-calculate-the-magnetic-flux-density}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
 
 \bibitem[{\citenamefont{von Bromley}(2022)}]{Bromley:2022}
 \bibnamefont{von Bromley}, \bibfnamefont{S.} (2022).
 \newblock Zwift: your complete guide: Everything you need to know.
-\newline\bblurlpre\url{https://www.bikeradar.com/features/zwift-your-complete-guide}
+\newblock \newline Availible at:
+  \url{https://www.bikeradar.com/features/zwift-your-complete-guide}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
 
 \bibitem[{Zwift Forums()}]{Jeremy:2021}
 Zwift Forums (2022 \bbljan{}~2).
-\newblock Improvements to ftms controllable trainers.
-\newline\bblurlpre\url{https://forums.zwift.com/t/bluetooth-improvements-for-controllable-trainers-treadmills-january-2022/569781/38?page=4}
+\newblock Improvements to ftms controllable trainers [online].
+\newblock \newline Availible at:
+  \url{https://forums.zwift.com/t/bluetooth-improvements-for-controllable-trainers-treadmills-january-2022/569781/38?page=4}.
+\newblock \newline [Accessed~1~\bbljan{}~2022].
 
 \end{thebibliography}

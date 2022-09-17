@@ -1,0 +1,29 @@
+INFO:  latexindent.exe version 3.18, 2022-06-12, a script to indent .tex files
+       latexindent.exe lives here: D:/texlive/2022/texmf-dist/scripts/latexindent/
+       Sat Sep 17 16:08:54 2022
+       Filename: Literature Review.tex
+INFO:  Processing switches:
+       -s|--silent: Silent mode active (you have used either -s or --silent)
+       -w|--overwrite: Overwrite mode active, will make a back up before overwriting
+       -o|--outputfile: output to file
+INFO:  Options check: -w and -o specified
+       You have called latexindent.pl with both -o and -w
+       The -o switch will take priority, and -w (overwrite) will be ignored
+INFO:  Directory for backup files and indent.log:
+       .
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from D:/texlive/2022/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
+       Home directory is C:\Users\dylan (didn't find either indentconfig.yaml or .indentconfig.yaml)
+       To specify user settings you would put indentconfig.yaml here: C:\Users\dylan/indentconfig.yaml
+       Alternatively, you can use the hidden file .indentconfig.yaml as: C:\Users\dylan/.indentconfig.yaml
+INFO:  -o switch active: output file check
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Outputting to file Literature Review.tex
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
