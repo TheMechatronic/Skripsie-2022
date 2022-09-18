@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{9}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -27,6 +27,12 @@ Bluetooth\textsuperscript \textregistered \space Service Specification (2017
 \newblock \newline Availible at:
   \url{https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=423422}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{Geometry Geeks()}]{Geometry:2022}
+Geometry Geeks (2022).
+\newblock Find and compare bike geometry. [online].
+\newblock \newline Availible at: \url{https://geometrygeeks.bike/}.
+\newblock \newline [Accessed~18~\bblsep{}~2022].
 
 \bibitem[{\citenamefont{Lee}(2020)}]{Lee:2020}
 \bibnamefont{Lee}, \bibfnamefont{A.} (2020 \bbljun{}~29).

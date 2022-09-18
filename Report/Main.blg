@@ -5,44 +5,44 @@ The style file: usmeg-a.bst
 Database file #1: References.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 8 entries,
+You've used 9 entries,
             3324 wiz_defined-function locations,
-            702 strings with 6557 characters,
-and the built_in function-call counts, 4661 in all, are:
-= -- 439
+            708 strings with 6730 characters,
+and the built_in function-call counts, 5048 in all, are:
+= -- 479
 > -- 50
 < -- 5
-+ -- 25
++ -- 26
 - -- 15
-* -- 340
-:= -- 627
-add.period$ -- 32
-call.type$ -- 8
-change.case$ -- 56
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 457
-empty$ -- 456
+* -- 361
+:= -- 675
+add.period$ -- 36
+call.type$ -- 9
+change.case$ -- 63
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 494
+empty$ -- 497
 format.name$ -- 30
-if$ -- 965
+if$ -- 1051
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 45
-newline$ -- 70
+missing$ -- 50
+newline$ -- 76
 num.names$ -- 20
-pop$ -- 91
+pop$ -- 103
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 45
 quote$ -- 0
-skip$ -- 122
+skip$ -- 138
 stack$ -- 0
-substring$ -- 380
-swap$ -- 136
+substring$ -- 401
+swap$ -- 146
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 81
 warning$ -- 0
-while$ -- 28
+while$ -- 29
 width$ -- 0
-write$ -- 133
+write$ -- 147

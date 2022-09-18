@@ -8,120 +8,142 @@
 clear;
 clc;
 
-% Disk Properties:
-% Diameter:
-disk_D = 0.110; % 110 mm
-% Thickness:
-disk_t = 0.010; % 10 mm
-% Resistivity 
-disk_rho = 2.65 * 10^-8; % ohm/m
-% Permeability
-disk_mu = 1.256e-6; % H/m
-% Conductivity:
-disk_kappa = 1/0.038e-6;
+% Constants:
+% Aluminium Disk Properties:
+diskDiameter = 0.110; % 110 mm
+diskThickness = 0.010; % 10 mm 
+diskResistivity = 2.65 * 10^-8; % ohm/m
+diskPermeability = 1.256e-6; % H/m
+diskConductivity = 1/0.038e-6;
 
-% Magnet Properties:
-% Thickness:
-mag_t = 0.005; % 5 mm
-% Diameter:
-mag_d = 0.015; % 15 mm
-% Amount:
-mag_n = 16;
-% Gap between magnets and plate:
-gap = 0.002; % 2 mm
+% Megnet Properties:
+magnetThickness = 0.005; % m
+magnetDiameter = 0.015; % m
+magnetAmount = 16;
+magnetAirGap = 0.003; % m
+magnetPlateGap = magnetAirGap + diskThickness/2; % m
 % Gap between surface of magnet and center of disc
-mag_g = gap + disk_t/2; % m 
-% Br:
-mag_Br = 1.3;
-% Function to find B at point z away from disk magnet
-syms B(z);
-B(z) = (mag_Br/2)*((mag_t + z)/(sqrt((mag_d/2)^2 + (mag_t + z)^2)) - z/sqrt((mag_d/2)^2 + z^2));
-xup = mag_g*2;
-B0 = double(mean(B(linspace(gap,gap+disk_t,10)) + B(-linspace(gap,gap+disk_t,10) + xup)));
+magnetRemanence = 1.3; % T
 
-xuplim = xup*1000;
-syms Bleft(x);
-Bleft(x) = B(x/1000);
-syms Bright(x);
-Bright(x) = B(-x/1000 + xup);
+% Determine the Magnetic Flux Density at point x:
+syms B(z);
+B(z) = (magnetRemanence/2) * ...
+    ((magnetThickness + z) / (sqrt((magnetDiameter / 2)^2 + ...
+    (magnetThickness + z)^2)) - ...
+    z / sqrt((magnetDiameter / 2)^2 + z^2));
+upperLimitX = magnetPlateGap*2;
+
+% Determine Average Flux density over the disk
+B0 = double(mean( ...
+    B(linspace(magnetAirGap,magnetAirGap+diskThickness,10)) + ...
+    B(-linspace(magnetAirGap,magnetAirGap+diskThickness,10)+upperLimitX)));
+
+%%%%%%%%%% REFINED TO HERE %%%%%%%%%%
+
+upperLimitXk = upperLimitX*1000;
+syms leftB(x);
+leftB(x) = B(x/1000);
+syms rightB(x);
+rightB(x) = B(-x/1000 + upperLimitX);
+
+figFontSize1 = 20;
+figLineWidth1 = 2;
+gcaFontSize1 = 18;
 
 % Figure 1: 0 degrees out of phase
 phas = 0;
-figure
+figure1 = figure;
+set(gca,'FontSize', gcaFontSize1)
 hold on
-xline(gap*1000, 'black')
-xline((gap+disk_t)*1000, 'black')
-fplot(Bleft(x)*cosd(phas), [0 xuplim], 'red')
-fplot(Bright(x), [0 xuplim], 'blue')
-fplot(Bleft(x)*cosd(phas) + Bright(x), [0 xuplim], 'green')
-xlabel('Position (mm)')
-ylabel('Magnetic Flux Density (T)')
-ylim([-0.5 0.5])
-xlim([0 xuplim])
+xline(magnetAirGap*1000, 'black', 'LineWidth', figLineWidth1)
+xline((magnetAirGap+diskThickness)*1000, 'black', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas), [0 upperLimitXk], 'red', 'LineWidth', figLineWidth1)
+fplot(rightB(x), [0 upperLimitXk], 'blue', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas) + rightB(x), [0 upperLimitXk], 'green', 'LineWidth', figLineWidth1)
+xlabel('Position (mm)', 'FontSize', figFontSize1)
+ylabel('Magnetic Flux Density (T)', 'FontSize', figFontSize1)
+ylim([-0.4 0.4])
+xlim([0 upperLimitXk])
 grid on
-title(phas + "^{o}", 'FontSize', 10, 'FontWeight', 'normal')
+exportgraphics(figure1, '..\..\Report\graphics\FluxZeroDeg.jpg', 'Resolution', 600)
+close(figure1)
 
 % Tile 2: 60 degrees
 phas = 60;
-figure
+figure2 = figure;
+set(gca,'FontSize', gcaFontSize1)
 hold on
-xline(gap*1000, 'black')
-xline((gap+disk_t)*1000, 'black')
-fplot(Bleft(x)*cosd(phas), [0 xuplim], 'red')
-fplot(Bright(x), [0 xuplim], 'blue')
-fplot(Bleft(x)*cosd(phas) + Bright(x), [0 xuplim], 'green')
-%legend('', '', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density', 'Location', 'southoutside')
-xlabel('Position (mm)')
-ylabel('Magnetic Flux Density (T)')
-ylim([-0.5 0.5])
-xlim([0 xuplim])
+xline(magnetAirGap*1000, 'black', 'LineWidth', figLineWidth1)
+xline((magnetAirGap+diskThickness)*1000, 'black', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas), [0 upperLimitXk], 'red', 'LineWidth', figLineWidth1)
+fplot(rightB(x), [0 upperLimitXk], 'blue', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas) + rightB(x), [0 upperLimitXk], 'green', 'LineWidth', figLineWidth1)
+xlabel('Position (mm)', 'FontSize', figFontSize1)
+ylabel('Magnetic Flux Density (T)', 'FontSize', figFontSize1)
+ylim([-0.4 0.4])
+xlim([0 upperLimitXk])
 grid on
-title(phas + "^{o}", 'FontSize', 10, 'FontWeight', 'normal')
+exportgraphics(figure2, '..\..\Report\graphics\FluxSixtyDeg.jpg', 'Resolution', 600)
+close(figure2)
 
 % Tile 3: 120 degrees
 phas = 120;
-figure
+figure3 = figure;
+set(gca,'FontSize', gcaFontSize1)
 hold on
-xline(gap*1000, 'black')
-xline((gap+disk_t)*1000, 'black')
-fplot(Bleft(x)*cosd(phas), [0 xuplim], 'red')
-fplot(Bright(x), [0 xuplim], 'blue')
-fplot(Bleft(x)*cosd(phas) + Bright(x), [0 xuplim], 'green')
-%legend('', '', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density', 'Location', 'southoutside')
-xlabel('Position (mm)')
-ylabel('Magnetic Flux Density (T)')
+xline(magnetAirGap*1000, 'black', 'LineWidth', figLineWidth1)
+xline((magnetAirGap+diskThickness)*1000, 'black', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas), [0 upperLimitXk], 'red', 'LineWidth', figLineWidth1)
+fplot(rightB(x), [0 upperLimitXk], 'blue', 'LineWidth', figLineWidth1)
+fplot(leftB(x)*cosd(phas) + rightB(x), [0 upperLimitXk], 'green', 'LineWidth', figLineWidth1)
+xlabel('Position (mm)', 'FontSize', figFontSize1)
+ylabel('Magnetic Flux Density (T)', 'FontSize', figFontSize1)
 ylim([-0.5 0.5])
-xlim([0 xuplim])
+xlim([0 upperLimitXk])
 grid on
-title(phas + "^{o}", 'FontSize', 10, 'FontWeight', 'normal')
+exportgraphics(figure3, '..\..\Report\graphics\FluxOneTwentyDeg.jpg', 'Resolution', 600)
+close(figure3)
 
 % Tile 4: 180 degrees
 phas = 180;
-figure
+figure4 = figure;
+set(gca,'FontSize', gcaFontSize1)
 hold on
-xline(gap*1000, 'black')
-xline((gap+disk_t)*1000, 'black')
-fplot(Bleft(x)*cosd(phas), [0 xuplim], 'red')
-fplot(Bright(x), [0 xuplim], 'blue')
-fplot(Bleft(x)*cosd(phas) + Bright(x), [0 xuplim], 'green')
-% legend('', '', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density', 'Location', 'southoutside')
-xlabel('Position (mm)')
-ylabel('Magnetic Flux Density (T)')
+px1 = xline(magnetAirGap*1000, 'black', 'LineWidth', figLineWidth1);
+px2 = xline((magnetAirGap+diskThickness)*1000, 'black', 'LineWidth', figLineWidth1);
+p1 = fplot(leftB(x)*cosd(phas), [0 upperLimitXk], 'red', 'LineWidth', figLineWidth1);
+p2 = fplot(rightB(x), [0 upperLimitXk], 'blue', 'LineWidth', figLineWidth1);
+p3 = fplot(leftB(x)*cosd(phas) + rightB(x), [0 upperLimitXk], 'green', 'LineWidth', figLineWidth1);
+xlabel('Position (mm)', 'FontSize', figFontSize1)
+ylabel('Magnetic Flux Density (T)', 'FontSize', figFontSize1)
 ylim([-0.5 0.5])
-xlim([0 xuplim])
+xlim([0 upperLimitXk])
 grid on
-% title(phas + "^{o}", 'FontSize', 10, 'FontWeight', 'normal')
 hold off
+exportgraphics(figure4, '..\..\Report\graphics\FluxOneEightyDeg.jpg', 'Resolution', 600)
+close(figure4)
 
-legend('', '', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density', 'Orientation', 'vertical');
+legendFigure = figure;
+hold on;
+line(nan, nan, 'Color', 'black');
+line(nan, nan, 'Color', 'red');
+line(nan, nan, 'Color', 'blue');
+line(nan, nan, 'Color', 'green');
+set(gca, 'Visible', 'off');
+hold off
+legend('Disk Edge', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density');
+exportgraphics(legendFigure, '..\..\Report\graphics\FluxLegend.jpg', 'Resolution', 600)
+close(legendFigure)
+
+% legend('', '', 'Magnetic Flux Density of Variable Magnet', 'Magnetic Flux Density of Stationary Magnet', 'Total Magnetic Flux Density', 'Orientation', 'vertical');
 
 
 % Radius of disk offset: (radius)
 R = 0.023; % 30 mm 
 % Distance between magnet centres:
-dc = 2*R*sin(pi/(mag_n/2));
+dc = 2*R*sin(pi/(magnetAmount/2));
 % Distance between magnet edges: (Approximation)
-dm = dc - mag_d;
+dm = dc - magnetDiameter;
 
 % Permeability in a vacume:
 mu_0 = 1.257e-6; % H/m
@@ -130,19 +152,19 @@ mu_0 = 1.257e-6; % H/m
 
 % High speed region:
 % Current in regions surrounding the pole shadows: 
-Iinf = mag_t * mag_Br/mu_0; % A
+Iinf = magnetThickness * magnetRemanence/mu_0; % A
 % Resistance in each of the channels between the pole pairs:
-Rinf = 1/disk_kappa * (mag_d)/(disk_t * R); % ohm
+Rinf = 1/diskConductivity * (magnetDiameter)/(diskThickness * R); % ohm
 % Retarding Force on disk:
 syms Tinf(omega);
-Tinf(omega) = mag_n * 1/omega * Iinf^2 * Rinf;
-c0 = 0.5 * (1 - ( (mag_d*disk_D*0.5)^2 /( (disk_D*0.5)^2 - R^2)^2) );
+Tinf(omega) = magnetAmount * 1/omega * Iinf^2 * Rinf;
+c0 = 0.5 * (1 - ( (magnetDiameter*diskDiameter*0.5)^2 /( (diskDiameter*0.5)^2 - R^2)^2) );
 
 % Low speed:
 syms T0_e(omega);
-T0_e(omega) = mag_n * 1/disk_rho * R^2 * (pi*mag_d^2/4) * disk_t * B0^2 * omega;
+T0_e(omega) = magnetAmount * 1/diskResistivity * R^2 * (pi*magnetDiameter^2/4) * diskThickness * B0^2 * omega;
 syms T0_0(omega);
-T0_0(omega) = mag_n/2 * disk_kappa * omega*R * B0^2 * pi * mag_d^2/4 * disk_t * c0;
+T0_0(omega) = magnetAmount/2 * diskConductivity * omega*R * B0^2 * pi * magnetDiameter^2/4 * diskThickness * c0;
 
 % Combined:
 omega_c = double(vpasolve(T0_0 == Tinf, omega, [0 100]));
@@ -150,7 +172,7 @@ Tcrit = T0_0(omega_c/10) / (2/((omega_c/10)/omega_c + omega_c/(omega_c/10)));
 syms T0(omega);
 T0(omega) = Tcrit * 2/(omega/omega_c + omega_c/omega);
 
-figure
+figure5 = figure;
 xlabel('Angular Velocity (rad/s)')
 ylabel('Braking Torque (N m)')
 hold on
@@ -160,18 +182,20 @@ fplot(T0, [0 400])
 %xline(omega_c)
 legend('High Speed', 'Low speed', 'Combined')
 hold off
+exportgraphics(figure5, '..\..\Report\graphics\Fig5.jpg', 'Resolution', 600)
+close(figure5)
 
 % Model 1:
 % Correction Factor
-c1 = 0.5 * ( 1 - 0.25*( 1 / ( (1+R/(disk_D/2))^2 * (( (disk_D/2) - R) / (mag_d))^2 ) ));
+c1 = 0.5 * ( 1 - 0.25*( 1 / ( (1+R/(diskDiameter/2))^2 * (( (diskDiameter/2) - R) / (magnetDiameter))^2 ) ));
 % Critical Force
-Te_hat = double(R * (1/mu_0) * sqrt(c1) * (pi/4) * (mag_d)^2 * ( mag_n*0.5*B0 )^2 * sqrt( (2*mag_g)/(mag_d) ) );
+Te_hat = double(R * (1/mu_0) * sqrt(c1) * (pi/4) * (magnetDiameter)^2 * ( magnetAmount*0.5*B0 )^2 * sqrt( (2*magnetPlateGap)/(magnetDiameter) ) );
 % Critical speed
-omega_c1 = ((2 / mu_0) * sqrt(1/(c1)) * (disk_rho/disk_t) * sqrt((2*mag_g)/(mag_d)))/ R;
+omega_c1 = ((2 / mu_0) * sqrt(1/(c1)) * (diskResistivity/diskThickness) * sqrt((2*magnetPlateGap)/(magnetDiameter)))/ R;
 % General Equation
 Te(omega) = Te_hat * 2/(omega_c1/(omega) + (omega)/omega_c1);
 
-figure
+figure6 = figure;
 hold on
 fplot(T0_e(z), [0 400])
 fplot(Te(omega), [0 400])
@@ -179,8 +203,10 @@ legend('Linear Model', 'Model With Saturation Effects')
 xlabel('Angular Velocity (rad/s)')
 ylabel('Braking Torque (N m)')
 hold off
+exportgraphics(figure6, '..\..\Report\graphics\Fig6.jpg', 'Resolution', 600)
+close(figure6)
 
-figure
+figure7 = figure;
 hold on
 fplot(Te(omega), [0 400])
 fplot(T0,[0 400])
@@ -189,11 +215,15 @@ legend('Simple Model', 'Advanced Model', 'Average')
 xlabel('Angular Velocity (rad/s)')
 ylabel('Braking Torque (N m)')
 hold off
+exportgraphics(figure7, '..\..\Report\graphics\Fig7.jpg', 'Resolution', 600)
+close(figure7)
 
-figure
+figure8 = figure;
 hold on
 fplot((Te+T0)/2, [0 400], 'black')
 yyaxis right
 fplot((Te+T0)/2 * omega, [0 400], 'red')
 legend('Average Torque', 'Power Delivered')
 xlabel('Angular Velocity (rad/s)')
+exportgraphics(figure8, '..\..\Report\graphics\Fig8.jpg', 'Resolution', 600)
+close(figure8)

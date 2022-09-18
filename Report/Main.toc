@@ -32,4 +32,4 @@
 \contentsline {chapter}{\numberline {4}Hardware Development}{18}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Expected Operating Conditions}{19}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{20}{section.4.2}%
-\contentsline {chapter}{List of References}{22}{section*.33}%
+\contentsline {chapter}{List of References}{24}{section*.37}%

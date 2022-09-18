@@ -169,14 +169,14 @@ This mode is defined in the \ac{ftms} documentation, and needs Control Permissio
 	\renewcommand{\arraystretch}{1.3}
 	\centering
 	\caption{\ac{sim} Mode Parameter Data}
-	\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{1cm} >{\raggedleft\arraybackslash}p{2cm}}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{1cm} >{\raggedleft\arraybackslash}p{2cm}}
 		\toprule
-		Parameter                             & Size   & Resolution \\
+		Parameter  & Unit                       & Size   & Resolution \\
 		\midrule
-		Wind Speed (\SI{}{\meter\per\second}) & 16 bit & 0.001      \\
-		Grade (\SI{}{\percent})               & 16 bit & 0.01       \\
-		\ac{crr}                              & 8 bits & 0.0001     \\
-		\ac{cw} (\SI{}{\kilogram\per\meter})  & 8 bits & 0.01       \\
+		Wind Speed & \SI{}{\meter\per\second}   & 16 bit & 0.001      \\
+		Grade      & \SI{}{\percent}            & 16 bit & 0.01       \\
+		\ac{crr}   &                            & 8 bits & 0.0001     \\
+		\ac{cw}    & \SI{}{\kilogram\per\meter} & 8 bits & 0.01       \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:sim}
@@ -207,12 +207,12 @@ The two most common types of bicycles that are expected to be used on the traine
 	\label{fig:bikeDim}
 \end{figure}
 
-Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the largest and smallest size dimensions from the best selling models in each category, as well as the average size that can be expected. The best selling bike models for each category are shown with their dimensions in Table X below: \citep{Lin:2021}
+Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the largest and smallest size dimensions from the best selling models in each category, as well as the average size that can be expected. The best selling bike models for each category are shown with their dimensions in Table \ref{tab:bikes} below: \citep{Lin:2021}
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.2}
 	\centering
-	\caption{Best selling road bicycle specifications}
+	\caption{Best selling road bicycle specifications \citep{Geometry:2022}}
 	\begin{tabularx}{\textwidth}{p{2.6cm} X Xp{0.05cm} p{2.6cm} X X}
 		\toprule
 		Road Bike           & \multicolumn{2}{c}{Wheelbase} &                         & \ac{mtb} & \multicolumn{2}{c}{Wheelbase}                                                     \\
