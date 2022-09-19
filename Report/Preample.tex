@@ -21,7 +21,6 @@
 \usepackage{hyphenat}
 \usepackage{lscape}
 
-
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tabto}
@@ -38,10 +37,17 @@
 \usepackage{float}
 \usepackage{tabularx}
 
-\usepackage{usbib}
+\usepackage[nonamebreak]{usbib}
 \bibliographystyle{usmeg-a}
 \renewcommand\bibfont{\footnotesize}
 \addto{\captionsenglish}{\renewcommand{\bibname}{List of References}}
+
+\setlength\bibsep{0.5\baselineskip} % vertical space between each item
+
+\patchcmd{\thebibliography}
+{\clubpenalty 4000\widowpenalty 4000}
+{\clubpenalties 1 10000 \widowpenalties 1 10000 }
+{}{}
 
 \hypersetup{
 	colorlinks   = true, %Colours links instead of ugly boxes

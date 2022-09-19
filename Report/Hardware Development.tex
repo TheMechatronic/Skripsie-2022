@@ -6,10 +6,8 @@
 % Version: 2.0
 
 \chapter{Hardware Development}
-
-\color{red} % Comment if section finalized
-
 % Section overview: Hardware development.
+
 For the project, hardware was developed with the aim of achieving the objectives shown in \ref{tab:devgoals} below:
 
 \begin{table}[H]
@@ -19,44 +17,22 @@ For the project, hardware was developed with the aim of achieving the objectives
 	\caption{Objectives of Hardware Development}
 	\begin{tabularx}{\textwidth}{p{2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
 		\toprule
-		Outcome Number & Description          & Required Outcome            \\
+		Hardware Design Outcome & Description          & Required Outcome            \\
 		\midrule
-		H 1            & Versatile Usage      & Design for adaptable length \\
-		H 2            & Wide Operating Range & Adequate Braking Force      \\
-		H 3            & Outcome 3            & Description                 \\
-		H 4            & Outcome 4            & Description                 \\
+		HDO 1            & Eddy Current Brake      & Design for adaptable length \\
+		HDO 2            & Speed Sensors & Adequate Braking Force      \\
+		HDO 3            & Frame and Shafts            & Description                 \\
+		HDO 4            & Outcome 4            & Description                 \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:devgoals}
 \end{table}
 
-\color{black}
 \newpage
 
 \section{Expected Operating Conditions}
-\color{red} % Comment if section finalized
 
-The expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{60}{\kilo\meter\per\hour}.
-
-Typical bicycle measurements are as seen in Table \ref{tab:bikesize} below.
-
-\begin{table}[H]
-	\color{red} % Comment if section finalized
-	\renewcommand{\arraystretch}{1.2}
-	\centering
-	\caption{Summery of Typical Bicycle Dimensions}
-	\begin{tabularx}{\textwidth}{p{1.4cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
-		\toprule
-		Size & Wheel Diameter         & Wheelbase              \\
-		\midrule
-		1    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
-		2    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
-		3    & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
-		13   & \SI{115}{\milli\meter} & \SI{115}{\milli\meter} \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:bikesize}
-\end{table}
+Roller trainers require the cyclist to be travelling at some speed for stability. Thus, the expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{50}{\kilo\meter\per\hour}. For the design, a maximum high speed of \SI{60}{\kilo\meter\per\hour} was considered. The corresponding drum speeds are shown in Figure \ref{fig:speedCalc} below.
 
 \begin{figure}[H]
 	\begin{center}
@@ -66,41 +42,14 @@ Typical bicycle measurements are as seen in Table \ref{tab:bikesize} below.
 	\end{center}
 \end{figure}
 
-\color{black}
+For the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher speeds will result in higher braking force and thus a larger available resistance range. On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were selected as a good compromise, and were selected for the model.\\
+
+Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can reach up to \SI{400}{\watt}, during a 1 hour workout. 
+
 \newpage
 
 \section{Eddy Current Brake Design}
-\color{red} % Comment if section finalized
-
-The Eddy Currents in the Aluminium disc will be:
-\[
-	\acs{I}_e = \frac{\acs{condDisk} \acs{B} \acs{v}}{2}
-\]
-The eddy currents within the disc is then:
-\[
-	di = \frac{\acs{I}_e}{2 \pi} d\acs{theta}
-\]
-Using Ampere's Law, the force on an element at length l is then:
-\[
-	d\acs{F} = \acs{B} \, di \, dl
-\]
-\[
-	d\acs{T} = l \, d\acs{F}
-\]
-Thus, combining all these, we get:
-\[
-	d\acs{T} = \frac{\acs{B} \, \acs{I}_e}{2 \pi} \, l \, d\acs{theta} \, dl
-\]
-By integrating, we get:
-\[
-	\int_{0}^{R} \int_{0}^{2 \pi} \frac{\acs{B} \, \acs{I}_e}{2 \pi} \, l \, d\acs{theta} \, dl
-\]
-\[
-	\acs{T} = \frac{\acs{condDisk}\acs{B}^2\acs{omega}_n R^2}{6}
-\]
-
-\color{black}
-
+\label{sec:Eddy}
 
 \begin{figure}[H]
 	\begin{center}
@@ -112,38 +61,37 @@ By integrating, we get:
 \end{figure}
 
 \begin{equation}
-	\acs{B} = \frac{\acs{Br}}{2} (\frac{T + z}{\sqrt{R^2 + {T + z}^2}} - \frac{z}{R^2 + z^2})
+	\acs{B} = \frac{\acs{Br}}{2} (\frac{t+ z}{\sqrt{r^2 + {t + z}^2}} - \frac{z}{r^2 + z^2})
 	\label{eq:B}
 \end{equation}
-
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{.475\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{FluxZeroDeg.jpg}
-		\caption{Zero Degrees Phase}
+		\includegraphics[width=.9\linewidth]{FluxZeroDeg.jpg}
+		\caption{\SI{0}{\degree} Phase}
 		\label{fig:Flux0}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{.475\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{FluxSixtyDeg.jpg}
-		\caption{Sixty Degree Phase}
+		\includegraphics[width=.9\linewidth]{FluxSixtyDeg.jpg}
+		\caption{\SI{60}{\degree} Phase}
 		\label{fig:Flux60}
 	\end{subfigure}
 	\vskip\baselineskip
 	\begin{subfigure}[b]{.475\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{FluxOneTwentyDeg.jpg}
-		\caption{One Twenty Degree Phase}
+		\includegraphics[width=.9\linewidth]{FluxOneTwentyDeg.jpg}
+		\caption{\SI{120}{\degree} Phase}
 		\label{fig:Flux120}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{.475\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{FluxOneEightyDeg.jpg}
-		\caption{One Eighty Degree Phase}
+		\includegraphics[width=.9\linewidth]{FluxOneEightyDeg.jpg}
+		\caption{\SI{180}{\degree} Phase}
 		\label{fig:Flux180}
 	\end{subfigure}
 	\begin{subfigure}{.475\textwidth}
@@ -154,21 +102,6 @@ By integrating, we get:
 	\label{fig:Flux}
 \end{figure}
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{Fig5.jpg}
-		\caption{Figure 5}
-		\label{fig:5}
-	\end{center}
-\end{figure}
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{Fig6.jpg}
-		\caption{Figure 6}
-		\label{fig:6}
-	\end{center}
-\end{figure}
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Fig7.jpg}
@@ -184,4 +117,8 @@ By integrating, we get:
 	\end{center}
 \end{figure}
 
-\color{black}
+\newpage
+\section{Sensors}
+Speed sensors are required to measure the speed of the cyclist ...
+\subsection{Concept Evaluation}
+Sensors are required to measure the angular velocity of both the rear cylinders. It was decided that using a infrared transmitter-receiver device with a reflective strip on the cylinder would be sufficient. The expected maximum sampling rate, as determined in section 
