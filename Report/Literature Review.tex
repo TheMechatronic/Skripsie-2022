@@ -39,13 +39,13 @@ As mentioned above, Zwift requires real-time tracking data from the player in or
 \begin{table}[h!]
 	\renewcommand{\arraystretch}{1.5}
 	\centering
-	\begin{tabularx}{0.8\textwidth}{ p{3cm} X}
+	\begin{tabularx}{\textwidth}{ p{2cm} X X X}
 		\toprule
-		Requirement  & Impact                                                                                                                   \\
+		\multicolumn{1}{c}{Parameter} & \multicolumn{1}{c}{Unit} & \multicolumn{1}{c}{Connectivity} & \multicolumn{1}{c}{Control} \\
 		\midrule
-		Speed data   & Most basic data requirement and is essential to the use of the Zwift platform.                                           \\
-		Cadence data & Not essential for platform, but a feature that many players prefer to have available.                                    \\
-		Power data   & Not essential for platform, although it is the preferred metric that Zwift will use to measure the effort of the player. \\
+		Speed                         & (\acs{rpm})              & Essential                        & Essential                   \\
+		Cadence                       & (\acs{rpm})              & Optional                         & Optional                    \\
+		Power                         & (\si{\watt})             & Optional                         & Optional                    \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -103,11 +103,11 @@ Some other features worth considering are listed in Table \ref{tab:ble} below:
 	\renewcommand{\arraystretch}{1.5}
 	\centering
 	\caption{Technical Specifications of the \ac{ble} Standard}
-	\begin{tabularx}{0.9\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{3cm} >{\raggedright\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{3cm} >{\raggedright\arraybackslash}X}
 		\toprule
 		Description        & Specification                       & Detail                                                                                                                                                 \\
 		\midrule
-		Data Package Size  & 64 bit (min) to 216 bit (max)       & The size of any single data package that can be sent between a master and slave(s).                                                                    \\
+		Data Package Size  & 64 bit (min) to 216 bit (max)       & The size data packages that can be sent between a master and slave(s).                                                                                 \\
 		Data Transfer Rate & \SI{1}{Mbps}                        & The rate at which the data is typically transferred between devices.                                                                                   \\
 		Security           & 128-bit AES                         & Security and encryption varies in levels, but generally data is encrypted between devices with a "shared secret" key that is generated during pairing. \\
 		Latency            & \SI{6}{\milli\second}               & Time between device starting transmission and data getting transferred. (Aka network lag).                                                             \\
@@ -185,11 +185,13 @@ This mode is defined in the \ac{ftms} documentation, and needs Control Permissio
 The \textit{Grade} indicates the gradient of the road that the avatar is travelling on. The \text{\ac{crr}} is determined by the road surface and wheel type of the avatar in the game, where the \textit{\ac{cw}} is determined by the player's weight and height, and can then be reduced by in-game events such as equipment selection and drafting behind other avatars when this feature is active. Currently Zwift does not utilize the \textit{Wind Speed} parameter.\\
 These parameters are then used by the trainer to determine the resistance required to simulate the conditions in the game. This is what creates the realistic training experience.
 
+\newpage
+
 \section{Bicycle Specifications}
 % Section showing expected bicycle specifications of most popular models
-The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. The dimensions that are relevant to the implementation of the trainer are the wheelbase, wheel diameter and weight, as shown in Figure \ref{fig:bikeDim} below.
+The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight. Figure \ref{fig:bikeDim} below shows where the dimensions are measured.
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -206,13 +208,12 @@ The two most common types of bicycles that are expected to be used on the traine
 	\caption{Bicycle Dimensions}
 	\label{fig:bikeDim}
 \end{figure}
+Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category, and is shown in Table \ref{tab:bikes} below: \citep{Lin:2021}
 
-Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the largest and smallest size dimensions from the best selling models in each category, as well as the average size that can be expected. The best selling bike models for each category are shown with their dimensions in Table \ref{tab:bikes} below: \citep{Lin:2021}
-
-\begin{table}[H]
+\begin{table}[ht]
 	\renewcommand{\arraystretch}{1.2}
 	\centering
-	\caption{Best selling road bicycle specifications \citep{Geometry:2022}}
+	\caption{Best Selling Road and \ac{mtb} specifications \citep{Geometry:2022}}
 	\begin{tabularx}{\textwidth}{p{2.6cm} X Xp{0.05cm} p{2.6cm} X X}
 		\toprule
 		Road Bike           & \multicolumn{2}{c}{Wheelbase} &                         & \ac{mtb} & \multicolumn{2}{c}{Wheelbase}                                                     \\

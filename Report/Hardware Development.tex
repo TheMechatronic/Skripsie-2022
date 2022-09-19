@@ -11,18 +11,17 @@
 For the project, hardware was developed with the aim of achieving the objectives shown in \ref{tab:devgoals} below:
 
 \begin{table}[H]
-	\color{red} % Comment if section finalized
 	\renewcommand{\arraystretch}{1.2}
 	\centering
 	\caption{Objectives of Hardware Development}
-	\begin{tabularx}{\textwidth}{p{2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{p{3.2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
 		\toprule
-		Hardware Design Outcome & Description          & Required Outcome            \\
+		Hardware Design Outcome & Description               & Target Objective            \\
 		\midrule
-		HDO 1            & Eddy Current Brake      & Design for adaptable length \\
-		HDO 2            & Speed Sensors & Adequate Braking Force      \\
-		HDO 3            & Frame and Shafts            & Description                 \\
-		HDO 4            & Outcome 4            & Description                 \\
+		HDO 1                   & Eddy Current Brake Design & O1 \\
+		HDO 2                   & Speed Sensors Design      & Adequate Braking Force      \\
+		HDO 3                   & Frame and Shafts Design   & Description                 \\
+		HDO 4                   & Outcome 4                 & Description                 \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:devgoals}
@@ -44,7 +43,7 @@ Roller trainers require the cyclist to be travelling at some speed for stability
 
 For the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher speeds will result in higher braking force and thus a larger available resistance range. On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were selected as a good compromise, and were selected for the model.\\
 
-Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can reach up to \SI{400}{\watt}, during a 1 hour workout. 
+Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can reach up to \SI{400}{\watt}, during a 1 hour workout.
 
 \newpage
 
@@ -95,8 +94,8 @@ Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can re
 		\label{fig:Flux180}
 	\end{subfigure}
 	\begin{subfigure}{.475\textwidth}
-	\centering
-	\includegraphics[width=\linewidth]{FluxLegend.jpg}
+		\centering
+		\includegraphics[width=\linewidth]{FluxLegend.jpg}
 	\end{subfigure}
 	\caption{Flux Distribution}
 	\label{fig:Flux}
@@ -121,4 +120,4 @@ Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can re
 \section{Sensors}
 Speed sensors are required to measure the speed of the cyclist ...
 \subsection{Concept Evaluation}
-Sensors are required to measure the angular velocity of both the rear cylinders. It was decided that using a infrared transmitter-receiver device with a reflective strip on the cylinder would be sufficient. The expected maximum sampling rate, as determined in section 
+Sensors are required to measure the angular velocity of both the rear cylinders. It was decided that using a infrared transmitter-receiver device with a reflective strip on the cylinder would be sufficient. The expected maximum sampling rate, as determined in section

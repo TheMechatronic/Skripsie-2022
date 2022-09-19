@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  19 SEP 2022 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  19 SEP 2022 23:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1040,7 +1040,13 @@ ech-ni-cal and en-gi-neer-ing
 \tf@toc=\write4
 \openout4 = `Main.toc'.
 
- [8] (./Main.lot)
+ [8] (./Main.lot
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+ [][] [][][]\T1/futs/m/n/12 Best Sell-ing Road and Moun-tain Bike ([][][][][][]
+[][]) spec-i-fi-ca-tions 
+ []
+
+)
 \tf@lot=\write5
 \openout5 = `Main.lot'.
 
@@ -1054,11 +1060,16 @@ ech-ni-cal and en-gi-neer-ing
 
 ] [11
 
-])
-[12
+]) [12
 
 ] (./Introduction.tex
 Chapter 1.
+
+Underfull \hbox (badness 1668) in paragraph at lines 14--24
+\T1/futs/m/n/12 more ef-fec-tively and en-abling so-cial en-gage-ment dur-ing t
+rain-ing ses-sions.
+ []
+
 [1
 
 
@@ -1067,11 +1078,6 @@ Chapter 2.
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
-[]|\T1/futs/m/n/12 Most ba-sic data re-quire-ment and is
- []
-
-[5]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 57.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -1090,7 +1096,7 @@ Underfull \hbox (badness 1442) in paragraph at lines 57--61
 mu-ni-ca-tion that has been
  []
 
-
+[5]
 Underfull \hbox (badness 1939) in paragraph at lines 76--76
 []|\T1/futs/m/n/12 Sends the tar-geted power (Watts)
  []
@@ -1110,7 +1116,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<graphics//BLEnet.jpg, id=385, 636.12656pt x 420.06938pt>
+<graphics//BLEnet.jpg, id=387, 636.12656pt x 420.06938pt>
 File: graphics//BLEnet.jpg Graphic file (type jpg)
 <use graphics//BLEnet.jpg>
 Package pdftex.def Info: graphics//BLEnet.jpg  used on input line 93.
@@ -1121,12 +1127,12 @@ Underfull \hbox (badness 1762) in paragraph at lines 121--123
  sup-ported by the
  []
 
-[9]
+
 Overfull \hbox (1.90227pt too wide) in paragraph at lines 140--140
 []|\T1/futs/m/n/12 Number| 
  []
 
-
+[9]
 Overfull \hbox (1.90227pt too wide) in paragraph at lines 159--159
 []|\T1/futs/m/n/12 Number| 
  []
@@ -1137,105 +1143,105 @@ Underfull \hbox (badness 1221) in paragraph at lines 145--161
  a bi-cy-cle trainer
  []
 
-[10]
+
 Underfull \hbox (badness 4266) in paragraph at lines 166--167
 \T1/futs/m/n/12 This mode is de-fined in the [][][][][][][][][] doc-u-men-ta-ti
 on, and needs Con-trol
  []
 
-[11]
-<graphics//measureMTB.jpg, id=446, 696.201pt x 417.9615pt>
+[10] [11]
+<graphics//measureMTB.jpg, id=448, 696.201pt x 417.9615pt>
 File: graphics//measureMTB.jpg Graphic file (type jpg)
 <use graphics//measureMTB.jpg>
-Package pdftex.def Info: graphics//measureMTB.jpg  used on input line 196.
+Package pdftex.def Info: graphics//measureMTB.jpg  used on input line 198.
 (pdftex.def)             Requested size: 199.0pt x 119.46465pt.
-<graphics//measureRoad.jpg, id=453, 780.516pt x 466.74374pt>
+<graphics//measureRoad.jpg, id=455, 780.516pt x 466.74374pt>
 File: graphics//measureRoad.jpg Graphic file (type jpg)
 <use graphics//measureRoad.jpg>
-Package pdftex.def Info: graphics//measureRoad.jpg  used on input line 202.
+Package pdftex.def Info: graphics//measureRoad.jpg  used on input line 204.
 (pdftex.def)             Requested size: 199.0pt x 119.00027pt.
 
-Overfull \hbox (1.01228pt too wide) in paragraph at lines 225--225
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Smallest| 
  []
 
 
-Overfull \hbox (1.01228pt too wide) in paragraph at lines 225--225
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Smallest| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1012$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1116$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1211$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1024$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1144$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1323$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1024$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1152$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
 []|$\T1/futs/m/n/12 1302$$[]$| 
  []
 
-[12 <./graphics//measureMTB.jpg> <./graphics//measureRoad.jpg>])
-(./Software Development.tex [13]
+) (./Software Development.tex [12 <./graphics//measureMTB.jpg> <./graphics//mea
+sureRoad.jpg>] [13]
 Chapter 3.
 [14
 
 ]
-<graphics//Software.jpg, id=484, 837.88031pt x 512.66531pt>
+<graphics//Software.jpg, id=488, 837.88031pt x 512.66531pt>
 File: graphics//Software.jpg Graphic file (type jpg)
 <use graphics//Software.jpg>
 Package pdftex.def Info: graphics//Software.jpg  used on input line 20.
@@ -1247,7 +1253,7 @@ e Blue-tooth com-mu-ni-ca-tion
  []
 
 [15 <./graphics//Software.jpg>]
-<graphics//BLEdiagram.jpg, id=494, 326.72063pt x 534.49687pt>
+<graphics//BLEdiagram.jpg, id=498, 326.72063pt x 534.49687pt>
 File: graphics//BLEdiagram.jpg Graphic file (type jpg)
 <use graphics//BLEdiagram.jpg>
 Package pdftex.def Info: graphics//BLEdiagram.jpg  used on input line 32.
@@ -1260,80 +1266,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 ) (./Hardware Development.tex [16 <./graphics//BLEdiagram.jpg>] [17]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
-[]|\T1/futs/m/n/12 Hardware
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
-\T1/futs/m/n/12 De-sign
+Underfull \hbox (badness 3260) in paragraph at lines 26--26
+[]|\T1/futs/m/n/12 Hardware De-sign
  []
 
 [18
 
 ]
-<graphics//SpeedCalculations.jpg, id=522, 3218.0225pt x 2467.2175pt>
+<graphics//SpeedCalculations.jpg, id=526, 3218.0225pt x 2467.2175pt>
 File: graphics//SpeedCalculations.jpg Graphic file (type jpg)
 <use graphics//SpeedCalculations.jpg>
-Package pdftex.def Info: graphics//SpeedCalculations.jpg  used on input line 39
+Package pdftex.def Info: graphics//SpeedCalculations.jpg  used on input line 38
 .
 (pdftex.def)             Requested size: 199.0pt x 152.54427pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 [19 <./graphics//SpeedCalculations.jpg>]
-<graphics//magnetBr.jpg, id=528, 730.52925pt x 457.10776pt>
+<graphics//magnetBr.jpg, id=532, 730.52925pt x 457.10776pt>
 File: graphics//magnetBr.jpg Graphic file (type jpg)
 <use graphics//magnetBr.jpg>
-Package pdftex.def Info: graphics//magnetBr.jpg  used on input line 56.
+Package pdftex.def Info: graphics//magnetBr.jpg  used on input line 55.
 (pdftex.def)             Requested size: 199.0pt x 124.5158pt.
-<graphics//FluxZeroDeg.jpg, id=532, 3142.74126pt x 2488.29625pt>
+<graphics//FluxZeroDeg.jpg, id=536, 3142.74126pt x 2488.29625pt>
 File: graphics//FluxZeroDeg.jpg Graphic file (type jpg)
 <use graphics//FluxZeroDeg.jpg>
-Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 72.
+Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 71.
 (pdftex.def)             Requested size: 170.14603pt x 134.7115pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 73.
+(Font)              scaled to size 10.07397pt on input line 72.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 73.
+(Font)              scaled to size 7.63599pt on input line 72.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 73.
+(Font)              scaled to size 10.07397pt on input line 72.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 73.
-<graphics//FluxSixtyDeg.jpg, id=533, 3142.74126pt x 2488.29625pt>
+(Font)              scaled to size 7.63599pt on input line 72.
+<graphics//FluxSixtyDeg.jpg, id=537, 3142.74126pt x 2488.29625pt>
 File: graphics//FluxSixtyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxSixtyDeg.jpg>
-Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 79.
+Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 78.
 (pdftex.def)             Requested size: 170.14603pt x 134.7115pt.
-<graphics//FluxOneTwentyDeg.jpg, id=534, 3143.745pt x 2488.29625pt>
+<graphics//FluxOneTwentyDeg.jpg, id=538, 3143.745pt x 2488.29625pt>
 File: graphics//FluxOneTwentyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneTwentyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 86.
+Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 85.
 
 (pdftex.def)             Requested size: 170.14603pt x 134.63557pt.
-<graphics//FluxOneEightyDeg.jpg, id=535, 3143.745pt x 2488.29625pt>
+<graphics//FluxOneEightyDeg.jpg, id=539, 3143.745pt x 2488.29625pt>
 File: graphics//FluxOneEightyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneEightyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 93.
+Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 92.
 
 (pdftex.def)             Requested size: 170.14603pt x 134.63557pt.
-<graphics//FluxLegend.jpg, id=536, 1787.67876pt x 443.6575pt>
+<graphics//FluxLegend.jpg, id=540, 1787.67876pt x 443.6575pt>
 File: graphics//FluxLegend.jpg Graphic file (type jpg)
 <use graphics//FluxLegend.jpg>
-Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 99.
+Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 98.
 (pdftex.def)             Requested size: 189.05243pt x 46.91373pt.
  [20 <./graphics//magnetBr.jpg>]
-<graphics//Fig7.jpg, id=543, 2987.16pt x 2436.10126pt>
+<graphics//Fig7.jpg, id=547, 2987.16pt x 2436.10126pt>
 File: graphics//Fig7.jpg Graphic file (type jpg)
 <use graphics//Fig7.jpg>
-Package pdftex.def Info: graphics//Fig7.jpg  used on input line 107.
+Package pdftex.def Info: graphics//Fig7.jpg  used on input line 106.
 (pdftex.def)             Requested size: 318.40121pt x 259.64548pt.
-<graphics//Fig8.jpg, id=544, 3022.29124pt x 2437.105pt>
+<graphics//Fig8.jpg, id=548, 3022.29124pt x 2437.105pt>
 File: graphics//Fig8.jpg Graphic file (type jpg)
 <use graphics//Fig8.jpg>
-Package pdftex.def Info: graphics//Fig8.jpg  used on input line 114.
+Package pdftex.def Info: graphics//Fig8.jpg  used on input line 113.
 (pdftex.def)             Requested size: 318.40121pt x 256.7403pt.
 
 [21 <./graphics//FluxZeroDeg.jpg> <./graphics//FluxSixtyDeg.jpg> <./graphics//F
@@ -1379,7 +1380,7 @@ een already used, duplicate ignored
 l.1 \newpage
              [3]
 Appendix A.
-<graphics//Brake Layout.jpg, id=580, 834.7185pt x 443.85825pt>
+<graphics//Brake Layout.jpg, id=584, 834.7185pt x 443.85825pt>
 File: graphics//Brake Layout.jpg Graphic file (type jpg)
 <use graphics//Brake Layout.jpg>
 Package pdftex.def Info: graphics//Brake Layout.jpg  used on input line 11.
@@ -1393,12 +1394,12 @@ l.17 \newpage
               [1
 
  <./graphics//Brake Layout.jpg>]
-<graphics//Fig5.jpg, id=584, 3033.3325pt x 2437.105pt>
+<graphics//Fig5.jpg, id=588, 3033.3325pt x 2437.105pt>
 File: graphics//Fig5.jpg Graphic file (type jpg)
 <use graphics//Fig5.jpg>
 Package pdftex.def Info: graphics//Fig5.jpg  used on input line 49.
 (pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
-<graphics//Fig6.jpg, id=585, 3033.3325pt x 2437.105pt>
+<graphics//Fig6.jpg, id=589, 3033.3325pt x 2437.105pt>
 File: graphics//Fig6.jpg Graphic file (type jpg)
 <use graphics//Fig6.jpg>
 Package pdftex.def Info: graphics//Fig6.jpg  used on input line 57.
@@ -1416,10 +1417,10 @@ Package rerunfilecheck Info: File `Main.out' has not changed.
  )
 (\end occurred when \ifx on line 14 was incomplete) 
 Here is how much of TeX's memory you used:
- 24785 strings out of 478238
- 544378 string characters out of 5847939
- 787552 words of memory out of 5000000
- 42442 multiletter control sequences out of 15000+600000
+ 24783 strings out of 478238
+ 544313 string characters out of 5847939
+ 787625 words of memory out of 5000000
+ 42440 multiletter control sequences out of 15000+600000
  691288 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,18n,120p,917b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1440,10 +1441,10 @@ fonts/type1/adobe/utopia/putri8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/pu
 blic/cm-super/sfss1200.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-su
 per/sfsx1095.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx14
 40.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Main.pdf (40 pages, 3633695 bytes).
+Output written on Main.pdf (40 pages, 3632971 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 559 compressed objects within 6 object streams
+ 677 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
  132 named destinations out of 1000 (max. 500000)
  360 words of extra memory for PDF output out of 10000 (max. 10000000)
 

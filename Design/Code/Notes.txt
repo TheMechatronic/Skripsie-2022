@@ -1,0 +1,21 @@
+Interupt on pin high:
+	counter ++
+end interupt
+
+
+
+int loop()
+	Set pins
+	Start interupt
+	Every x seconds:
+	SpeedNew = counter/x (slots/s)
+	Acceleration = SpeedOld - SpeedNew
+	
+	Stepper motor control:
+	RequiredTorque():
+		Function to find the required torque based on the received parameters
+		Receive:
+			WindSpeed
+			Grade
+			CRR
+			CW
