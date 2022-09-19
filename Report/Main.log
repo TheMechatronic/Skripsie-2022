@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  18 SEP 2022 20:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  19 SEP 2022 08:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1283,53 +1283,53 @@ Package pdftex.def Info: graphics//magnetBr.jpg  used on input line 107.
 <graphics//FluxZeroDeg.jpg, id=552, 3141.7375pt x 2489.3pt>
 File: graphics//FluxZeroDeg.jpg Graphic file (type jpg)
 <use graphics//FluxZeroDeg.jpg>
-Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 122.
+Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 124.
 (pdftex.def)             Requested size: 189.05243pt x 149.76938pt.
 <graphics//FluxSixtyDeg.jpg, id=553, 3141.7375pt x 2489.3pt>
 File: graphics//FluxSixtyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxSixtyDeg.jpg>
-Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 129.
+Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 131.
 (pdftex.def)             Requested size: 189.05243pt x 149.76938pt.
 <graphics//FluxOneTwentyDeg.jpg, id=554, 3141.7375pt x 2489.3pt>
 File: graphics//FluxOneTwentyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneTwentyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 136
+Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 138
 .
 (pdftex.def)             Requested size: 189.05243pt x 149.76938pt.
 <graphics//FluxOneEightyDeg.jpg, id=555, 3141.7375pt x 2489.3pt>
 File: graphics//FluxOneEightyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneEightyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 143
+Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 145
 .
 (pdftex.def)             Requested size: 189.05243pt x 149.76938pt.
 <graphics//FluxLegend.jpg, id=556, 1787.67876pt x 443.6575pt>
 File: graphics//FluxLegend.jpg Graphic file (type jpg)
 <use graphics//FluxLegend.jpg>
-Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 149.
+Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 151.
 (pdftex.def)             Requested size: 189.05243pt x 46.91373pt.
 <graphics//Fig5.jpg, id=557, 3033.3325pt x 2437.105pt>
 File: graphics//Fig5.jpg Graphic file (type jpg)
 <use graphics//Fig5.jpg>
-Package pdftex.def Info: graphics//Fig5.jpg  used on input line 157.
+Package pdftex.def Info: graphics//Fig5.jpg  used on input line 159.
 (pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
 
 [21 <./graphics//FluxZeroDeg.jpg> <./graphics//FluxSixtyDeg.jpg> <./graphics//F
 luxOneTwentyDeg.jpg> <./graphics//FluxOneEightyDeg.jpg> <./graphics//FluxLegend
 .jpg>]
-<graphics//Fig6.jpg, id=562, 3033.3325pt x 2437.105pt>
+<graphics//Fig6.jpg, id=563, 3033.3325pt x 2437.105pt>
 File: graphics//Fig6.jpg Graphic file (type jpg)
 <use graphics//Fig6.jpg>
-Package pdftex.def Info: graphics//Fig6.jpg  used on input line 165.
+Package pdftex.def Info: graphics//Fig6.jpg  used on input line 167.
 (pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
-<graphics//Fig7.jpg, id=563, 2987.16pt x 2436.10126pt>
+<graphics//Fig7.jpg, id=564, 2987.16pt x 2436.10126pt>
 File: graphics//Fig7.jpg Graphic file (type jpg)
 <use graphics//Fig7.jpg>
-Package pdftex.def Info: graphics//Fig7.jpg  used on input line 172.
+Package pdftex.def Info: graphics//Fig7.jpg  used on input line 174.
 (pdftex.def)             Requested size: 318.40121pt x 259.64548pt.
-<graphics//Fig8.jpg, id=564, 3022.29124pt x 2437.105pt>
+<graphics//Fig8.jpg, id=565, 3022.29124pt x 2437.105pt>
 File: graphics//Fig8.jpg Graphic file (type jpg)
 <use graphics//Fig8.jpg>
-Package pdftex.def Info: graphics//Fig8.jpg  used on input line 179.
+Package pdftex.def Info: graphics//Fig8.jpg  used on input line 181.
 (pdftex.def)             Requested size: 318.40121pt x 256.7403pt.
  [22 <./graphics//Fig5.jpg> <./graphics//Fig6.jpg>]) [23 <./graphics//Fig7.jpg>
  <./graphics//Fig8.jpg>] (./Main.bbl
@@ -1366,10 +1366,10 @@ Package rerunfilecheck Info: File `Main.out' has not changed.
  )
 (\end occurred when \ifx on line 14 was incomplete) 
 Here is how much of TeX's memory you used:
- 24770 strings out of 478238
- 544360 string characters out of 5847939
- 787858 words of memory out of 5000000
- 42429 multiletter control sequences out of 15000+600000
+ 24772 strings out of 478238
+ 544380 string characters out of 5847939
+ 787914 words of memory out of 5000000
+ 42430 multiletter control sequences out of 15000+600000
  668114 words of font info for 196 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,18n,120p,917b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1392,10 +1392,10 @@ be/utopia/putri8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/s
 fss1200.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pf
 b><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb><d:/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Main.pdf (38 pages, 3543063 bytes).
+Output written on Main.pdf (38 pages, 3543103 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 137 named destinations out of 1000 (max. 500000)
+ 691 PDF objects out of 1000 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 138 named destinations out of 1000 (max. 500000)
  331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
