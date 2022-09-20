@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  19 SEP 2022 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  20 SEP 2022 21:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -777,16 +777,17 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 57.
 \c@g@acro@rpc@int=\count344
 \c@g@acro@dis@int=\count345
 \c@g@acro@mtb@int=\count346
-\c@g@acro@thetadBrake@int=\count347
-\c@g@acro@condDisk@int=\count348
-\c@g@acro@B@int=\count349
-\c@g@acro@v@int=\count350
-\c@g@acro@I@int=\count351
-\c@g@acro@F@int=\count352
-\c@g@acro@T@int=\count353
-\c@g@acro@theta@int=\count354
-\c@g@acro@omega@int=\count355
-\c@g@acro@Br@int=\count356
+\c@g@acro@gpio@int=\count347
+\c@g@acro@thetadBrake@int=\count348
+\c@g@acro@condDisk@int=\count349
+\c@g@acro@B@int=\count350
+\c@g@acro@v@int=\count351
+\c@g@acro@I@int=\count352
+\c@g@acro@F@int=\count353
+\c@g@acro@T@int=\count354
+\c@g@acro@theta@int=\count355
+\c@g@acro@omega@int=\count356
+\c@g@acro@Br@int=\count357
 )
 (./ExecutiveSummery.tex) (./ECSAEvaluation.tex)) (./ProjectOverview.tex)
 (./Main.aux)
@@ -833,21 +834,21 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
-\c@mv@tabular=\count357
-\c@mv@boldtabular=\count358
+\c@mv@tabular=\count358
+\c@mv@boldtabular=\count359
 
 (d:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count359
+\scratchcounter=\count360
 \scratchdimen=\dimen194
 \scratchbox=\box72
-\nofMPsegments=\count360
-\nofMParguments=\count361
+\nofMPsegments=\count361
+\nofMParguments=\count362
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count362
+\MPscratchCnt=\count363
 \MPscratchDim=\dimen195
-\MPnumerator=\count363
-\makeMPintoPDFobject=\count364
+\MPnumerator=\count364
+\makeMPintoPDFobject=\count365
 \everyMPtoPDFconversion=\toks34
 ) (d:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -890,7 +891,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (d:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count365
+\c@section@level=\count366
 )
 LaTeX Info: Redefining \ref on input line 17.
 LaTeX Info: Redefining \pageref on input line 17.
@@ -915,7 +916,7 @@ tex/latex/stellenbosch/logos/SU_logo-eps-converted-to.pdf D:/texlive/2022/texmf
 (epstopdf)             \includegraphics on input line 9.
 Package epstopdf Info: Output file is already uptodate.
 <D:/texlive/2022/texmf-dist/tex/latex/stellenbosch/logos/SU_logo-eps-converted-
-to.pdf, id=136, 413.545pt x 145.54375pt>
+to.pdf, id=143, 413.545pt x 145.54375pt>
 File: D:/texlive/2022/texmf-dist/tex/latex/stellenbosch/logos/SU_logo-eps-conve
 rted-to.pdf Graphic file (type pdf)
 <use D:/texlive/2022/texmf-dist/tex/latex/stellenbosch/logos/SU_logo-eps-conver
@@ -982,7 +983,7 @@ LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/bold/it' will be
 
 {d:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <d:/texlive/2022
 /texmf-dist/tex/latex/stellenbosch/logos/SU_logo-eps-converted-to.pdf>]
-<graphics//Signature.jpg, id=148, 200.54926pt x 48.18pt>
+<graphics//Signature.jpg, id=155, 200.54926pt x 48.18pt>
 File: graphics//Signature.jpg Graphic file (type jpg)
 <use graphics//Signature.jpg>
 Package pdftex.def Info: graphics//Signature.jpg  used on input line 14.
@@ -1040,13 +1041,7 @@ ech-ni-cal and en-gi-neer-ing
 \tf@toc=\write4
 \openout4 = `Main.toc'.
 
- [8] (./Main.lot
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
- [][] [][][]\T1/futs/m/n/12 Best Sell-ing Road and Moun-tain Bike ([][][][][][]
-[][]) spec-i-fi-ca-tions 
- []
-
-)
+ [8] (./Main.lot)
 \tf@lot=\write5
 \openout5 = `Main.lot'.
 
@@ -1060,7 +1055,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 
 ] [11
 
-]) [12
+])
+[12
 
 ] (./Introduction.tex
 Chapter 1.
@@ -1096,184 +1092,142 @@ Underfull \hbox (badness 1442) in paragraph at lines 57--61
 mu-ni-ca-tion that has been
  []
 
-[5]
-Underfull \hbox (badness 1939) in paragraph at lines 76--76
-[]|\T1/futs/m/n/12 Sends the tar-geted power (Watts)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
-\T1/futs/m/n/12 that the trainer should aim to
- []
-
-
-Underfull \hbox (badness 1635) in paragraph at lines 76--76
-[]|\T1/futs/m/n/12 Set the sim-u-la-tion pa-ram-e-ters on
- []
-
-[6] [7]
+[5] [6] [7]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<graphics//BLEnet.jpg, id=387, 636.12656pt x 420.06938pt>
+<graphics//BLEnet.jpg, id=422, 636.12656pt x 420.06938pt>
 File: graphics//BLEnet.jpg Graphic file (type jpg)
 <use graphics//BLEnet.jpg>
 Package pdftex.def Info: graphics//BLEnet.jpg  used on input line 93.
 (pdftex.def)             Requested size: 358.19757pt x 236.53201pt.
 [8 <./graphics//BLEnet.jpg>]
-Underfull \hbox (badness 1762) in paragraph at lines 121--123
+Underfull \hbox (badness 1762) in paragraph at lines 123--125
 \T1/futs/m/n/12 The spec-i-fi-ca-tion out-lines and de-fines ser-vices that are
  sup-ported by the
  []
 
 
-Overfull \hbox (1.90227pt too wide) in paragraph at lines 140--140
+Overfull \hbox (1.90227pt too wide) in paragraph at lines 142--142
 []|\T1/futs/m/n/12 Number| 
  []
 
 [9]
-Overfull \hbox (1.90227pt too wide) in paragraph at lines 159--159
+Overfull \hbox (1.90227pt too wide) in paragraph at lines 161--161
 []|\T1/futs/m/n/12 Number| 
  []
 
 
-Underfull \hbox (badness 1221) in paragraph at lines 145--161
+Underfull \hbox (badness 1221) in paragraph at lines 147--163
 []\T1/futs/m/n/12 The pa-ram-e-ters that would be rel-e-vant to the con-trol of
  a bi-cy-cle trainer
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 166--167
+Underfull \hbox (badness 4266) in paragraph at lines 168--169
 \T1/futs/m/n/12 This mode is de-fined in the [][][][][][][][][] doc-u-men-ta-ti
 on, and needs Con-trol
  []
 
 [10] [11]
-<graphics//measureMTB.jpg, id=448, 696.201pt x 417.9615pt>
+<graphics//measureMTB.jpg, id=482, 696.201pt x 417.9615pt>
 File: graphics//measureMTB.jpg Graphic file (type jpg)
 <use graphics//measureMTB.jpg>
-Package pdftex.def Info: graphics//measureMTB.jpg  used on input line 198.
+Package pdftex.def Info: graphics//measureMTB.jpg  used on input line 200.
 (pdftex.def)             Requested size: 199.0pt x 119.46465pt.
-<graphics//measureRoad.jpg, id=455, 780.516pt x 466.74374pt>
+<graphics//measureRoad.jpg, id=489, 780.516pt x 466.74374pt>
 File: graphics//measureRoad.jpg Graphic file (type jpg)
 <use graphics//measureRoad.jpg>
-Package pdftex.def Info: graphics//measureRoad.jpg  used on input line 204.
+Package pdftex.def Info: graphics//measureRoad.jpg  used on input line 206.
 (pdftex.def)             Requested size: 199.0pt x 119.00027pt.
 
-Overfull \hbox (1.01228pt too wide) in paragraph at lines 226--226
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Smallest| 
  []
 
 
-Overfull \hbox (1.01228pt too wide) in paragraph at lines 226--226
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Smallest| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1012$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1116$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1211$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1024$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1144$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1323$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1024$$[]$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\T1/futs/m/n/12 Specialized
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1152$$[]$| 
  []
 
 
-Overfull \hbox (4.40462pt too wide) in paragraph at lines 226--226
+Overfull \hbox (4.40462pt too wide) in paragraph at lines 228--228
 []|$\T1/futs/m/n/12 1302$$[]$| 
  []
 
-) (./Software Development.tex [12 <./graphics//measureMTB.jpg> <./graphics//mea
+) (./Hardware Development.tex [12 <./graphics//measureMTB.jpg> <./graphics//mea
 sureRoad.jpg>] [13]
 Chapter 3.
-[14
-
-]
-<graphics//Software.jpg, id=488, 837.88031pt x 512.66531pt>
-File: graphics//Software.jpg Graphic file (type jpg)
-<use graphics//Software.jpg>
-Package pdftex.def Info: graphics//Software.jpg  used on input line 20.
-(pdftex.def)             Requested size: 398.0pt x 243.51854pt.
-
-Underfull \hbox (badness 3128) in paragraph at lines 27--29
-\T1/futs/m/n/12 The [][][][][][][][][] han-dler is re-spon-si-ble for all of th
-e Blue-tooth com-mu-ni-ca-tion
- []
-
-[15 <./graphics//Software.jpg>]
-<graphics//BLEdiagram.jpg, id=498, 326.72063pt x 534.49687pt>
-File: graphics//BLEdiagram.jpg Graphic file (type jpg)
-<use graphics//BLEdiagram.jpg>
-Package pdftex.def Info: graphics//BLEdiagram.jpg  used on input line 32.
-(pdftex.def)             Requested size: 199.0pt x 325.55327pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
- []
-
-) (./Hardware Development.tex [16 <./graphics//BLEdiagram.jpg>] [17]
-Chapter 4.
 
 Underfull \hbox (badness 3260) in paragraph at lines 26--26
 []|\T1/futs/m/n/12 Hardware De-sign
  []
 
-[18
+[14
 
 ]
-<graphics//SpeedCalculations.jpg, id=526, 3218.0225pt x 2467.2175pt>
+<graphics//SpeedCalculations.jpg, id=522, 3218.0225pt x 2467.2175pt>
 File: graphics//SpeedCalculations.jpg Graphic file (type jpg)
 <use graphics//SpeedCalculations.jpg>
 Package pdftex.def Info: graphics//SpeedCalculations.jpg  used on input line 38
@@ -1284,103 +1238,169 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-[19 <./graphics//SpeedCalculations.jpg>]
-<graphics//magnetBr.jpg, id=532, 730.52925pt x 457.10776pt>
+[15 <./graphics//SpeedCalculations.jpg>] [16]
+<graphics//magnetBr.jpg, id=535, 730.52925pt x 457.10776pt>
 File: graphics//magnetBr.jpg Graphic file (type jpg)
 <use graphics//magnetBr.jpg>
-Package pdftex.def Info: graphics//magnetBr.jpg  used on input line 55.
+Package pdftex.def Info: graphics//magnetBr.jpg  used on input line 71.
 (pdftex.def)             Requested size: 199.0pt x 124.5158pt.
-<graphics//FluxZeroDeg.jpg, id=536, 3142.74126pt x 2488.29625pt>
+<graphics//FluxZeroDeg.jpg, id=539, 3142.74126pt x 2488.29625pt>
 File: graphics//FluxZeroDeg.jpg Graphic file (type jpg)
 <use graphics//FluxZeroDeg.jpg>
-Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 71.
+Package pdftex.def Info: graphics//FluxZeroDeg.jpg  used on input line 87.
 (pdftex.def)             Requested size: 170.14603pt x 134.7115pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 72.
+(Font)              scaled to size 10.07397pt on input line 88.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 72.
+(Font)              scaled to size 7.63599pt on input line 88.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 72.
+(Font)              scaled to size 10.07397pt on input line 88.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 72.
-<graphics//FluxSixtyDeg.jpg, id=537, 3142.74126pt x 2488.29625pt>
+(Font)              scaled to size 7.63599pt on input line 88.
+<graphics//FluxSixtyDeg.jpg, id=540, 3142.74126pt x 2488.29625pt>
 File: graphics//FluxSixtyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxSixtyDeg.jpg>
-Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 78.
+Package pdftex.def Info: graphics//FluxSixtyDeg.jpg  used on input line 94.
 (pdftex.def)             Requested size: 170.14603pt x 134.7115pt.
-<graphics//FluxOneTwentyDeg.jpg, id=538, 3143.745pt x 2488.29625pt>
+<graphics//FluxOneTwentyDeg.jpg, id=541, 3143.745pt x 2488.29625pt>
 File: graphics//FluxOneTwentyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneTwentyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 85.
-
+Package pdftex.def Info: graphics//FluxOneTwentyDeg.jpg  used on input line 101
+.
 (pdftex.def)             Requested size: 170.14603pt x 134.63557pt.
-<graphics//FluxOneEightyDeg.jpg, id=539, 3143.745pt x 2488.29625pt>
+<graphics//FluxOneEightyDeg.jpg, id=542, 3143.745pt x 2488.29625pt>
 File: graphics//FluxOneEightyDeg.jpg Graphic file (type jpg)
 <use graphics//FluxOneEightyDeg.jpg>
-Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 92.
-
+Package pdftex.def Info: graphics//FluxOneEightyDeg.jpg  used on input line 108
+.
 (pdftex.def)             Requested size: 170.14603pt x 134.63557pt.
-<graphics//FluxLegend.jpg, id=540, 1787.67876pt x 443.6575pt>
+<graphics//FluxLegend.jpg, id=543, 1787.67876pt x 443.6575pt>
 File: graphics//FluxLegend.jpg Graphic file (type jpg)
 <use graphics//FluxLegend.jpg>
-Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 98.
+Package pdftex.def Info: graphics//FluxLegend.jpg  used on input line 114.
 (pdftex.def)             Requested size: 189.05243pt x 46.91373pt.
- [20 <./graphics//magnetBr.jpg>]
-<graphics//Fig7.jpg, id=547, 2987.16pt x 2436.10126pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<graphics//Fig7.jpg, id=544, 2987.16pt x 2436.10126pt>
 File: graphics//Fig7.jpg Graphic file (type jpg)
 <use graphics//Fig7.jpg>
-Package pdftex.def Info: graphics//Fig7.jpg  used on input line 106.
+Package pdftex.def Info: graphics//Fig7.jpg  used on input line 122.
 (pdftex.def)             Requested size: 318.40121pt x 259.64548pt.
-<graphics//Fig8.jpg, id=548, 3022.29124pt x 2437.105pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<graphics//Fig8.jpg, id=545, 3022.29124pt x 2437.105pt>
 File: graphics//Fig8.jpg Graphic file (type jpg)
 <use graphics//Fig8.jpg>
-Package pdftex.def Info: graphics//Fig8.jpg  used on input line 113.
+Package pdftex.def Info: graphics//Fig8.jpg  used on input line 130.
 (pdftex.def)             Requested size: 318.40121pt x 256.7403pt.
 
-[21 <./graphics//FluxZeroDeg.jpg> <./graphics//FluxSixtyDeg.jpg> <./graphics//F
-luxOneTwentyDeg.jpg> <./graphics//FluxOneEightyDeg.jpg> <./graphics//FluxLegend
-.jpg>] [22 <./graphics//Fig7.jpg> <./graphics//Fig8.jpg>]) (./Main.bbl [1]
-(d:/texlive/2022/texmf-dist/tex/latex/stellenbosch/usbib.eng)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./Software Development.tex [17 <./graphics//magnetBr.jpg>] [18 <./graphics//
+FluxZeroDeg.jpg> <./graphics//FluxSixtyDeg.jpg> <./graphics//FluxOneTwentyDeg.j
+pg> <./graphics//FluxOneEightyDeg.jpg> <./graphics//FluxLegend.jpg>] [19 <./gra
+phics//Fig7.jpg> <./graphics//Fig8.jpg>]
+Chapter 4.
+[20
+
+]
+<graphics//Software.jpg, id=568, 837.88031pt x 512.66531pt>
+File: graphics//Software.jpg Graphic file (type jpg)
+<use graphics//Software.jpg>
+Package pdftex.def Info: graphics//Software.jpg  used on input line 20.
+(pdftex.def)             Requested size: 398.0pt x 243.51854pt.
+
+Underfull \hbox (badness 3128) in paragraph at lines 27--29
+\T1/futs/m/n/12 The [][][][][][][][][] han-dler is re-spon-si-ble for all of th
+e Blue-tooth com-mu-ni-ca-tion
+ []
+
+[21 <./graphics//Software.jpg>]
+<graphics//BLEdiagram.jpg, id=578, 326.72063pt x 534.49687pt>
+File: graphics//BLEdiagram.jpg Graphic file (type jpg)
+<use graphics//BLEdiagram.jpg>
+Package pdftex.def Info: graphics//BLEdiagram.jpg  used on input line 32.
+(pdftex.def)             Requested size: 199.0pt x 325.55327pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+) (./Electronics Development.tex [22 <./graphics//BLEdiagram.jpg>] [23]
+Chapter 5.
+[24
+
+]
+<graphics//RPR220.jpg, id=607, 165.0165pt x 155.98276pt>
+File: graphics//RPR220.jpg Graphic file (type jpg)
+<use graphics//RPR220.jpg>
+Package pdftex.def Info: graphics//RPR220.jpg  used on input line 40.
+(pdftex.def)             Requested size: 125.37097pt x 118.50766pt.
+<graphics//SensorCircuit.JPG, id=609, 554.67226pt x 325.215pt>
+File: graphics//SensorCircuit.JPG Graphic file (type jpg)
+<use graphics//SensorCircuit.JPG>
+Package pdftex.def Info: graphics//SensorCircuit.JPG  used on input line 47.
+(pdftex.def)             Requested size: 258.69757pt x 151.67995pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25]
+<graphics//StepperMotor.jpg, id=617, 215.80624pt x 178.6675pt>
+File: graphics//StepperMotor.jpg Graphic file (type jpg)
+<use graphics//StepperMotor.jpg>
+Package pdftex.def Info: graphics//StepperMotor.jpg  used on input line 69.
+(pdftex.def)             Requested size: 103.10175pt x 85.35826pt.
+<graphics//StepperDriver.jpg, id=619, 453.19313pt x 339.51843pt>
+File: graphics//StepperDriver.jpg Graphic file (type jpg)
+<use graphics//StepperDriver.jpg>
+Package pdftex.def Info: graphics//StepperDriver.jpg  used on input line 76.
+(pdftex.def)             Requested size: 94.94516pt x 71.13188pt.
+ [26 <./graphics//RPR220.jpg> <./graphics//SensorCircuit.JPG> <./graphics//Step
+perMotor.jpg> <./graphics//StepperDriver.jpg>]
+<graphics//MotorWire.jpg, id=629, 354.123pt x 296.307pt>
+File: graphics//MotorWire.jpg Graphic file (type jpg)
+<use graphics//MotorWire.jpg>
+Package pdftex.def Info: graphics//MotorWire.jpg  used on input line 110.
+(pdftex.def)             Requested size: 119.40121pt x 99.9066pt.
+) (./Main.bbl [27 <./graphics//MotorWire.jpg>] (d:/texlive/2022/texmf-dist/tex/
+latex/stellenbosch/usbib.eng)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 8.
-
 (d:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 45--50
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
 \T1/futs/m/n/10 Availible at: [][]$\T1/cmtt/m/n/10 https : / / www . theprosclo
 set . com / blogs / news / best -[] selling -[] bikes -[]
  []
 
+[28
 
-Underfull \hbox (badness 5681) in paragraph at lines 65--70
+]
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
+\T1/futs/m/n/10 Co., [][]$\T1/cmtt/m/n/10 https : / / fscdn . rohm . com / en /
+ products / databook / datasheet / opto / optical _
+ []
+
+
+Underfull \hbox (badness 5681) in paragraph at lines 85--90
 \T1/futs/m/n/10 Availible at: [][]$\T1/cmtt/m/n/10 https : / / www . supermagne
 te . de / eng / faq / How -[] do -[] you -[] calculate -[] the -[]
  []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.78 \bibitem[{Zwift Forums()}]{Jeremy:2021}
-                                             [2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
 \T1/futs/m/n/10 Availible at: [][]$\T1/cmtt/m/n/10 https : / / forums . zwift .
  com / t / bluetooth -[] improvements -[] for -[]
  []
 
-) (./AppendixA.tex
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \newpage
-             [3]
+) (./AppendixA.tex [29]
 Appendix A.
-<graphics//Brake Layout.jpg, id=584, 834.7185pt x 443.85825pt>
+<graphics//Brake Layout.jpg, id=662, 834.7185pt x 443.85825pt>
 File: graphics//Brake Layout.jpg Graphic file (type jpg)
 <use graphics//Brake Layout.jpg>
 Package pdftex.def Info: graphics//Brake Layout.jpg  used on input line 11.
@@ -1394,34 +1414,56 @@ l.17 \newpage
               [1
 
  <./graphics//Brake Layout.jpg>]
-<graphics//Fig5.jpg, id=588, 3033.3325pt x 2437.105pt>
+<graphics//Fig5.jpg, id=689, 3033.3325pt x 2437.105pt>
 File: graphics//Fig5.jpg Graphic file (type jpg)
 <use graphics//Fig5.jpg>
 Package pdftex.def Info: graphics//Fig5.jpg  used on input line 49.
 (pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
-<graphics//Fig6.jpg, id=589, 3033.3325pt x 2437.105pt>
-File: graphics//Fig6.jpg Graphic file (type jpg)
-<use graphics//Fig6.jpg>
-Package pdftex.def Info: graphics//Fig6.jpg  used on input line 57.
-(pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
-)
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \end{document}
-                    [2 <./graphics//Fig5.jpg> <./graphics//Fig6.jpg>]
-(./Main.aux)
+l.54 
+      [2]
+<graphics//Fig6.jpg, id=694, 3033.3325pt x 2437.105pt>
+File: graphics//Fig6.jpg Graphic file (type jpg)
+<use graphics//Fig6.jpg>
+Package pdftex.def Info: graphics//Fig6.jpg  used on input line 57.
+(pdftex.def)             Requested size: 318.40121pt x 255.81061pt.
+) (./AppendixBudget.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \newpage
+             [3 <./graphics//Fig5.jpg> <./graphics//Fig6.jpg>]
+pdfTeX warning (ext4): destination with the same identifier (name{appendix.A}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5 \chapter{Budget}
+                    
+Appendix B.
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33 \end{document}
+                    [4
+
+] (./Main.aux)
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: A3814CB38FA7A45D9B689CC3DD794B31;4676.
+(rerunfilecheck)             Checksum: 23DD79FD50CC7DD1A0521BAFE705E7F0;4856.
  )
 (\end occurred when \ifx on line 14 was incomplete) 
 Here is how much of TeX's memory you used:
- 24783 strings out of 478238
- 544313 string characters out of 5847939
- 787625 words of memory out of 5000000
- 42440 multiletter control sequences out of 15000+600000
- 691288 words of font info for 216 fonts, out of 8000000 for 9000
+ 25015 strings out of 478238
+ 551325 string characters out of 5847939
+ 792553 words of memory out of 5000000
+ 42631 multiletter control sequences out of 15000+600000
+ 696479 words of font info for 221 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,18n,120p,917b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1434,17 +1476,21 @@ e/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{d:/texlive/2022/texmf-dist/fonts
 s/ebgaramond/ebgm_yddfsn.enc}{d:/texlive/2022/texmf-dist/fonts/enc/dvips/ebgara
 mond/ebgm_ljow5q.enc}<d:/texlive/2022/texmf-dist/fonts/type1/public/ebgaramond/
 EBGaramond-BoldItalic.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/fourie
-r/fourier-ms.pfb><d:/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putb8a.pf
-b><d:/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><d:/texlive/2
-022/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><d:/texlive/2022/texmf-dist/
-fonts/type1/adobe/utopia/putri8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/pu
-blic/cm-super/sfss1200.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-su
-per/sfsx1095.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx14
-40.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Main.pdf (40 pages, 3632971 bytes).
+r/fourier-alt.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourie
+r-mex.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb
+><d:/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><d:/te
+xlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><d:/texlive/202
+2/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><d:/texlive/2022/texmf-dist/fo
+nts/type1/adobe/utopia/putr8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/adobe
+/utopia/putr8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putri8a
+.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><d:/t
+exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb><d:/texlive/202
+2/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb><d:/texlive/2022/texmf-di
+st/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on Main.pdf (46 pages, 3792614 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 562 compressed objects within 6 object streams
- 132 named destinations out of 1000 (max. 500000)
- 360 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 668 compressed objects within 7 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

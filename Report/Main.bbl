@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -28,6 +28,13 @@ Bluetooth\textsuperscript \textregistered \space Service Specification (2017
   \url{https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=423422}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
 
+\bibitem[{Communica()}]{Communica:2022}
+Communica (2022).
+\newblock Hkd tb6600 stepper driver 4.5a. [online].
+\newblock \newline Availible at:
+  \url{https://www.communica.co.za/products/hkd-tb6600-stepper-driver-4-5a}.
+\newblock \newline [Accessed~20~\bblsep{}~2022].
+
 \bibitem[{Geometry Geeks()}]{Geometry:2022}
 Geometry Geeks (2022).
 \newblock Find and compare bike geometry. [online].
@@ -48,6 +55,12 @@ Geometry Geeks (2022).
   \url{https://www.theproscloset.com/blogs/news/best-selling-bikes-2021}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
 
+\bibitem[{Micro Robotics()}]{Robotics:2022}
+Micro Robotics (2022).
+\newblock Online store. [online].
+\newblock \newline Availible at: \url{https://www.robotics.org.za/}.
+\newblock \newline [Accessed~20~\bblsep{}~2022].
+
 \bibitem[{\citenamefont{Morozev}(2017)}]{Morozev:2017}
 \bibnamefont{Morozev}, \bibfnamefont{M.} (2017 \bbldec{}~30).
 \newblock Grabcad [online].
@@ -60,6 +73,13 @@ Geometry Geeks (2022).
 \newblock Grabcad [online].
 \newblock \newline Availible at: \url{https://grabcad.com/library/am-ht-1}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{RPR-220()}]{RPR:2015}
+RPR-220 (2017).
+\newblock \emph{RPR-220 Reflective photosensor (photoreflector) Datasheet,
+  Rev.B}.
+\newblock ROHM Co.,
+  \url{https://fscdn.rohm.com/en/products/databook/datasheet/opto/optical_sensor/photosensor/rpr-220.pdf}.
 
 \bibitem[{Supermagnete()}]{Supermagnete:2010}
 Supermagnete (2010 \bbljan{}~1).

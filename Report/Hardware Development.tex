@@ -10,18 +10,18 @@
 
 For the project, hardware was developed with the aim of achieving the objectives shown in \ref{tab:devgoals} below:
 
-\begin{table}[H]
+\begin{table}[h!]
 	\renewcommand{\arraystretch}{1.2}
 	\centering
 	\caption{Objectives of Hardware Development}
 	\begin{tabularx}{\textwidth}{p{3.2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
 		\toprule
-		Hardware Design Outcome & Description               & Target Objective            \\
+		Hardware Design Outcome & Description               & Target Objective       \\
 		\midrule
-		HDO 1                   & Eddy Current Brake Design & O1 \\
-		HDO 2                   & Speed Sensors Design      & Adequate Braking Force      \\
-		HDO 3                   & Frame and Shafts Design   & Description                 \\
-		HDO 4                   & Outcome 4                 & Description                 \\
+		HDO 1                   & Eddy Current Brake Design & O1                     \\
+		HDO 2                   & Speed Sensors Design      & Adequate Braking Force \\
+		HDO 3                   & Frame and Shafts Design   & Description            \\
+		HDO 4                   & Outcome 4                 & Description            \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:devgoals}
@@ -41,9 +41,25 @@ Roller trainers require the cyclist to be travelling at some speed for stability
 	\end{center}
 \end{figure}
 
-For the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher speeds will result in higher braking force and thus a larger available resistance range. On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were selected as a good compromise, and were selected for the model.\\
+Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand,  On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were selected as a good compromise, and were selected for the model.\\
 
 Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can reach up to \SI{400}{\watt}, during a 1 hour workout.
+
+\begin{table}[H]
+	\centering
+	\caption{Outcomes of Condition Analysis}
+	\begin{tabularx}{\textwidth}{>{\raggedright}X >{\raggedright}p{4cm} >{\raggedright\arraybackslash}p{3cm}}
+		\toprule
+		Outcome               & Description & Value          \\
+		\midrule
+		Drum Rotational Speed & Maximum     & 3500 \acs{rpm} \\
+		Wheelbase             & Range       &                \\
+		Braking Torque        & Target      &                \\
+		Allowable Weight      & Maximum     &                \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:conditions}
+\end{table}
 
 \newpage
 
@@ -64,7 +80,7 @@ Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can re
 	\label{eq:B}
 \end{equation}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{.475\textwidth}
 		\centering
@@ -101,23 +117,18 @@ Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can re
 	\label{fig:Flux}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Fig7.jpg}
 		\caption{Figure 7}
 		\label{fig:7}
 	\end{center}
 \end{figure}
-\begin{figure}[H]
+
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Fig8.jpg}
 		\caption{Figure 8}
 		\label{fig:8}
 	\end{center}
 \end{figure}
-
-\newpage
-\section{Sensors}
-Speed sensors are required to measure the speed of the cyclist ...
-\subsection{Concept Evaluation}
-Sensors are required to measure the angular velocity of both the rear cylinders. It was decided that using a infrared transmitter-receiver device with a reflective strip on the cylinder would be sufficient. The expected maximum sampling rate, as determined in section

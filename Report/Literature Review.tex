@@ -59,11 +59,11 @@ In the past, when Zwift was just launched, all of the Bluetooth communication wa
 On 14 February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. Then, in late 2021 Zwift announced that they will be supporting \ac{ftms} in their latest update, and thus any new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol as is discussed in Section \ref{sec:ftms}. \citep{Jeremy:2021}\\
 Table \ref{tab:blreq} below shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This can be deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums.
 
-\begin{table}[H]
-	\renewcommand{\arraystretch}{1.5}
+\begin{table}[h!]
+		\renewcommand{\arraystretch}{1.5}
 	\centering
 	\caption{Zwift Supported \ac{ftms} Commands}
-	\begin{tabularx}{0.8\textwidth}{ >{\raggedright}p{4cm} X}
+	\begin{tabularx}{\textwidth}{ >{\raggedright}p{4cm} X}
 		\toprule
 		Command                              & Description                                                               \\
 		\midrule
@@ -88,7 +88,7 @@ Depending on the type of workout that is being performed, Zwift will use the dif
 \label{sec:ble}
 \ac{ble} works by forming pico - and scatter-net networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a network as can be seen in Figure \ref{fig:ble} below.\\
 
-\begin{figure}[H]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{BLEnet.jpg}
 		\caption{\ac{ble} Star Network Topology}
@@ -98,9 +98,11 @@ Depending on the type of workout that is being performed, Zwift will use the dif
 
 The master thus determines how often a slave is allowed to communicate, and slaves only communicate when requested to do so by a master. This is with one exception in the case of "advertising". Advertising is a feature that allows a slave device to announce that it has something to transmit to the master. This is either an event message or a measurement value.
 \newpage
+
 Some other features worth considering are listed in Table \ref{tab:ble} below:
-\begin{table}[H]
-	\renewcommand{\arraystretch}{1.5}
+
+\begin{table}[h!]
+		\renewcommand{\arraystretch}{1.5}
 	\centering
 	\caption{Technical Specifications of the \ac{ble} Standard}
 	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{3cm} >{\raggedright\arraybackslash}X}
@@ -208,12 +210,12 @@ The two most common types of bicycles that are expected to be used on the traine
 	\caption{Bicycle Dimensions}
 	\label{fig:bikeDim}
 \end{figure}
-Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category, and is shown in Table \ref{tab:bikes} below: \citep{Lin:2021}
+Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category. \citep{Lin:2021}The results are shown in Table \ref{tab:bikes} below: \citep{Geometry:2022}
 
 \begin{table}[ht]
 	\renewcommand{\arraystretch}{1.2}
 	\centering
-	\caption{Best Selling Road and \ac{mtb} specifications \citep{Geometry:2022}}
+	\caption{Best Selling Road and \ac{mtb} specifications} 
 	\begin{tabularx}{\textwidth}{p{2.6cm} X Xp{0.05cm} p{2.6cm} X X}
 		\toprule
 		Road Bike           & \multicolumn{2}{c}{Wheelbase} &                         & \ac{mtb} & \multicolumn{2}{c}{Wheelbase}                                                     \\
