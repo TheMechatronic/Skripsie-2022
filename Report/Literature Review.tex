@@ -6,6 +6,7 @@
 % Version: 2.1
 
 \chapter{Literature Review}
+\label{sec:lit}
 % Overview of the focus of the lietrature review:
 
 % Plan for Literature Review Layout:
@@ -16,96 +17,130 @@
 % Eddy Current Brake
 % Sensor Technology
 
-The literature review is performed to define the requirements for the connection with Zwift, as well as discovering and understanding the various desired and required features and products that exist on the market today.
+The literature review is performed to demonstrate the investigation and refinement of the technical requirements for compatibility with Zwift and the training platform that was subsequently developed. These technical requirements are then refined into engineering and functional requirements in Section \ref{sec:req}.
 
-\section{Overview}
+The review starts by investigating the utilization of Zwift and to identify the requirements to achieve this. Any identified technology or information that requires further investigation is then analysed and reviewed in subsequent sections of the review.
+
+The review then continues to investigate and identify the technical requirements of the training platform that was developed. This is achieved by identifying and investigating commonly used products and technology offered on the market.
+
+The review concludes with a brief summary of the results.
 
 \newpage
 
-\section{Zwift: Technology and Requirements}
-
-As mentioned above, Zwift uses real-time training data to drive the avatar in the virtual world. In order to achieve this, Zwift needs to run on a device that has :
-
-\begin{itemize}
-	\item An internet connection to connect to the Zwift servers via the \ac{api}.
-	\item \ac{ble} or ANT+ functionality to receive the data from the training session.
-\end{itemize}
-
-This device is usually a laptop, mobile phone or tablet, and will also display the avatar in the virtual world to the player. Moving forward, this device will be referred to as the "host" device as it is the central device controlling the user experience. \citep{Bromley:2022}
+\section{Zwift Technical Requirements}
 
 \subsection{Basic Requirements}
-As mentioned above, Zwift requires real-time tracking data from the player in order to control the avatar. The interactiveness and accuracy of the experience greatly depends on the amount and nature of the data that is sent to the host device (also sometimes referred to as the 'main unit').
+As mentioned in the introduction, Zwift utilizes real-time training data provide instant feedback to the user in the form of a digital avatar moving in a virtual environment. Zwift works similar to modern multilayer computer games, where the game is hosted on a centralised server, and users connect to this server(s) through the internet using an \ac{api} integrated into a downloadable application.
 
-\begin{table}[h!]
+The application is available from the official website, and is available for download on Mac, Windows, Android and iOS. The application requires a user account that can be created as a free trial version, or after the trail period as a paid subscription. The device that Zwift will be installed on is required to connect to an external trainer or sensors using either \acs{ble} or ANT+, and the device should thus support this technology. \citep{Zwift:2022}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{ZwiftConnection.jpg}
+		\caption{Zwift Connection Overview}
+		\label{fig:zwift}
+	\end{center}
+\end{figure}
+
+Figure \ref{fig:zwift} shows an overview of the connections that are required while using the Zwift application. This project will mainly focus on the training platform and the communication with the Zwift application.
+
+\subsection{Training Platform Requirements}
+The Zwift application provides support for many different training platform types as well as independent sensors to be used as input devices. The main types of configuration that are described on the official website are: wheel-on trainers, direct drive trainers and smart bikes. These were investigated in more depth in Section \ref{sec:train}.
+
+The training platform serves three main purposes: to facilitate the training session by providing the cyclist with a means of cycling, to measure, process and transmit the data that is required by Zwift and to adjust the training experience based on feedback from the Zwift application. As shown in Figure \ref{fig:zwift}, the training platform sends and receives data from the device where the Zwift application is installed and running. This is achieved using \ac{ble} or ANT+ technology.
+
+If the connected training platform utilizes ANT+, the \ac{fec} protocol is implemented for communication, where a \ac{ble} connection will utilize the \ac{ftms} protocol. These are investigated in more depth in section \ref{sec:ant}. The Zwift application also provides the option to connect to speed, cadence and power sensors in addition to smart trainers. The supported and required measurement data are explained in the following subsections.
+
+\subsubsection{Cycling Power}
+The most important parameter that is required for experiencing the Zwift application is the Power input by the cyclist. This can be measured using power sensors, or calculated from other measurements. Power sensors measure the input force provided by the user, and multiply this by the cadence to find the input power using equation \ref{eq:pow}. If the input force is not known, but the braking force can be determined and the wheel speed is known, then the power can still be calculated using equation \ref{eq:pow}. This is called simulated power, and is what Zwift uses when it does not receive direct power measurements.
+
+\begin{equation}
+	P = \acs{omega} \times \acs{T}
+	\label{eq:pow}
+\end{equation}
+
+\subsubsection{Cycling Speed}
+Cycling speed is the speed at which the cyclist would be travelling if they were not fixed to the training platform. It can be calculated by measuring the wheel rotational speed and wheel diameter using equation \ref{eq:spd}, where $D$ is the diameter of the wheel.
+
+\begin{equation}
+	\acs{v} = \acs{omega} \times \frac{D}{2}
+	\label{eq:spd}
+\end{equation}
+
+Zwift uses the speed measurement of the cyclist to control the speed of the avatar in the virtual environment. This is thus the most basic type of data that is required to interact with the application. If a supported "dumb" or turbo trainer is used, then Zwift can determine the braking force that is applied given curtain conditions such as brake lever position and riding speed.
+The minimum requirement for full utilization of the platform is a speed sensor when using a supported wheel-on trainer.
+
+\subsubsection{Cycling Cadence}
+Cadence is the rotation rate of the pedals of the bike and is usually measured in \ac{rpm}. Zwift does not require any cadence data for interacting with the platform, as it does not take the cadence into account for controlling the virtual avatar. Cadence data is often used by cyclists as a gauge of how hard the given exercise is. A higher cadence means that the cyclists is cycling faster and experiencing a more intense workout, where a slower cadence might mean that there is more load on the cyclists legs, but at a lower intensity.
+\newpage
+
+\section{\ac{ble} vs ANT+}
+\label{sec:ant}
+
+\ac{ble} and ANT+ are wireless communication technologies that are both widely used in consumer products across many industries. Both \ac{ble} and ANT+ devices communicate over \ac{uhf} electromagnetic waves with frequencies around \SI{2.4}{\giga\hertz}. This communication takes place over small distances and requires both transmitting and receiving device to have supporting hardware in order to communicate.
+
+\subsection{ANT+ \acl{fec}}
+
+ANT+ was developed and marketed by ANT Wireless. It is a sensor network technology that allows for communication between sensors and monitors, and is primarily used for activity tracking. The propriety nature of the ANT+ technology meaning that a specific ANT+ dongle is required for implementation makes this protocol less ideal for this project as it limits the accessibility of some possible future development and implementation. 
+
+The ANT+ \ac{fec} protocol was developed specifically for smart training equipment from the ground up, and thus provides a good low energy solution to many manufacturers. The \ac{fec} protocol is the only ANT+ protocol that is supported by the Zwift application at the time of writing. ANT+ hardware is required by both the device where Zwift is installed, as well as the training platform.
+
+\subsection{\ac{ble} for Fitness Devices}
+\ac{ble} is one of two standards for Bluetooth communication that has been developed and is maintained by \ac{bsig}.\footnote{The other being Bluetooth \ac{bbr}} The specific details of the technology and standard is discussed in Section \ref{sec:ble}. For the sake of Zwift requirements, this section will look at the specific protocol of the \ac{ble} specification that Zwift supports.
+
+When Zwift was initially launched, all of the Bluetooth communication was performed using proprietary protocols provided by the manufacturers of trainers and training equipment as there has not yet been a standard protocol defined to specify Bluetooth communication of controllable sports equipment.
+
+On 14 February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. Then, in late 2021 Zwift announced that they will be supporting \ac{ftms} in their latest update, and thus any new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol as is discussed in Section \ref{sec:ftms}. \citep{Jeremy:2021}
+
+Zwift does not implement the full \ac{ftms} protocol, as this would add unnecessary complexity to equipment manufacturers. Table \ref{tab:blreq} below shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This was deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums. \citep{Jeremy:2021}
+
+\begin{table}[H]
 	\renewcommand{\arraystretch}{1.5}
-	\centering
-	\begin{tabularx}{\textwidth}{ p{2cm} X X X}
-		\toprule
-		\multicolumn{1}{c}{Parameter} & \multicolumn{1}{c}{Unit} & \multicolumn{1}{c}{Connectivity} & \multicolumn{1}{c}{Control} \\
-		\midrule
-		Speed                         & (\acs{rpm})              & Essential                        & Essential                   \\
-		Cadence                       & (\acs{rpm})              & Optional                         & Optional                    \\
-		Power                         & (\si{\watt})             & Optional                         & Optional                    \\
-		\bottomrule
-	\end{tabularx}
-\end{table}
-
-\subsection{\ac{ble} vs ANT+}
-Both \ac{ble} and ANT+ devices communicate using \ac{uhf} electromagnetic waves with frequencies around \SI{2.4}{\giga\hertz}. The communication also takes part over a small distance.
-
-\subsubsection{\ac{ble} for Fitness Devices}
-\ac{ble} is one of two standards for Bluetooth communication that has been developed and maintained by \ac{bsig}.\footnote{The other being Bluetooth \ac{bbr}}The specific details of the technology and standard is discussed in Section \ref{sec:ble}. For the sake of Zwift requirements, this section will look at the specific protocol of the \ac{ble} specification that Zwift supports.\\
-In the past, when Zwift was just launched, all of the Bluetooth communication was performed using proprietary protocols provided by the manufacturers of trainers and training equipment as there has not yet been a standard protocol defined to handle Bluetooth communication of controllable sports equipment. \\
-On 14 February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. Then, in late 2021 Zwift announced that they will be supporting \ac{ftms} in their latest update, and thus any new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol as is discussed in Section \ref{sec:ftms}. \citep{Jeremy:2021}\\
-Table \ref{tab:blreq} below shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This can be deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums.
-
-\begin{table}[h!]
-		\renewcommand{\arraystretch}{1.5}
 	\centering
 	\caption{Zwift Supported \ac{ftms} Commands}
 	\begin{tabularx}{\textwidth}{ >{\raggedright}p{4cm} X}
 		\toprule
-		Command                              & Description                                                               \\
+		Command          & Description                                                              \\
 		\midrule
-		Set Target Resistance Level          & Sends the desired resistance level to the trainer.                        \\
-		Set Target Power                     & Sends the targeted power (Watts) that the trainer should aim to maintain. \\
-		Start or Resume                      & Starts or resumes a training session on the trainer                       \\
-		Stop or Pause                        & Stop or pause a training session on the trainer.                          \\
-		Set Indoor Bike Simulation Parameter & Set the simulation parameters on the trainer                              \\
+		Resistance Level & Sends the desired resistance level to the trainer                        \\
+		Target Power     & Sends the targeted power (Watts) that the trainer should aim to maintain \\
+		Start or Resume  & Starts or resumes a training session on the trainer                      \\
+		Stop or Pause    & Stop or pause a training session on the trainer                          \\
+		\ac{sim}         & Set the simulation parameters on the trainer                             \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:blreq}
 \end{table}
 
-Depending on the type of workout that is being performed, Zwift will use the different control point commands listed in Table \ref{tab:blreq} above. When the user is normally riding around within the Zwift world, it will send \ac{sim} parameter commands. This is explained in more detail in Section \ref{sec:sim}. When the user is using the "Workout Mode", Zwift has the option to engage "ERG" mode, where it will send a desired power target that the trainer should aim to maintain regardless of the speed. Thus the user can decide to go faster, with the trainer lowering the resistance, or go slower with the trainer having an increased resistance. Lastly, the user can adjust the resistance on their trainer from within the Zwift software, requiring Zwift to then send that specific command to the trainer.
+Zwift will use the commands above to control the training platform depending on the mode that is set and used within the application. The two main modes that can be chosen within Zwift is the "ERG" mode or \acf{sim} mode. "ERG" (Further only refereed to as ERG) stems from the Greek work "Ergasia", which means "work", and is implemented using the Target Power command and requires the training platform to adjust the resistance in reaction to the rider speed in order to maintain the target power level. 
+
+\ac{sim} mode is investigated in more detail in section \ref{sec:sim}, and utilizes a separately defined control point. \cite{Zwiftinsider:2022}
+
+Lastly, the user can adjust the resistance on their trainer from within the Zwift software, enabling Zwift to then send that specific command to the trainer when the user would like to change the immediate resistance level.
 
 \newpage
 
-\section{Existing Trainer Technology}
-
-
 \section{\ac{ble} Communication}
 \label{sec:ble}
-\ac{ble} works by forming pico - and scatter-net networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a network as can be seen in Figure \ref{fig:ble} below.\\
 
-\begin{figure}[h!]
+\ac{ble} works by forming pico - and scatternet networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a star topology network which is illustrated in Figure \ref{fig:ble} below.\\
+
+\begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{BLEnet.jpg}
+		\includegraphics[width = \textwidth]{BLEnet.jpg}
 		\caption{\ac{ble} Star Network Topology}
 		\label{fig:ble}
 	\end{center}
 \end{figure}
 
-The master thus determines how often a slave is allowed to communicate, and slaves only communicate when requested to do so by a master. This is with one exception in the case of "advertising". Advertising is a feature that allows a slave device to announce that it has something to transmit to the master. This is either an event message or a measurement value.
-\newpage
+Since the master manages the slave device's communication, slave devices only communicate when requested to do so by a master. This is with one exception in the case of the slave "advertising". Advertising is a feature that allows a slave device to announce that it has something to transmit to the master. This is either an event message or a measurement value that is then sent from the slave to the master.
 
 Some other features worth considering are listed in Table \ref{tab:ble} below:
 
-\begin{table}[h!]
-		\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
 	\centering
 	\caption{Technical Specifications of the \ac{ble} Standard}
-	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{3cm} >{\raggedright\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{2.5cm} >{\raggedright\arraybackslash}X}
 		\toprule
 		Description        & Specification                       & Detail                                                                                                                                                 \\
 		\midrule
@@ -189,6 +224,11 @@ These parameters are then used by the trainer to determine the resistance requir
 
 \newpage
 
+\section{Existing Trainer Technology}
+\label{sec:train}
+
+\newpage
+
 \section{Bicycle Specifications}
 % Section showing expected bicycle specifications of most popular models
 The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight. Figure \ref{fig:bikeDim} below shows where the dimensions are measured.
@@ -215,7 +255,7 @@ Although these dimensions vary between brands, models and sizes, a general overv
 \begin{table}[ht]
 	\renewcommand{\arraystretch}{1.2}
 	\centering
-	\caption{Best Selling Road and \ac{mtb} specifications} 
+	\caption{Best Selling Road and \ac{mtb} specifications}
 	\begin{tabularx}{\textwidth}{p{2.6cm} X Xp{0.05cm} p{2.6cm} X X}
 		\toprule
 		Road Bike           & \multicolumn{2}{c}{Wheelbase} &                         & \ac{mtb} & \multicolumn{2}{c}{Wheelbase}                                                     \\
@@ -229,9 +269,20 @@ Although these dimensions vary between brands, models and sizes, a general overv
 	\label{tab:bikes}
 \end{table}
 
+\colorbox{red}{add wheel diameter review}
+
+\newpage
+
 \section{Eddy Current Brake}
 % Section on Eddy Current Brake
+
+\newpage
+
 \section{Sensor Technology}
-% Rotary Encoder
+% Tachometer
+% Torque Transducer
+
+\newpage
+
 \section{Conclusion}
 % Section summerizing the literature review

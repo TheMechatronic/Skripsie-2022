@@ -6,16 +6,11 @@ Electronics section overview ...
 
 \newpage
 
-\section{Sensors}
+\section{Speed Sensor Design}
 
 Speed sensors are required to measure the rotational speed of the two rear drums. For the application, RPR-220 infrared photoreflectors were used as they allow for reliable contactless speed measurements. The RPR-220 unit was also readily available, inexpensive and would work with the Raspberry Pi's \acs{gpio} pins.
 
-Sensors are required to measure the angular velocity of both the rear cylinders. It was decided that using a infrared transmitter-receiver device with reflective strips on the cylinder would be sufficient. The sampling rate of the sensors should be high enough to gather high resolution measurements, but should remain accurate up to the maximum expected drum speed.
-
-The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
-
-\begin{table}[h!]
-	\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
 	\centering
 	\caption{RPR-220 Data Sheet Parameter Summary}
 	\citep{RPR:2015}
@@ -33,7 +28,9 @@ The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO libr
 	\label{tab:rprdata}
 \end{table}
 
-\begin{figure}[h!]
+The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
+
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.315\textwidth}
 		\centering
@@ -48,10 +45,18 @@ The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO libr
 		\caption{Sensor Biasing and Filter Circuit}
 		\label{fig:sensorD}
 	\end{subfigure}
-	\caption{Sensor Implementation}
+	\caption{Sensor Design}
 	\label{fig:Sensor}
 \end{figure}
 
+The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\ohm} resistor. The circuit is powered by the CKCY Buck03 \SI{5}{\volt} buck converter. The \acs{led} is powered by an external source to avoid strain on the Raspberry Pi's \acs{gpio} pins, and to allow for it to operate at a higher voltage level than the \SI{3.3}{\volt} that is available from the pins. The phototransistor will let \SI{0.8}{\milli\ampere} pass when it receives \SI{100}{\percent} of the transmitted light back. A voltage divider circuit can then be used to get the output to the Raspberry Pi \ac{gpio} pin to read \SI{3.3}{\volt}, where the resistance value is determined using equation \ref{eq:ohm}. 
+
+\begin{equation}
+	R = \frac{V}{I}
+	\label{eq:ohm}
+\end{equation}
+
+Thus, with the \SI{3.3}{\volt} source and \SI{0.8}{\milli\ampere} of current, the resistor value can be calculated using equation \ref{eq:ohm} as \SI{4125}{\ohm}. This, however, is for the ideal case, and a much lower percentage can be expected to reflect when the sensor is implemented. For the design, a reflection of \SI{90}{\percent} at a distance of \SI{6}{\milli\meter} where the data sheet indicates the current will be \SI{0.3}{\milli\ampere}. Following the same calculation, a resistor value of \SI{11}{\kilo\ohm} is determined.
 
 \begin{equation}
 	f_c = \frac{1}{2 R C}
@@ -59,10 +64,11 @@ The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO libr
 
 \newpage
 
-
 \section{Motor Control}
 
-\begin{figure}[h!]
+For controlling the phase of the magnets of the Eddy Current brake, a stepper motor was chosen for it's accuracy and the ability to control it's operation with the Raspberry Pi's \acs{gpio} pins.
+
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.550\textwidth}
 		\centering
@@ -86,18 +92,18 @@ The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO libr
 
 After testing the resistance level between the wires on the Nema-23 stepper motor, the results were:
 
-\begin{table}[h!]
+\begin{table}[H]
 	\centering
 	\caption{Stepper Motor Wire Resistance Measurement Results}
 	\begin{tabularx}{\textwidth}{X X X X X X  }
 		\toprule
-		       & Black               & Green               & Red                 & Yellow              & White           \\
+		       & Black               & Green                 & Red                   & Yellow                & White                 \\
 		\midrule
-		Blue   & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm} & \SI{41.2}{\ohm}     & > \SI{1}{\mega\ohm} & \SI{20.7}{\ohm} \\
-		White  & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm} & \SI{20.8}{\ohm}     & > \SI{1}{\mega\ohm} &                 \\
-		Yellow & \SI{20.7}{\ohm}     & \SI{20.5}{\ohm}     & > \SI{1}{\mega\ohm} &                     &                 \\
-		Red    & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm} &                     &                     &                 \\
-		Green  & \SI{40.5}{\ohm}     &                     &                     &                     &                 \\
+		Blue   & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{41.2}{\ohm}       & > \SI{1}{\mega\ohm}   & \SI{20.7}{\ohm}       \\
+		White  & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{20.8}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} \\
+		Yellow & \SI{20.7}{\ohm}     & \SI{20.5}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} \\
+		Red    & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
+		Green  & \SI{40.5}{\ohm}     & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:nemaTest}
@@ -105,10 +111,12 @@ After testing the resistance level between the wires on the Nema-23 stepper moto
 
 From Table \ref{tab:nemaTest} above, the wires associated with each coil can be identified. A resistance of > \SI{1}{\mega\ohm} indicates that the wires are not connected to the same coil. For the wires on the same coil, a larger resistance indicates that there is more coiled wire between the connections, and they are thus farther apart. This results in the :
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.3\textwidth]{MotorWire.jpg}
 		\caption{Nema-23 Wiring}
 		\label{fig:motorWire}
 	\end{center}
 \end{figure}
+
+\section{Electronics Overview}

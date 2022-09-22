@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -18,6 +18,13 @@
 \newcommand{\Capitalize}[1]{\uppercase{#1}}
 \newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
 \providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{Abt}(2022)}]{Britannica:2022}
+\bibnamefont{Abt}, \bibfnamefont{S.} (2022 \bbljul{}~28).
+\newblock cycling. [online].
+\newblock \newline Availible at:
+  \url{https://www.britannica.com/sports/cycling}.
+\newblock \newline [Accessed~22~\bblsep{}~2022].
 
 \bibitem[{Bluetooth\textsuperscript \textregistered \space Service
   Specification()}]{BLSIG:2017}
@@ -81,6 +88,13 @@ RPR-220 (2017).
 \newblock ROHM Co.,
   \url{https://fscdn.rohm.com/en/products/databook/datasheet/opto/optical_sensor/photosensor/rpr-220.pdf}.
 
+\bibitem[{\citenamefont{Schlange}(2022)}]{Zwiftinsider:2022}
+\bibnamefont{Schlange}, \bibfnamefont{E.} (2022 \bblmay{}~11).
+\newblock All about erg mode in zwift. [online].
+\newblock \newline Availible at:
+  \url{https://zwiftinsider.com/erg-mode-in-zwift/}.
+\newblock \newline [Accessed~22~\bblsep{}~2022].
+
 \bibitem[{Supermagnete()}]{Supermagnete:2010}
 Supermagnete (2010 \bbljan{}~1).
 \newblock Faq: How do you calculate the magnetic flux density? [online].
@@ -88,12 +102,11 @@ Supermagnete (2010 \bbljan{}~1).
   \url{https://www.supermagnete.de/eng/faq/How-do-you-calculate-the-magnetic-flux-density}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
 
-\bibitem[{\citenamefont{von Bromley}(2022)}]{Bromley:2022}
-\bibnamefont{von Bromley}, \bibfnamefont{S.} (2022).
-\newblock Zwift: your complete guide: Everything you need to know [online].
-\newblock \newline Availible at:
-  \url{https://www.bikeradar.com/features/zwift-your-complete-guide}.
-\newblock \newline [Accessed~1~\bbljan{}~2022].
+\bibitem[{Zwift()}]{Zwift:2022}
+Zwift (2022).
+\newblock Official zwift website. [online].
+\newblock \newline Availible at: \url{https://www.zwift.com/}.
+\newblock \newline [Accessed~22~\bblsep{}~2022].
 
 \bibitem[{Zwift Forums()}]{Jeremy:2021}
 Zwift Forums (2022 \bbljan{}~2).

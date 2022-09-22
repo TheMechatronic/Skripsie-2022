@@ -31,35 +31,34 @@ For the project, hardware was developed with the aim of achieving the objectives
 
 \section{Expected Operating Conditions}
 
-Roller trainers require the cyclist to be travelling at some speed for stability. Thus, the expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{50}{\kilo\meter\per\hour}. For the design, a maximum high speed of \SI{60}{\kilo\meter\per\hour} was considered. The corresponding drum speeds are shown in Figure \ref{fig:speedCalc} below.
+\subsection{Operating Speeds}
+\label{sec:opspeed}
+
+Roller trainers require the cyclist to be travelling at some speed for stability. Thus, the expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{50}{\kilo\meter\per\hour}. For the design, a maximum high speed of \SI{60}{\kilo\meter\per\hour} was considered. The corresponding drum speeds for common drum size options are shown in Figure \ref{fig:speedCalc} below.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{SpeedCalculations.jpg}
+		\includegraphics[width=0.8\textwidth]{SpeedCalculations.jpg}
 		\caption{Rotational Speed of Roller Size Comparison}
 		\label{fig:speedCalc}
 	\end{center}
 \end{figure}
 
-Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand,  On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were selected as a good compromise, and were selected for the model.\\
+Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand,  On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were identified as a good compromise, and were selected as the best option for the project.\\
 
-Typical cyclists average between 75 and \SI{100}{\watt}, and pro cyclists can reach up to \SI{400}{\watt}, during a 1 hour workout.
+\subsection{Torque Requirements}
 
-\begin{table}[H]
-	\centering
-	\caption{Outcomes of Condition Analysis}
-	\begin{tabularx}{\textwidth}{>{\raggedright}X >{\raggedright}p{4cm} >{\raggedright\arraybackslash}p{3cm}}
-		\toprule
-		Outcome               & Description & Value          \\
-		\midrule
-		Drum Rotational Speed & Maximum     & 3500 \acs{rpm} \\
-		Wheelbase             & Range       &                \\
-		Braking Torque        & Target      &                \\
-		Allowable Weight      & Maximum     &                \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:conditions}
-\end{table}
+The required braking torque range is dependant on the cycling speed and the power output of the cyclist. Typically, amateur cyclists maintain an average power output between \SI{75}{\watt} and \SI{100}{\watt}, and pro cyclists can maintain up to \SI{400}{\watt}, during a 1 hour workout. As the cyclist's speed increases, less torque is required to maintain the same power output. The relation is expressed as Equation \ref{eq:pow}.
+
+When considering the \SI{90}{\milli\meter} roller size that was selected in Section \ref{sec:opspeed}, the Torque requirements for different power outputs is shown in Figure \ref{fig:torqueCalc} below. From the figure, it can be seen that the torque requirement at low speeds will dominate the torque requirement and should thus be used as consideration when selecting torque requirements of the brake.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{TorqueCalculations.jpg}
+		\caption{Torque Requirement Curve}
+		\label{fig:torqueCalc}
+	\end{center}
+\end{figure}
 
 \newpage
 

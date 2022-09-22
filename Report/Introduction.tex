@@ -11,36 +11,71 @@
 % Background on the topic - Try to keep to single page
 % Opening statement
 % Why cycling as focus area:
-Bad weather, time, safety or other factors may prevent cyclists from being able to train outside.
+Cycling has been practised as a sport from as early as 1868 \citep{Britannica:2022} and has only increased in popularity as more people seek ways to stay healthy and active with busy modern lifestyles. It is not uncommon to see many cyclists out on the road during early morning hours or late afternoon, trying to get their exercise in for the day.
+The modern city lifestyle is not without it's drawbacks however, and this is especially true for someone who is passionate about staying active by cycling. Busy streets that are full of stationary and moving hazards have proven to be very dangerous for cyclists, especially during rush times when most people are commuting to and from work. Other factors, such as shortened days in the winter reducing the amount of time available for training, while cold weather keeps cyclists off the roads all together in many European countries.\\
+
 % Why trainers are needed:
-Modern city lifestyle often means that it is often safer and more convenient 
-In recent years, it has become very popular for cyclists to train indoors as this is often safer than cycling on busy city streets, it makes cycling less reliant on the weather and is more convenient. The problem is that indoor cycling can often be very boring and lonely. \\
+Indoor trainers provide cyclists with the opportunity to train indoors in a safer and more controlled environment. This has revolutionized the modern cycling lifestyle, allowing cyclists to continue their training when it is too cold or dark outside. Although this has proven to be an acceptable solution to most competitive cyclists, it does not appeal to many new cyclists who are attracted to the excitement and social interaction of the modern cycling lifestyle, as indoor training can often be lonely and non-stimulating.\\
+
 % What is Zwift:
-Zwift is an online based virtual reality platform that allows indoor cyclists to virtually ride courses in the real world whilst communicating and competing with other people in real time through the platform. This allows for indoor cycling to become more interactive and exciting, allowing the cyclist to train more effectively and enabling social engagement during training sessions.
+This has given rise to online virtual training platforms such as Zwift, that aim to fill the gap connecting indoor cycling and the excitement of competitive cycling. Zwift is an interactive racing and training platform that allows cyclists to see immediate feedback as they pedal their training bike in the form of a personal, in-game avatar. The platform also allows users to socialize and compete with other users in real-time training rides or races. This adds the excitement and social aspect that is needed for indoor cycling to appeal to a wider range of people in modern times.\\
+
 % Why is project needed
-In order to use the Zwift platform, you need a compatible trainer or training device in order to send riding information to Zwift and to receive feedback that will adjust the riding experience based on the virtual circumstances. These trainers are very expensive and thus not very accessible to many consumers.
+
+In order to use the Zwift platform, you need a compatible trainer or training device in order to send riding information to Zwift and to receive feedback that will adjust the riding experience based on the virtual circumstances in order to simulate a realistic riding experience. These trainers are very expensive and thus not very accessible to many consumers. This project aims to demonstrate the development, design and testing of an inexpensive smart bicycle trainer that is compatible with the Zwift platform.\\
+
 % Final closing statement
-This project will aim to demonstrate the development, design and testing of an inexpensive smart bicycle trainer. The project, conducted by Mr D.C. Eksteen as part of Mechatronic Project 475, stems from a proposal by Dr G. Venter.
+The project, conducted by Mr D.C. Eksteen as part of Mechatronic Project 475 for the Department of Mechanical and Mechatronic Engineering at Stellenbosch University, stems from a proposal by Dr G. Venter, who oversaw the project under his guiding supervision.
+
+\newpage
 
 \section{Aim and Objectives}
 
-This project aims to develop, build and test a smart trainer, with specific focus on compatibility with Zwift.\\
-The objectives will be to: 
+This project aims to demonstrate the development, building and testing of a smart bicycle trainer, with a specific focus on compatibility with Zwift.\\
+The objectives are presented in Table \ref{tab:obj}.
 
-\begin{itemize}
-	\item Develop Hardware to:
-	\begin{enumerate}
-		\item Monitor and measure the rider inputs. These include, for example, cycling speed, cadence, power, heart rate etc.
-		\item Change the riding conditions based on feedback from Zwift platform. These include, for example, rolling resistance, incline etc.
-	\end{enumerate}
-	
-	\item Develop Software to:
-	\begin{enumerate}
-		\item Collect and process rider inputs and to communicate this to the Zwift platform.
-		\item Receive feedback information from Zwift and enable hardware to change the riding conditions as mentioned above.
-	\end{enumerate}
-	\item Combine developed Hardware and Software to produce a smart trainer that is comparable to smart trainers that are available on the market, but at a lower cost point. (Needs refinement)
-\end{itemize} % List the hardware and software requirements
+\begin{table}[H]
+	\centering
+	\caption{Project Objectives}
+	\begin{tabularx}{\textwidth}{>{\centering}p{1.5cm} X}
+		\toprule
+		\multicolumn{2}{c}{Hardware Objectives}                                       \\
+		\midrule
+		HO: 1 & Provide an inexpensive indoor training platform                       \\
+		HO: 2 & Monitor and measure rider inputs                                      \\
+		HO: 3 & Change the training experience based on Zwift feedback                \\
+		      &                                                                       \\
+		\toprule
+		\multicolumn{2}{c}{Software Objectives}                                       \\
+		\midrule
+		SO: 1 & Collect and process the rider inputs                                  \\
+		SO: 2 & Communicate and interact with Zwift platform                          \\
+		SO: 3 & Control the training experience through hardware utilization          \\
+		      &                                                                       \\
+		\toprule
+		\multicolumn{2}{c}{Final Deliverable Objectives}                              \\
+		\midrule
+		DO: 1 & Smart training platform that is accessible to a wide consumer range   \\
+		DO: 2 & Comparable features to similar available trainers at lower cost point \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:obj}
+\end{table}
+%
+%\begin{itemize}
+%	\item Develop Hardware to:
+%	      \begin{enumerate}
+%		      \item Monitor and measure the rider inputs. These include, for example, cycling speed, cadence, power, heart rate etc.
+%		      \item Change the riding conditions based on feedback from Zwift platform. These include, for example, rolling resistance, incline etc.
+%	      \end{enumerate}
+%
+%	\item Develop Software to:
+%	      \begin{enumerate}
+%		      \item Collect and process rider inputs and to communicate this to the Zwift platform.
+%		      \item Receive feedback information from Zwift and enable hardware to change the riding conditions as mentioned above.
+%	      \end{enumerate}
+%	\item Combine developed Hardware and Software to produce a smart trainer that is comparable to smart trainers that are available on the market, but at a lower cost point. (Needs refinement)
+%\end{itemize} % List the hardware and software requirements
 
 \newpage
 
@@ -50,23 +85,8 @@ The objectives will be to:
 % Why
 % How
 
-Motivation will focus on:
-\begin{itemize}
-	\item What:
-	\begin{itemize}
-		\item Zwift = popular indoor training and competitive platform.
-		\item Bicycle trainer = Convenient way to train cycling without needing to cycle outside.
-	\end{itemize}
-	\item Why:
-	\begin{itemize}
-		\item Indoor training increasing in popularity.
-		\item Making access to Zwift more accessible and thus promoting cycling and exercise. 
-	\end{itemize}
-	\item How:
-	\begin{itemize}
-		\item Convert existing "dumb" trainer into smart trainer.
-		\item Enable trainer to connect with Zwift platform.
-		\item Using and leveraging existing industry standards to produce a robust solution.
-	\end{itemize}
-	
-\end{itemize}
+Zwift is a popular training platform that cyclists use to train and compete, and improves the overall experience of training on an indoor bicycle trainer. These indoor bicycle trainers have seen a large increase in demand in recent years as an increasing number of consumers turn to cycling as a means of staying active.
+
+These trainers are often very expensive, and thus not accessible to many consumers who might want start participating in interactive virtual cycling experiences. This will promote more people to take up cycling as a means of staying active, and contribute to the promotion of an active and healthy lifestyle in general.
+
+This can be achieved by firstly developing the required software to interact with the Zwift platform and making this available to other developers hoping to develop similar products, and secondly, by demonstrating the development of a robust training platform that has comparable features to trainers that are available on the market at a lower cost point.
