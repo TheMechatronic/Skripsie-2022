@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -26,6 +26,13 @@
   \url{https://www.britannica.com/sports/cycling}.
 \newblock \newline [Accessed~22~\bblsep{}~2022].
 
+\bibitem[{\citenamefont{Alff}(2011)}]{Alff:2011}
+\bibnamefont{Alff}, \bibfnamefont{D.} (2011 \bblfeb{}).
+\newblock The world’s best bicycle trainers: A complete guide. [online].
+\newblock \newline Availible at:
+  \url{https://bicycletouringpro.com/bicycle-trainers/}.
+\newblock \newline [Accessed~24~\bblapr{}~2022].
+
 \bibitem[{Bluetooth\textsuperscript \textregistered \space Service
   Specification()}]{BLSIG:2017}
 Bluetooth\textsuperscript \textregistered \space Service Specification (2017
@@ -48,6 +55,13 @@ Geometry Geeks (2022).
 \newblock \newline Availible at: \url{https://geometrygeeks.bike/}.
 \newblock \newline [Accessed~18~\bblsep{}~2022].
 
+\bibitem[{Huawei()}]{Huawei:2022}
+Huawei (2022 \bblsep{}~16).
+\newblock Ftms characteristics. [online].
+\newblock \newline Availible at:
+  \url{https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/ftms-list-0000001055208574}.
+\newblock \newline [Accessed~23~\bblsep{}~2022].
+
 \bibitem[{\citenamefont{Lee}(2020)}]{Lee:2020}
 \bibnamefont{Lee}, \bibfnamefont{A.} (2020 \bbljun{}~29).
 \newblock Creating a ble peripheral with bluez [online].
@@ -67,6 +81,13 @@ Micro Robotics (2022).
 \newblock Online store. [online].
 \newblock \newline Availible at: \url{https://www.robotics.org.za/}.
 \newblock \newline [Accessed~20~\bblsep{}~2022].
+
+\bibitem[{Montague Bikes()}]{Montague:2019}
+Montague Bikes (2019 \bbljun{}~17).
+\newblock Bicycle wheel sizes explained. [online].
+\newblock \newline Availible at:
+  \url{https://www.montaguebikes.com/folding-bikes-blog/2019/06/bicycle-wheel-sizes-explained/}.
+\newblock \newline [Accessed~24~\bblmay{}~2022].
 
 \bibitem[{\citenamefont{Morozev}(2017)}]{Morozev:2017}
 \bibnamefont{Morozev}, \bibfnamefont{M.} (2017 \bbldec{}~30).
@@ -101,6 +122,18 @@ Supermagnete (2010 \bbljan{}~1).
 \newblock \newline Availible at:
   \url{https://www.supermagnete.de/eng/faq/How-do-you-calculate-the-magnetic-flux-density}.
 \newblock \newline [Accessed~1~\bbljan{}~2022].
+
+\bibitem[{\citenamefont{Townsend}
+  \emph{\bbletal{}}(2014)\citenamefont{Townsend}, \citenamefont{Cufi},
+  \citenamefont{Akiba} \protect\BIBand{}
+  \citenamefont{Davidson}}]{Townsend:2014}
+\bibnamefont{Townsend}, \bibfnamefont{K.}, \bibnamefont{Cufi},
+  \bibfnamefont{C.}, \bibnamefont{Akiba} \protect\BIBand{}
+  \bibnamefont{Davidson}, \bibfnamefont{R.} (2014 \bblmay{}).
+\newblock \emph{Getting Started with Bluetooth Low Energy}.
+\newblock O'Reilly Media, Inc.,
+  \url{https://www.oreilly.com/library/view/getting-started-with/9781491900550/ch04.html}.
+\newblock ISBN 9781491949511.
 
 \bibitem[{Zwift()}]{Zwift:2022}
 Zwift (2022).

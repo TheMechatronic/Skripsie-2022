@@ -5,25 +5,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Zwift Connection Overview\relax }}{6}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \ac {ble} Star Network Topology\relax }}{12}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Bicycle Dimensions\relax }}{17}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \ac {ble} Star Network Topology\relax }}{11}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \ac {ble} Specification Structure\relax }}{12}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.27}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Concept Boundary of Interest\relax }}{21}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{25}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Torque Requirement Curve\relax }}{26}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Magnetic Flux Density of Disc Magnet\relax }}{27}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Flux Distribution\relax }}{28}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Figure 7\relax }}{29}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Figure 8\relax }}{29}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Torque Requirement Curve\relax }}{24}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Magnetic Flux Density of Disc Magnet\relax }}{25}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Flux Distribution\relax }}{26}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Figure 7\relax }}{27}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Figure 8\relax }}{27}{figure.caption.37}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of General Software Structure\relax }}{31}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{32}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of General Software Structure\relax }}{29}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{30}{figure.caption.39}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensor Design\relax }}{39}{figure.caption.39}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Motor Control Components\relax }}{40}{figure.caption.40}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Nema-23 Wiring\relax }}{41}{figure.caption.42}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensor Design\relax }}{37}{figure.caption.41}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Motor Control Components\relax }}{38}{figure.caption.42}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Nema-23 Wiring\relax }}{39}{figure.caption.44}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Eddy Current Brake Dimensions\relax }}{i}{figure.caption.45}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Figure 5\relax }}{iii}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Figure 6\relax }}{iii}{figure.caption.47}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Eddy Current Brake Dimensions\relax }}{i}{figure.caption.47}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Figure 5\relax }}{iii}{figure.caption.48}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Figure 6\relax }}{iii}{figure.caption.49}%
 \addvspace {10\p@ }

@@ -11,6 +11,7 @@ Electronics section overview ...
 Speed sensors are required to measure the rotational speed of the two rear drums. For the application, RPR-220 infrared photoreflectors were used as they allow for reliable contactless speed measurements. The RPR-220 unit was also readily available, inexpensive and would work with the Raspberry Pi's \acs{gpio} pins.
 
 \begin{table}[H]
+		\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{RPR-220 Data Sheet Parameter Summary}
 	\citep{RPR:2015}
@@ -28,7 +29,14 @@ Speed sensors are required to measure the rotational speed of the two rear drums
 	\label{tab:rprdata}
 \end{table}
 
-The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
+The Raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
+
+The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\ohm} resistor. The circuit is powered through the CKCY Buck03 \SI{5}{\volt} buck converter. The \acs{led} is powered by an external power source to avoid damaging Raspberry Pi's \acs{gpio} pins, and to allow for it to operate at \SI{5}{\volt}. The phototransistor lets \SI{0.8}{\milli\ampere} pass if \SI{100}{\percent} of the transmitted light is reflected. A voltage divider circuit was used to get the output to the Raspberry Pi \ac{gpio} pin to read \SI{3.3}{\volt}, where the resistance value was determined with equation \ref{eq:ohm}. 
+
+\begin{equation}
+	R = \frac{V}{I}
+	\label{eq:ohm}
+\end{equation}
 
 \begin{figure}[H]
 	\centering
@@ -48,13 +56,6 @@ The raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO libr
 	\caption{Sensor Design}
 	\label{fig:Sensor}
 \end{figure}
-
-The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\ohm} resistor. The circuit is powered by the CKCY Buck03 \SI{5}{\volt} buck converter. The \acs{led} is powered by an external source to avoid strain on the Raspberry Pi's \acs{gpio} pins, and to allow for it to operate at a higher voltage level than the \SI{3.3}{\volt} that is available from the pins. The phototransistor will let \SI{0.8}{\milli\ampere} pass when it receives \SI{100}{\percent} of the transmitted light back. A voltage divider circuit can then be used to get the output to the Raspberry Pi \ac{gpio} pin to read \SI{3.3}{\volt}, where the resistance value is determined using equation \ref{eq:ohm}. 
-
-\begin{equation}
-	R = \frac{V}{I}
-	\label{eq:ohm}
-\end{equation}
 
 Thus, with the \SI{3.3}{\volt} source and \SI{0.8}{\milli\ampere} of current, the resistor value can be calculated using equation \ref{eq:ohm} as \SI{4125}{\ohm}. This, however, is for the ideal case, and a much lower percentage can be expected to reflect when the sensor is implemented. For the design, a reflection of \SI{90}{\percent} at a distance of \SI{6}{\milli\meter} where the data sheet indicates the current will be \SI{0.3}{\milli\ampere}. Following the same calculation, a resistor value of \SI{11}{\kilo\ohm} is determined.
 
@@ -93,6 +94,7 @@ For controlling the phase of the magnets of the Eddy Current brake, a stepper mo
 After testing the resistance level between the wires on the Nema-23 stepper motor, the results were:
 
 \begin{table}[H]
+		\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Stepper Motor Wire Resistance Measurement Results}
 	\begin{tabularx}{\textwidth}{X X X X X X  }

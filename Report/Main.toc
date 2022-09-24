@@ -19,37 +19,38 @@
 \contentsline {subsubsection}{Cycling Power}{7}{section*.15}%
 \contentsline {subsubsection}{Cycling Speed}{8}{section*.16}%
 \contentsline {subsubsection}{Cycling Cadence}{8}{section*.17}%
-\contentsline {section}{\numberline {2.2}\ac {ble} vs ANT+}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.2}\ac {ble} vs ANT+}{8}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}ANT+ \acl {fec}}{9}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}\ac {ble} for Fitness Devices}{9}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}\ac {ble} Communication}{12}{section.2.3}%
-\contentsline {subsubsection}{\ac {ftms} Protocol}{13}{section*.21}%
-\contentsline {subsubsection}{\ac {sim} mode}{15}{section*.24}%
-\contentsline {section}{\numberline {2.4}Existing Trainer Technology}{16}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Bicycle Specifications}{17}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Eddy Current Brake}{18}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Sensor Technology}{19}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Conclusion}{20}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Concept Design and Evaluation}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Expected Operating Conditions}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Requirement Analysis}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Concept Design}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Concept Evaluation}{23}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Hardware Development}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Expected Operating Conditions}{25}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Operating Speeds}{25}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Torque Requirements}{26}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{27}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Software Development}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Structure}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}\ac {ble} Handler}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Sensor Data Measuring and Logging}{34}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Power Calculations}{35}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Motor Control}{36}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Electronics Design}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Speed Sensor Design}{38}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Motor Control}{40}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Electronics Overview}{41}{section.6.3}%
-\contentsline {chapter}{List of References}{42}{section*.44}%
+\contentsline {section}{\numberline {2.3}\ac {ble} Communication}{11}{section.2.3}%
+\contentsline {subsubsection}{\ac {ftms} Protocol}{13}{section*.22}%
+\contentsline {subsubsection}{\ac {sim} mode}{13}{section*.24}%
+\contentsline {section}{\numberline {2.4}Existing Trainer Technology}{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Bicycle Specifications}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Eddy Current Brake}{17}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Sensor Technology}{18}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Concept Design and Evaluation}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Expected Operating Conditions}{20}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Operating Speeds}{20}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Torque Requirements}{20}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Requirement Analysis}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Concept Design}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Concept Evaluation}{21}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Hardware Development}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Expected Operating Conditions}{23}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Operating Speeds}{23}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Torque Requirements}{24}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{25}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Software Development}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Structure}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}\ac {ble} Handler}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Sensor Data Measuring and Logging}{32}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Power Calculations}{33}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Motor Control}{34}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Electronics Design}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Speed Sensor Design}{36}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Motor Control}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Electronics Overview}{39}{section.6.3}%
+\contentsline {chapter}{List of References}{40}{section*.46}%
 \contentsline {chapter}{\numberline {A}Eddy Current Brake Calculations}{i}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Budget}{iv}{appendix.A}%

@@ -8,39 +8,68 @@
 \chapter{Concept Design and Evaluation}
 % Section overview:
 
-This section will firstly refine the requirements that were identified in section \ref{sec:lit} by evaluating the expected operating conditions and parameters required to meet the project objectives. 
+\color{red}
 
-The refined technical performance measures and functional requirements are then presented in section \ref{sec:req}, and used to develop a conceptual solution that is presented in section \ref{sec:conc}. 
+This section aims to identify and refine any requirements that were required of the training platform, and then demonstrate and analyse a concept solution that will be expanded into the final delivered demonstration model in further sections. Table \ref{tab:conditions} shows the user requirements that were derived from the project objectives and literature review. These user requirements are then analysed in Section \ref{sec:req} to get engineering requirements and technical- and functional performance measures.
 
-Section \ref{sec:eval} will then evaluate the proposed concept against the project objectives and will be used to demonstrate the feasibility of the proposed solution.
+\begin{table}[H]
+	\centering
+	\caption{Derived User Requirements}
+	\begin{tabularx}{\textwidth}{>{\raggedright}p{1 cm} X >{\raggedright\arraybackslash}p{2cm}}
+		\toprule
+		\multicolumn{2}{c}{User Requirement} & Priority                            \\
+		\midrule
+		UR 1                                 & Connect with Zwift      & Essential \\
+		UR 2                                 & Controllable Resistance & High      \\
+		UR 3                                 & Cadence Measurement     & Medium    \\
+		UR 4                                 & Power Measurement       & Low       \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:conditions}
+\end{table}
+
+\color{black}
 
 \newpage
-\section{Expected Operating Conditions}
 
+\section{Expected Operating Conditions}
+\subsection{Operating Speeds}
+\label{sec:opspeedc}
+
+The typical speed of a cyclist typically ranges from \SI{10}{\kilo\meter\per\hour} to \SI{50}{\kilo\meter\per\hour} when cycling on reasonably flat ground. For the design of the platform, a speed of maximum required speed of \SI{60}{\kilo\meter\per\hour} was assumed.
+
+Typically, amateur cyclists maintain an average power output between \SI{75}{\watt} and \SI{100}{\watt}, and pro cyclists can maintain up to \SI{400}{\watt}, during a 1 hour workout. As the cyclist's speed increases, less torque is required to maintain the same power output. The relation is expressed as Equation \ref{eq:pow}.
+
+\subsection{Torque Requirements}
+
+The required braking torque range is dependant on the cycling speed and the power output of the cyclist.
+
+When considering the \SI{90}{\milli\meter} roller size that was selected in Section \ref{sec:opspeedc}, the Torque requirements for different power outputs is shown in Figure \ref{fig:torqueCalcc} below. From the figure, it can be seen that the torque requirement at low speeds will dominate the torque requirement and should thus be used as consideration when selecting torque requirements of the brake.
 
 \newpage
 
 \section{Requirement Analysis}
 \label{sec:req}
 
-\begin{table}[H]
-	\centering
-	\caption{Engineering Requirement Outcomes}
-	\begin{tabularx}{\textwidth}{>{\raggedright}X >{\raggedright}p{4cm} >{\raggedright}p{2cm} >{\raggedright\arraybackslash}p{1.5cm}}
-		\toprule
-		Requirement           & Description & Value & Unit               \\
-		\midrule
-		Drum Rotational Speed & Maximum     & 3500  & \acs{rpm}          \\
-		Wheelbase             & Range       &       & \si{\milli\meter}  \\
-		Braking Torque        & Target      &       & \si{\newton\meter} \\
-		Allowable Weight      & Maximum     &       & \si{\kilogram}     \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:conditions}
-\end{table}
+\begin{itemize}
+	\item Zwift controllable smart trainer
+	\item Inexpensive
+	\item Easily accessible by many consumers
+	\item Comparable features to existing models.
+\end{itemize}
 
 \section{Concept Design}
 \label{sec:conc}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{SOI.jpg}
+		\caption{Concept Boundary of Interest}
+		\label{fig:soi}
+	\end{center}
+\end{figure}
+
 
 \section{Concept Evaluation}
 \label{sec:eval}

@@ -72,7 +72,8 @@ The minimum requirement for full utilization of the platform is a speed sensor w
 
 \subsubsection{Cycling Cadence}
 Cadence is the rotation rate of the pedals of the bike and is usually measured in \ac{rpm}. Zwift does not require any cadence data for interacting with the platform, as it does not take the cadence into account for controlling the virtual avatar. Cadence data is often used by cyclists as a gauge of how hard the given exercise is. A higher cadence means that the cyclists is cycling faster and experiencing a more intense workout, where a slower cadence might mean that there is more load on the cyclists legs, but at a lower intensity.
-\newpage
+
+
 
 \section{\ac{ble} vs ANT+}
 \label{sec:ant}
@@ -81,21 +82,21 @@ Cadence is the rotation rate of the pedals of the bike and is usually measured i
 
 \subsection{ANT+ \acl{fec}}
 
-ANT+ was developed and marketed by ANT Wireless. It is a sensor network technology that allows for communication between sensors and monitors, and is primarily used for activity tracking. The propriety nature of the ANT+ technology meaning that a specific ANT+ dongle is required for implementation makes this protocol less ideal for this project as it limits the accessibility of some possible future development and implementation. 
+ANT+ was developed and marketed by ANT Wireless. It is a sensor network technology that allows for communication between sensors and monitors, and is primarily used for activity tracking. The propriety nature of the ANT+ technology meaning that a specific ANT+ dongle is required for implementation makes this protocol less ideal for this project as it limits the accessibility of some possible future development and implementation.
 
 The ANT+ \ac{fec} protocol was developed specifically for smart training equipment from the ground up, and thus provides a good low energy solution to many manufacturers. The \ac{fec} protocol is the only ANT+ protocol that is supported by the Zwift application at the time of writing. ANT+ hardware is required by both the device where Zwift is installed, as well as the training platform.
 
 \subsection{\ac{ble} for Fitness Devices}
-\ac{ble} is one of two standards for Bluetooth communication that has been developed and is maintained by \ac{bsig}.\footnote{The other being Bluetooth \ac{bbr}} The specific details of the technology and standard is discussed in Section \ref{sec:ble}. For the sake of Zwift requirements, this section will look at the specific protocol of the \ac{ble} specification that Zwift supports.
+\ac{ble} is one of two standards for Bluetooth communication that has been developed and is maintained by \ac{bsig}.\footnote{Other standard being Bluetooth \ac{bbr}} The specific details of the technology and standard is discussed in Section \ref{sec:ble}. For the sake of Zwift requirements, this section will look at the specific protocol of the \ac{ble} specification that Zwift supports.
 
 When Zwift was initially launched, all of the Bluetooth communication was performed using proprietary protocols provided by the manufacturers of trainers and training equipment as there has not yet been a standard protocol defined to specify Bluetooth communication of controllable sports equipment.
 
-On 14 February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. Then, in late 2021 Zwift announced that they will be supporting \ac{ftms} in their latest update, and thus any new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol as is discussed in Section \ref{sec:ftms}. \citep{Jeremy:2021}
+On 14 February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. Then, in late 2021 Zwift announced that they will be supporting \ac{ftms} in their latest update, and thus any new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol as is discussed in Section \ref{sec:ftms}. \citep{Jeremy:2021}\\
 
 Zwift does not implement the full \ac{ftms} protocol, as this would add unnecessary complexity to equipment manufacturers. Table \ref{tab:blreq} below shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This was deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums. \citep{Jeremy:2021}
 
 \begin{table}[H]
-	\renewcommand{\arraystretch}{1.5}
+	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Zwift Supported \ac{ftms} Commands}
 	\begin{tabularx}{\textwidth}{ >{\raggedright}p{4cm} X}
@@ -112,18 +113,16 @@ Zwift does not implement the full \ac{ftms} protocol, as this would add unnecess
 	\label{tab:blreq}
 \end{table}
 
-Zwift will use the commands above to control the training platform depending on the mode that is set and used within the application. The two main modes that can be chosen within Zwift is the "ERG" mode or \acf{sim} mode. "ERG" (Further only refereed to as ERG) stems from the Greek work "Ergasia", which means "work", and is implemented using the Target Power command and requires the training platform to adjust the resistance in reaction to the rider speed in order to maintain the target power level. 
+Zwift will use the commands above to control the training platform depending on the mode that is set and used within the application. The two main modes that can be chosen within Zwift is the \acf{erg} mode or \acf{sim} mode. \ac{erg} stems from the Greek word "Ergasia", which means "work", and is implemented using the Target Power command and requires the training platform to adjust the resistance in reaction to the rider speed in order to maintain the target power level. \citep{Zwiftinsider:2022}
 
-\ac{sim} mode is investigated in more detail in section \ref{sec:sim}, and utilizes a separately defined control point. \cite{Zwiftinsider:2022}
+\ac{sim} mode utilizes a separately defined control point within the \ac{ftms} standard and is investigated in more detail in section \ref{sec:sim}.
 
 Lastly, the user can adjust the resistance on their trainer from within the Zwift software, enabling Zwift to then send that specific command to the trainer when the user would like to change the immediate resistance level.
-
-\newpage
 
 \section{\ac{ble} Communication}
 \label{sec:ble}
 
-\ac{ble} works by forming pico - and scatternet networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a star topology network which is illustrated in Figure \ref{fig:ble} below.\\
+\ac{ble} works by forming pico - and scatternet networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a 'star' network topology which is illustrated in Figure \ref{fig:ble}. \citep{Townsend:2014}
 
 \begin{figure}[H]
 	\begin{center}
@@ -133,77 +132,83 @@ Lastly, the user can adjust the resistance on their trainer from within the Zwif
 	\end{center}
 \end{figure}
 
-Since the master manages the slave device's communication, slave devices only communicate when requested to do so by a master. This is with one exception in the case of the slave "advertising". Advertising is a feature that allows a slave device to announce that it has something to transmit to the master. This is either an event message or a measurement value that is then sent from the slave to the master.
-
-Some other features worth considering are listed in Table \ref{tab:ble} below:
+Specifications from the \ac{ble} specification sheet is shown in Table \ref{tab:ble}. The \ac{ble} protocol is divided into various standardized and proprietary profiles that specify specific communication architectures. The \aca{gatt} profile is used by \ac{bsig} to standardize various common service applications, and is also the profile where the \ac{ftms} service that is required by Zwift is specified.
 
 \begin{table}[H]
+	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Technical Specifications of the \ac{ble} Standard}
-	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.5cm} >{\raggedright}p{2.5cm} >{\raggedright\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{>{\raggedright}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.4cm}}
 		\toprule
-		Description        & Specification                       & Detail                                                                                                                                                 \\
+		Name              & \multicolumn{1}{l}{Description}                                                  & \multicolumn{1}{l}{Specification}            \\
 		\midrule
-		Data Package Size  & 64 bit (min) to 216 bit (max)       & The size data packages that can be sent between a master and slave(s).                                                                                 \\
-		Data Transfer Rate & \SI{1}{Mbps}                        & The rate at which the data is typically transferred between devices.                                                                                   \\
-		Security           & 128-bit AES                         & Security and encryption varies in levels, but generally data is encrypted between devices with a "shared secret" key that is generated during pairing. \\
-		Latency            & \SI{6}{\milli\second}               & Time between device starting transmission and data getting transferred. (Aka network lag).                                                             \\
-		Power Consumption  & \SI{0.01}{\watt} to \SI{0.5}{\watt} & The power required by a device to join and operate on the piconet.                                                                                     \\
+		Package Size      & The size data packages that can be sent between devices                          & 64-bit (min) 216-bit (max)                   \\
+		Transfer Rate     & Typical rate of data transfer between devices                                    & \SI{1}{Mbps}                                 \\
+		Security          & Data encrypted with "shared key"                                                 & 128-bit AES                                  \\
+		Latency           & Time between start of transmission and data being transferred. (Aka network lag) & \SI{6}{\milli\second}                        \\
+		Power Consumption & Power required join and operate on a piconet                                     & \SI{0.01}{\watt} (min) \SI{0.5}{\watt} (max) \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:ble}
 \end{table}
 
+\vspace{-0.65 cm}
+
+The \ac{ble} \ac{gatt} profile consists of 138 active service specifications that can be found on the official website of \ac{bsig}. Each service specification the defines and specifies various sub-services and characteristics that focus on some specific application. Each characteristic forms a collection of values and descriptors that contain specific data in a specified format. Figure \ref{fig:serv} gives an overview of the specification structure. Each step in the structure contains an \ac{uuid}, grants certain permissions and has a specified value. \citep{BLSIG:2017}
+
+\vspace{-0.3 cm}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width = 0.9 \textwidth]{BLEservice.jpg}
+		\caption{\ac{ble} Specification Structure}
+		\label{fig:serv}
+		\citep[Adapted from ][chap.~4]{Townsend:2014}
+	\end{center}
+\end{figure}
+
+\vspace{-0.7 cm}
+
+When a connection with the Zwift application is established over \ac{ble}, the \ac{ftms} service is implemented for communicating with training platforms and was thus investigated in further detail.
+
 \subsubsection{\ac{ftms} Protocol}\label{sec:ftms}
-Within the \ac{ftms} protocol, there is a sub-protocol dedicated to Indoor Bike Data that focuses specifically on the application of the protocol for bike trainers. \cite[section ~4.9]{BLSIG:2017}.\\
-The specification outlines and defines services that are supported by the protocol. Table \ref{tab:ftmsft} and \ref{tab:ftmstg} below lists the available features that are of interest to the project. Machine Features are Parameters that can be requested from the trainer, and Target Features are training parameters that can be set from an external device. \citep{BLSIG:2017}
 
-\begin{minipage}{\textwidth}
-	\begin{table}[H]
-		\renewcommand{\arraystretch}{1.2}
-		\centering
-		\caption{Relevant Optional Fitness Machine Features of \ac{ftms} Protocol}
-		\begin{tabularx}{\textwidth}{p{1.4cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
-			\toprule
-			Number                                                & Feature                          & Description                                                                          \\
-			\midrule
-			NA\footnote{This feature is compulsory for protocol.} & Instantaneous Speed              & Trainer can determine the instantaneous speed of the user.                           \\
-			0                                                     & Average Speed Supported          & Trainer can determine the average speed of the user for the duration of the session. \\
-			1                                                     & Cadence Supported                & Trainer can determine pedalling rate of the user (rpm).                              \\
-			7                                                     & Resistance Level Supported       & Trainer can determine the resistance the user experiences.                           \\
-			10                                                    & Heart Rate Measurement Supported & Trainer is able to determine the heart rate of the user.                             \\
-			14                                                    & Power Measurement Supported      & Trainer is able to determine the power generated by the user.                        \\
-			\bottomrule
-		\end{tabularx}
-		\label{tab:ftmsft}
-	\end{table}
-\end{minipage}
+As mentioned in section \ref{sec:ble}, \acf{ftms} is a service specification under the \acf{gatt} with a \ac{uuid} of 0x1826. The \ac{ftms} service specification contains 15 different characteristics, of which 7 are related to cycling training platforms. These characteristics are listed in table \ref{tab:ftmsft}, along with their \acp{uuid} and required properties. \cite[section ~4.9]{BLSIG:2017}.
 
-The parameters that would be relevant to the control of a bicycle trainer connected to Zwift are listed in Table \ref{tab:ftmstg} below:
+\footnotetext[1]{\acl{fm}}
+
 \begin{table}[H]
-	\renewcommand{\arraystretch}{1.2}
+	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
-	\caption{Relevant Optional Target Setting Features of \ac{ftms} Protocol}
-	\begin{tabularx}{\textwidth}{p{1.4cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
+	\caption{\ac{ftms} Characteristics for Bicycle Training Platforms}
+	\citep{Huawei:2022}
+	\begin{tabularx}{\textwidth}{>{\raggedright}p{3cm} >{\raggedright}X >{\raggedright}p{2.3cm} p{1.3cm}}
 		\toprule
-		Number & Feature                    & Description                                             \\
+		Characteristic                               & Description                             & Properties       & \acs{uuid} \\
 		\midrule
-		1      & Inclination Target Setting & Trainer can adjust difficulty to simulate inclination.  \\
-		2      & Resistance Target Setting  & Trainer can adjust resistance level.                    \\
-		3      & Power Target Setting       & Trainer can adjust difficulty to maintain power target. \\
-		13     & \ac{sim} Parameters        & Trainer supports \ac{sim} mode.                         \\
+		Indoor Bike Data                             & Reports live workout data               & Notify           & 0x2AD2     \\
+		Training Status                              & Reports training device status          & Read / Notify    & 0x2AD3     \\
+		Speed Range                                  & Reports supported speed range           & Read             & 0x2AD4     \\
+		Power Range                                  & Reports supported power range           & Read             & 0x2AD8     \\
+		\acs{fm}\footnote[1]{\acf{fm}} Control Point & Controls fitness machine status         & Write / Indicate & 0x2AD9     \\
+		\acs{fm}\footnote[1]{\acf{fm}} Status        & Reports changes in workout status       & Notify           & 0x2ADA     \\
+		\acs{fm}\footnote[1]{\acf{fm}} Feature       & Describes device supported capabilities & Read             & 0x2ACC     \\
 		\bottomrule
 	\end{tabularx}
-	\label{tab:ftmstg}
+	\label{tab:ftmsft}
 \end{table}
+
+\vspace{-0.5 cm}
 
 \subsubsection{\ac{sim} mode}
 \label{sec:sim}
 
+\color{red}
+
 This mode is defined in the \ac{ftms} documentation, and needs Control Permission to be activated. Once the mode is activated, the trainer will receive parameter arrays with the data shown in Table \ref{tab:sim} below to determine the required resistance level.
 
 \begin{table}[H]
-	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{\ac{sim} Mode Parameter Data}
 	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{1cm} >{\raggedleft\arraybackslash}p{2cm}}
@@ -219,21 +224,53 @@ This mode is defined in the \ac{ftms} documentation, and needs Control Permissio
 	\label{tab:sim}
 \end{table}
 
-The \textit{Grade} indicates the gradient of the road that the avatar is travelling on. The \text{\ac{crr}} is determined by the road surface and wheel type of the avatar in the game, where the \textit{\ac{cw}} is determined by the player's weight and height, and can then be reduced by in-game events such as equipment selection and drafting behind other avatars when this feature is active. Currently Zwift does not utilize the \textit{Wind Speed} parameter.\\
+\vspace{-0.5 cm}
+
+The \textit{Grade} indicates the gradient of the road that the avatar is travelling on. The \text{\ac{crr}} is determined by the road surface and wheel type of the avatar in the game, where the \textit{\ac{cw}} is determined by the player's weight and height, and can then be reduced by in-game events such as equipment selection and drafting behind other avatars when this feature is active. Currently Zwift does not utilize the \textit{Wind Speed} parameter.
+
 These parameters are then used by the trainer to determine the resistance required to simulate the conditions in the game. This is what creates the realistic training experience.
 
-\newpage
+\color{black}
 
 \section{Existing Trainer Technology}
 \label{sec:train}
 
-\newpage
+There are four types of bicycle trainers that are commonly used for indoor cycling. \textit{Roller trainers} consists of roller drums on which a bicycle's wheels may spin freely (\ref{fig:roller}). \textit{Wheel-on resistance trainers} (aka. turbo trainers) allow for the bicycle to be fixed into a stationary position with some resistance applied to the rotation of the rear wheel (\ref{fig:wheelon}). \textit{Direct-drive trainers} are similar to wheel-on trainers where the bicycle is fixed in a stationary position, but with at least the rear wheel removed. This allows the resistance to be applied directly to the bicycle's drivetrain (\ref{fig:directdrive}). The fourth type consists of a completely independent platform that does not require a bicycle to operate. \citep{Alff:2011}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.3\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Roller.jpg}
+		\caption{Roller Trainer}
+		\label{fig:roller}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{.3\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Trainer_WheelOn.jpg}
+		\caption{Wheel On Trainer}
+		\label{fig:wheelon}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{.3\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Trainer_DirectDrive.jpg}
+		\caption{Direct Drive Trainer}
+		\label{fig:directdrive}
+	\end{subfigure}
+	\caption{Bicycle Dimensions}
+	\label{fig:trainers}
+	\citep{Zwift:2022}
+\end{figure}
+
+\vspace{-1 cm}
 
 \section{Bicycle Specifications}
 % Section showing expected bicycle specifications of most popular models
-The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight. Figure \ref{fig:bikeDim} below shows where the dimensions are measured.
+The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight as illustrated in Figure \ref{fig:bikeDim}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -250,12 +287,16 @@ The two most common types of bicycles that are expected to be used on the traine
 	\caption{Bicycle Dimensions}
 	\label{fig:bikeDim}
 \end{figure}
-Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category. \citep{Lin:2021}The results are shown in Table \ref{tab:bikes} below: \citep{Geometry:2022}
 
-\begin{table}[ht]
-	\renewcommand{\arraystretch}{1.2}
+\vspace{-0.6 cm}
+
+Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category in Table \ref{tab:bikes}. \citep{Lin:2021} 
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Best Selling Road and \ac{mtb} specifications}
+	\citep{Geometry:2022}
 	\begin{tabularx}{\textwidth}{p{2.6cm} X Xp{0.05cm} p{2.6cm} X X}
 		\toprule
 		Road Bike           & \multicolumn{2}{c}{Wheelbase} &                         & \ac{mtb} & \multicolumn{2}{c}{Wheelbase}                                                     \\
@@ -269,7 +310,7 @@ Although these dimensions vary between brands, models and sizes, a general overv
 	\label{tab:bikes}
 \end{table}
 
-\colorbox{red}{add wheel diameter review}
+The most common wheel diameter sizes for both road bicycles and \ac{mtb} are 27.5" (aka. 650c) and 29" (aka. 700c). The 27.5" and 29" refer to the diameter of the rim in inches, where the 650c and 700c refer to the typical diameter with a tyre on in \si{\milli\meter}. The dimension that is relevant to the design of a bicycle training platform is the diameter with the wheel on, and will thus commonly range between \SI{650}{\milli\meter} and \SI{700}{\milli\meter}. \citep{Montague:2019}
 
 \newpage
 
@@ -284,5 +325,5 @@ Although these dimensions vary between brands, models and sizes, a general overv
 
 \newpage
 
-\section{Conclusion}
+% \section{Conclusion}
 % Section summerizing the literature review
