@@ -27,7 +27,7 @@
 \usepackage{tabto}
 \usepackage{enumitem}
 \usepackage{mfirstuc}
-\MFUnocap{and}\MFUnocap{is}\MFUnocap{a}\MFUnocap{an}\MFUnocap{of}
+\MFUnocap{and}\MFUnocap{is}\MFUnocap{a}\MFUnocap{an}\MFUnocap{of}\MFUnocap{to}
 \usepackage{xcolor}
 \usepackage{ragged2e}
 \usepackage{booktabs}
@@ -241,6 +241,13 @@
 
 \addtolength{\textfloatsep}{0pt}
 \newcommand\tablestretch{1.2}		
+
+\newcounter{reqCount}
+\setcounter{reqCount}{0}
+
+\makeatletter
+\newcommand\newR[1]{\stepcounter{reqCount}\thereqCount\def\@currentlabel{\thereqCount}\label{#1}}
+\makeatother
 
 \input{ExecutiveSummery.tex}
 \input{ECSAEvaluation.tex}

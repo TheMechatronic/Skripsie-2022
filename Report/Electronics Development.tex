@@ -6,6 +6,12 @@ Electronics section overview ...
 
 \newpage
 
+\section{Raspberry Pi setup}
+
+Pi voltage range = 1.8V to 3.3V (High)
+
+\newpage
+
 \section{Speed Sensor Design}
 
 Speed sensors are required to measure the rotational speed of the two rear drums. For the application, RPR-220 infrared photoreflectors were used as they allow for reliable contactless speed measurements. The RPR-220 unit was also readily available, inexpensive and would work with the Raspberry Pi's \acs{gpio} pins.
@@ -23,6 +29,7 @@ Speed sensors are required to measure the rotational speed of the two rear drums
 		LED Voltage                     & Rated     & \SI{5}{\volt}           \\
 		Phototransistor Current (Dark)  & Rated     & \SI{0.5}{\micro\ampere} \\
 		Phototransistor Current (Light) & Rated     & \SI{0.8}{\milli\ampere} \\
+		Phototransistor Current         & Maximum   & \SI{}{\milli\ampere}    \\
 		Phototransistor Response Time   & Rated     & \SI{10}{\micro\second}  \\
 		\bottomrule
 	\end{tabularx}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -33,6 +33,15 @@
   \url{https://bicycletouringpro.com/bicycle-trainers/}.
 \newblock \newline [Accessed~24~\bblapr{}~2022].
 
+\bibitem[{\citenamefont{Baum} \protect\BIBand{}
+  \citenamefont{Eberhardt}(2016)}]{Baum:2016}
+\bibnamefont{Baum}, \bibfnamefont{E.} \protect\BIBand{}
+  \bibnamefont{Eberhardt}, \bibfnamefont{S.} (2016 \bbljun{}~27).
+\newblock Eddy current brake with two pole pairs.
+\newblock \emph{COMPEL - The international journal for computation and
+  mathematics in electrical and electronic engineering}, \bblvol{}~28,
+  \bblno{}~1, \bblpp{} 67--76.
+
 \bibitem[{Bluetooth\textsuperscript \textregistered \space Service
   Specification()}]{BLSIG:2017}
 Bluetooth\textsuperscript \textregistered \space Service Specification (2017
@@ -48,6 +57,12 @@ Communica (2022).
 \newblock \newline Availible at:
   \url{https://www.communica.co.za/products/hkd-tb6600-stepper-driver-4-5a}.
 \newblock \newline [Accessed~20~\bblsep{}~2022].
+
+\bibitem[{\citenamefont{Gay}(2005)}]{Gay:2005}
+\bibnamefont{Gay}, \bibfnamefont{S.E.} (2005).
+\newblock \emph{Contactless Magnetic Brake for Automotive Applications}.
+\newblock \bblmthesis{}, Electrical Engineering, Texas A\&M University, Texas,
+  USA.
 
 \bibitem[{Geometry Geeks()}]{Geometry:2022}
 Geometry Geeks (2022).
@@ -116,6 +131,14 @@ RPR-220 (2017).
   \url{https://zwiftinsider.com/erg-mode-in-zwift/}.
 \newblock \newline [Accessed~22~\bblsep{}~2022].
 
+\bibitem[{\citenamefont{Smythe}()}]{Smythe:1942}
+\bibnamefont{Smythe}, \bibfnamefont{W.R.} ().
+
+\bibitem[{\citenamefont{Smythe}(1950)}]{Smythe:1950}
+\bibnamefont{Smythe}, \bibfnamefont{W.R.} (1950).
+\newblock \emph{Static and Dynamic Electricity}, \bblpp{} 162--165.
+\newblock \bblsecondo{} \bbledn{}. The Maple Press Company, York, Pa.
+
 \bibitem[{Supermagnete()}]{Supermagnete:2010}
 Supermagnete (2010 \bbljan{}~1).
 \newblock Faq: How do you calculate the magnetic flux density? [online].
@@ -134,6 +157,13 @@ Supermagnete (2010 \bbljan{}~1).
 \newblock O'Reilly Media, Inc.,
   \url{https://www.oreilly.com/library/view/getting-started-with/9781491900550/ch04.html}.
 \newblock ISBN 9781491949511.
+
+\bibitem[{\citenamefont{Wouterse}(1991)}]{Wouterse:1991}
+\bibnamefont{Wouterse}, \bibfnamefont{J.} (1991).
+\newblock Critical torque and speed of eddy current brake with widely separated
+  soft iron poles.
+\newblock \emph{IEE Proceedings-B}, \bblvol{} 138, \bblno{}~4, \bblpp{}
+  153--158.
 
 \bibitem[{Zwift()}]{Zwift:2022}
 Zwift (2022).

@@ -1,3 +1,9 @@
+To be done:
+Motor control
+GetResistance()
+
+
+
 Interupt on pin high:
 	counter ++
 end interupt

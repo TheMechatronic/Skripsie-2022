@@ -14,14 +14,14 @@ For the project, hardware was developed with the aim of achieving the objectives
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Objectives of Hardware Development}
-	\begin{tabularx}{\textwidth}{p{3.2cm} >{\raggedright}p{5cm} >{\raggedright\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{p{3.2cm} >{\raggedright}X >{\raggedright\arraybackslash}p{2cm}}
 		\toprule
-		Hardware Design Outcome & Description               & Target Objective       \\
+		      & Description & Reference \\
 		\midrule
-		HDO 1                   & Eddy Current Brake Design & O1                     \\
-		HDO 2                   & Speed Sensors Design      & Adequate Braking Force \\
-		HDO 3                   & Frame and Shafts Design   & Description            \\
-		HDO 4                   & Outcome 4                 & Description            \\
+		HDO 1 &             & ER x      \\
+		HDO 2 &             & ER x      \\
+		HDO 3 &             & ER x      \\
+		HDO 4 &             & ER x      \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:devgoals}
@@ -46,9 +46,12 @@ Roller trainers require the cyclist to be travelling at some speed for stability
 
 Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand,  On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were identified as a good compromise, and were selected as the best option for the platform.\\
 
-\subsection{Torque Requirements}
+\newpage
 
-The required braking torque range is dependant on the cycling speed and the power output of the cyclist. Typically, amateur cyclists maintain an average power output between \SI{75}{\watt} and \SI{100}{\watt}, and pro cyclists can maintain up to \SI{400}{\watt}, during a 1 hour workout. As the cyclist's speed increases, less torque is required to maintain the same power output. The relation is expressed as Equation \ref{eq:pow}.
+\section{Eddy Current Brake Design}
+\label{sec:Eddy}
+
+\subsubsection{Braking Torque Requirements}
 
 When considering the \SI{90}{\milli\meter} roller size that was selected in Section \ref{sec:opspeed}, the Torque requirements for different power outputs is shown in Figure \ref{fig:torqueCalc} below. From the figure, it can be seen that the torque requirement at low speeds will dominate the torque requirement and should thus be used as consideration when selecting torque requirements of the brake.
 
@@ -60,10 +63,7 @@ When considering the \SI{90}{\milli\meter} roller size that was selected in Sect
 	\end{center}
 \end{figure}
 
-\newpage
-
-\section{Eddy Current Brake Design}
-\label{sec:Eddy}
+\subsubsection{Parameter Selection}
 
 \begin{figure}[H]
 	\begin{center}

@@ -3,46 +3,57 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Main.aux
 The style file: usmeg-a.bst
 Database file #1: References.bib
+I was expecting an "="---line 437 of file References.bib
+ :  author   = {William R. Smythe},                                                                               ` 
+ :                                                                                                                  `
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 459 of file References.bib
+ :  author   = {Kapjin Lee and Kyihwan Park},                                                                               ` 
+ :                                                                                                                            `
+I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 18 entries,
+Warning--empty title in Smythe:1942
+Warning--empty journal in Smythe:1942
+You've used 23 entries,
             3324 wiz_defined-function locations,
-            770 strings with 8480 characters,
-and the built_in function-call counts, 9947 in all, are:
-= -- 935
-> -- 104
-< -- 7
-+ -- 55
-- -- 33
-* -- 732
-:= -- 1300
-add.period$ -- 71
-call.type$ -- 18
-change.case$ -- 125
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 974
-empty$ -- 1000
-format.name$ -- 65
-if$ -- 2093
+            805 strings with 9148 characters,
+and the built_in function-call counts, 13583 in all, are:
+= -- 1242
+> -- 163
+< -- 20
++ -- 78
+- -- 51
+* -- 1015
+:= -- 1766
+add.period$ -- 85
+call.type$ -- 23
+change.case$ -- 155
+chr.to.int$ -- 26
+cite$ -- 25
+duplicate$ -- 1328
+empty$ -- 1343
+format.name$ -- 104
+if$ -- 2856
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 104
-newline$ -- 129
-num.names$ -- 32
-pop$ -- 221
+missing$ -- 151
+newline$ -- 152
+num.names$ -- 52
+pop$ -- 336
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 119
 quote$ -- 0
-skip$ -- 281
+skip$ -- 401
 stack$ -- 0
-substring$ -- 752
-swap$ -- 300
-text.length$ -- 0
+substring$ -- 997
+swap$ -- 459
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 159
-warning$ -- 0
-while$ -- 53
+type$ -- 201
+warning$ -- 2
+while$ -- 89
 width$ -- 0
-write$ -- 272
+write$ -- 334
+(There were 2 error messages)

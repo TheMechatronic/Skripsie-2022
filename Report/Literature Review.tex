@@ -228,14 +228,18 @@ This mode is defined in the \ac{ftms} documentation, and needs Control Permissio
 
 The \textit{Grade} indicates the gradient of the road that the avatar is travelling on. The \text{\ac{crr}} is determined by the road surface and wheel type of the avatar in the game, where the \textit{\ac{cw}} is determined by the player's weight and height, and can then be reduced by in-game events such as equipment selection and drafting behind other avatars when this feature is active. Currently Zwift does not utilize the \textit{Wind Speed} parameter.
 
-These parameters are then used by the trainer to determine the resistance required to simulate the conditions in the game. This is what creates the realistic training experience.
-
 \color{black}
+
+\vspace{-0.5cm}
+
+\newpage
 
 \section{Existing Trainer Technology}
 \label{sec:train}
 
 There are four types of bicycle trainers that are commonly used for indoor cycling. \textit{Roller trainers} consists of roller drums on which a bicycle's wheels may spin freely (\ref{fig:roller}). \textit{Wheel-on resistance trainers} (aka. turbo trainers) allow for the bicycle to be fixed into a stationary position with some resistance applied to the rotation of the rear wheel (\ref{fig:wheelon}). \textit{Direct-drive trainers} are similar to wheel-on trainers where the bicycle is fixed in a stationary position, but with at least the rear wheel removed. This allows the resistance to be applied directly to the bicycle's drivetrain (\ref{fig:directdrive}). The fourth type consists of a completely independent platform that does not require a bicycle to operate. \citep{Alff:2011}
+
+\vspace{-0.5cm}
 
 \begin{figure}[H]
 	\centering
@@ -264,9 +268,10 @@ There are four types of bicycle trainers that are commonly used for indoor cycli
 	\citep{Zwift:2022}
 \end{figure}
 
-\vspace{-1 cm}
+\newpage
 
 \section{Bicycle Specifications}
+\label{sec:specs}
 % Section showing expected bicycle specifications of most popular models
 The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight as illustrated in Figure \ref{fig:bikeDim}.
 
@@ -312,10 +317,57 @@ Although these dimensions vary between brands, models and sizes, a general overv
 
 The most common wheel diameter sizes for both road bicycles and \ac{mtb} are 27.5" (aka. 650c) and 29" (aka. 700c). The 27.5" and 29" refer to the diameter of the rim in inches, where the 650c and 700c refer to the typical diameter with a tyre on in \si{\milli\meter}. The dimension that is relevant to the design of a bicycle training platform is the diameter with the wheel on, and will thus commonly range between \SI{650}{\milli\meter} and \SI{700}{\milli\meter}. \citep{Montague:2019}
 
-\newpage
-
 \section{Eddy Current Brake}
 % Section on Eddy Current Brake
+
+\subsubsection{Working Principle}
+
+An \acf{ecb} is a contactless braking device that consists of a stationary magnetic flux source and a moving conductor. The magnetic flux source can be from either permanent magnets or electromagnets, and the conductor typically takes the form of a rail, drum or disk. As the conductor moves through the stationary magnetic flux, it experiences a time-varying magnetic flux density. According to Lenz's law (Equation \ref{eq:lenz}), this time-varying magnetic flux density $\frac{\delta\vec{B}}{\delta t}$ results in an electric field $\vec{\ac{E}}$.
+
+\begin{equation}
+	\nabla \times \vec{\ac{E}} = \frac{\delta\vec{\ac{B}}}{\delta t}
+	\label{eq:lenz}
+\end{equation}
+
+According to Ohm's Law (Equation \ref{eq:ohm2}), this electric field results in circulating currents $\vec{\ac{J}}$ within the conductor with conductance \acs{condDisk}.
+
+\begin{equation}
+	\vec{\ac{J}} = \ac{condDisk} \cdot \vec{\ac{E}}
+	\label{eq:ohm2}
+\end{equation}
+
+These circulating currents are called "Eddy-currents", and the interaction of these eddy-currents with the flux density results in a force $\vec{\acs{F}}$ that opposes the motion: \citep{Gay:2005}
+
+\begin{equation}
+	\vec{\ac{F}} = \vec{\ac{J}} \times \vec{\ac{B}}
+	\label{eq:force}
+\end{equation}
+
+\subsubsection{Mathematical Model}
+
+\cite{Smythe:1942} first proposed a mathematical model that includes two distinct torque regions. Below the critical speed, the torque vs. speed relation is approximately linear, and the high speed region approaches some constant. This model was the further expanded and improved in \cite{Smythe:1950}.
+
+\cite{Wouterse:1991} proposed a model for the induced torque at the critical speed, as the torque in this region cannot be expressed simply as a function of magnetic flux and disk speed. 
+
+\cite{Baum:2016} proposed a model for the performance of an \ac{ecb} with two pole pairs on a rotating conductive disk. This model builds on the work of \cite{Smythe:1950} and \cite{Wouterse:1991} to take into account the saturation of the disk and the demagnetization effect of the induced magnetic flux on the magnets. This results in Equation~\ref{eq:low} for the low speed region and Equation~\ref{eq:high} for the high speed region. The critical speed is found by equating these two equations.
+
+\begin{equation}
+	\ac{F}_{Low Speed} = n_{pairs} \cdot \ac{condDisk} \cdot \ac{v} \cdot {\ac{B}_0}^2 \cdot A_{magnet} \cdot t_{disk}
+	\label{eq:low}
+\end{equation}
+
+\begin{equation}
+	\ac{F}_{High Speed} = n_{pairs} \cdot \frac{1}{\ac{v}} \cdot t_{magnet}^2 \cdot \frac{\ac{B}_0^2}{\acs{permeability}_0^2} \cdot \frac{1}{\ac{condDisk}} \cdot \frac{2 D_{magnet}}{t_{disk} d_{magnets}}
+	\label{eq:high}
+\end{equation}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{Brake Layout.jpg}
+		\caption{Eddy Current Brake Dimensions}
+		\label{fig:EB}
+	\end{center}
+\end{figure}
 
 \newpage
 

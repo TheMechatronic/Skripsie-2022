@@ -344,11 +344,20 @@ exportgraphics(figure7, ...
 close(figure7)
 
 figure8 = figure;
-hold on
-fplot((Te+T0)/2, [0 400], 'black')
-yyaxis right
-fplot((Te+T0)/2 * omega, [0 400], 'red')
-legend('Average Torque', 'Power Delivered')
-xlabel('Angular Velocity (rad/s)')
-exportgraphics(figure8, '..\..\Report\graphics\Fig8.jpg', 'Resolution', 600)
-close(figure8)
+hold on;
+fplot((Te+T0)/2, [0 400], 'black');
+yyaxis right;
+fplot((Te+T0)/2 * omega, [0 400], 'red');
+legend('Average Torque', 'Power Delivered');
+xlabel('Angular Velocity (rad/s)');
+exportgraphics(figure8, ...
+                '..\..\Report\graphics\Fig8.jpg', ...
+                'Resolution', 600);
+close(figure8);
+
+%% TEST MODEL
+% Tb = σR2Sd ˙θB2
+syms Torque(omega)
+Torque(omega) = diskConductivity*magnetDiskR*pi*(magnetDiameter/2)^2*B0^2*(magnetAmount/2)*omega
+fig1 = figure
+fplot(Torque, [0 4000])
