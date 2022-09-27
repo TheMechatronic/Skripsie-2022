@@ -29,9 +29,7 @@ For the project, hardware was developed with the aim of achieving the objectives
 
 \newpage
 
-\section{Expected Operating Conditions}
-
-\subsection{Operating Speeds}
+\section{Roller Design}
 \label{sec:opspeed}
 
 Roller trainers require the cyclist to be travelling at some speed for stability. Thus, the expected operating range of a cyclist on the trainer will typically range between \SI{10}{\kilo\meter\per\hour} and \SI{50}{\kilo\meter\per\hour}. For the design, a maximum high speed of \SI{60}{\kilo\meter\per\hour} was considered. The corresponding drum speeds for common drum size options are shown in Figure \ref{fig:speedCalc} below.
@@ -44,7 +42,29 @@ Roller trainers require the cyclist to be travelling at some speed for stability
 	\end{center}
 \end{figure}
 
-Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand,  On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were identified as a good compromise, and were selected as the best option for the platform.\\
+Considering the design of the Eddy Current brake, as discussed in Section \ref{sec:Eddy}, higher braking force can be achieved at higher drum speeds, and result in a larger operating range. On the other hand, higher speeds will also increase the free-rolling resistance of the trainer, and allow for less range at higher speeds. Thus, \SI{90}{\milli\meter} drums were identified as a good compromise, and were selected as the best option for the platform.
+
+The rollers were designed to consist of class-12 \acf{upvc} pipes attached to EN-8 steel shafts. The bearings that were used are 6902RS deep groove ball bearings with rubber shields on both sides.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{rollerCad.jpg}
+		\caption{Roller Design}
+		\label{fig:rollerCAD}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{rollerCad.jpg}
+		\caption{Built Roller}
+		\label{fig:rollerBuild}
+	\end{subfigure}
+	\caption{Roller Development}
+	\label{fig:rollerDev}
+\end{figure}
+
+For the two front idler rollers, the \ac{upvc} pipe and end-caps rotate freely on a a fixed shaft, and are coupled together with a rubber elastic band that is used on existing roller models. The rear roller is attached to the shaft with a key at both end-caps in order to allow for force to be transferred from the braking unit to the rear wheel of the cyclist.
 
 \newpage
 
@@ -65,13 +85,26 @@ When considering the \SI{90}{\milli\meter} roller size that was selected in Sect
 
 \subsubsection{Parameter Selection}
 
+For the \ac{ecb}, Neodymium rare earth permanent disk magnets were selected as they would provide the highest magnetic flux density.
+
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{magnetBr.jpg}
-		\caption{Magnetic Flux Density of Disc Magnet}
-		\citep[Addapted from][]{Supermagnete:2010}
+	\centering
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{magnetD.jpg}
+		\caption{Neodymium Disk Magnet}
+		\label{fig:magN}
+	\end{subfigure}%
+\hfill
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{magnetBr.jpg}
+		\caption{\ac{B} Field Calculation}
 		\label{fig:B0}
-	\end{center}
+	\end{subfigure}
+	\caption{Disk Magnet}
+	\citep[Addapted from][]{Supermagnete:2010}
+	\label{fig:magnets}
 \end{figure}
 
 \begin{equation}

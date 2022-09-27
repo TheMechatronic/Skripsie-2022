@@ -1,0 +1,111 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": false,
+        "File": "Main.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "AppendixSafetyReport.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Main.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 34
+            },
+            {
+                "Col": 5,
+                "EditorGroup": 0,
+                "FileName": "FrontMatter.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 15
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Hardware Development.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 45
+            },
+            {
+                "Col": 20,
+                "EditorGroup": 0,
+                "FileName": "Nomenclature.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 182
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Literature Review.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 275
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Electronics Development.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 41
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Concept Design.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 13
+            },
+            {
+                "Col": 22,
+                "EditorGroup": 0,
+                "FileName": "Preample.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 23
+            },
+            {
+                "Col": 25,
+                "EditorGroup": 0,
+                "FileName": "AppendixSafetyReport.tex",
+                "FirstLine": 48,
+                "FoldedLines": "",
+                "Line": 51
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "AppendixBudget.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 261,
+                "EditorGroup": 0,
+                "FileName": "Introduction.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 14
+            },
+            {
+                "Col": 35,
+                "EditorGroup": 0,
+                "FileName": "ECSAEvaluation.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 15
+            }
+        ],
+        "MasterFile": ""
+    }
+}

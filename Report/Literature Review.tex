@@ -23,8 +23,6 @@ The review starts by investigating the utilization of Zwift and to identify the 
 
 The review then continues to investigate and identify the technical requirements of the training platform that was developed. This is achieved by identifying and investigating commonly used products and technology offered on the market.
 
-The review concludes with a brief summary of the results.
-
 \newpage
 
 \section{Zwift Technical Requirements}
@@ -345,7 +343,7 @@ These circulating currents are called "Eddy-currents", and the interaction of th
 
 \subsubsection{Mathematical Model}
 
-\cite{Smythe:1942} first proposed a mathematical model that includes two distinct torque regions. Below the critical speed, the torque vs. speed relation is approximately linear, and the high speed region approaches some constant. This model was the further expanded and improved in \cite{Smythe:1950}.
+\cite{Smythe:1942} first proposed a mathematical model that includes two distinct torque regions. Below the critical speed, the torque vs. speed relation is approximately linear, and the high speed region approaches some constant. This model was the further expanded and improved by \cite{Smythe:1950}.
 
 \cite{Wouterse:1991} proposed a model for the induced torque at the critical speed, as the torque in this region cannot be expressed simply as a function of magnetic flux and disk speed. 
 
@@ -357,14 +355,14 @@ These circulating currents are called "Eddy-currents", and the interaction of th
 \end{equation}
 
 \begin{equation}
-	\ac{F}_{High Speed} = n_{pairs} \cdot \frac{1}{\ac{v}} \cdot t_{magnet}^2 \cdot \frac{\ac{B}_0^2}{\acs{permeability}_0^2} \cdot \frac{1}{\ac{condDisk}} \cdot \frac{2 D_{magnet}}{t_{disk} d_{magnets}}
+	\ac{F}_{High Speed} = n_{pairs} \cdot \frac{1}{\ac{v}} \cdot t_{magnet}^2 \cdot \frac{\ac{B}_0^2}{\acs{permeability}_0^2} \cdot \frac{1}{\ac{condDisk}} \cdot \frac{2 D_{magnet}}{t_{disk} \cdot \delta d_{magnets}}
 	\label{eq:high}
 \end{equation}
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{Brake Layout.jpg}
-		\caption{Eddy Current Brake Dimensions}
+		\caption{Eddy Current Brake Dimensions (To be changed ...)}
 		\label{fig:EB}
 	\end{center}
 \end{figure}

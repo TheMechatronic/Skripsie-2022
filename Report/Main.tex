@@ -33,6 +33,12 @@ afrikaans,english, 						%.. Global lang drivers
 % \pagenumbering{gobble} 
 \bibliography{References.bib}
 
-\input{AppendixA.tex}
+\newpage
+\appendix
+\pagenumbering{roman} 
+\setcounter{page}{1}
+\renewcommand\thechapter{A}
+%\input{AppendixA.tex}
 \input{AppendixBudget.tex}
+\input{AppendixSafetyReport.tex}
 \end{document}

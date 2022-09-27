@@ -22,9 +22,9 @@ Table \ref{tab:conditions} shows the user requirements that were derived from th
 		\midrule
 		\newR{UR:zwift}                      & Connect with Zwift                             & Essential \\
 		\newR{UR:sim}                        & Realistic Riding Simulation                    & Essential \\
-		\newR{UR:measure}                    & Accurate Measured Training Data                & Medium    \\
 		\newR{UR:weight}                     & Weight Should be Comparable to Market Products & High      \\
 		\newR{UR:range}                      & Accept a Wide Range of Bicycles                & High      \\
+		\newR{UR:measure}                    & Accurate Measured Training Data                & Medium    \\
 		\newR{UR:price}                      & Less Expensive than Market Products            & High      \\
 		\newR{UR:store}                      & Platform Easily Stored                         & Medium    \\
 		\bottomrule
@@ -76,7 +76,6 @@ Table \ref{tab:conditions} shows the user requirements that were derived from th
 	\label{tab:perfreq}
 \end{table}
 
-\subsection{Operating Conditions}
 \label{sec:opspeedc}
 
 \subsubsection{PER \ref{PR:27speed} \& \ref{PR:29speed}:}
@@ -105,7 +104,7 @@ A general overview of the concept starts by distinguishing what falls within the
 	\end{center}
 \end{figure}
 
-The interfaces between elements are explained in Table~\ref{tab:links}.
+The interfaces between elements shown in Figure~\ref{fig:soi} are explained in Table~\ref{tab:links}, and clarified in the following subsections.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
@@ -125,8 +124,14 @@ The interfaces between elements are explained in Table~\ref{tab:links}.
 	\label{tab:links}
 \end{table}
 
-\subsubsection{2:}
+\subsubsection{2: \ac{ble} with \ac{ftms} implementation}
 It was decided to keep the platform completely separate from the device that will be running the Zwift application, as this will allow th platform to easily be used by any other device without requiring any additional modifications.\ac{ble} was chosen as the communication protocol as this is what is available on most consumer electronic devices that Zwift is expected to operate on, and will thus not need an external unit to communicate with the platform.
+
+\subsubsection{\ac{nsoi} Design}
+
+In order to meet the requirements specified above, a \textit{roller trainer} was identified as the platform that would achieve the most desirable outcome. Roller trainers would allow for use with any existing bicycle configuration and a wider range of wheel diameters and wheelbases, without requiring the cyclist to buy or attach any additional components. The solution does however add some complexity to the use of the platform, as it requires additional skill and experience in order to efficiently use roller trainer platforms.
+
+The resistance of the platform will be controlled by an \ac{ecb}, as this would allow for repeatable and frictionless braking torque applied to the rear roller of the trainer. This will accurately simulate outside rolling conditions, as smooth acceleration would be required at high braking torques to avoid the bicycle wheel slipping, similar to what would happen in outside riding conditions.
 
 \section{Concept Evaluation}
 \label{sec:eval}
@@ -135,16 +140,22 @@ It was decided to keep the platform completely separate from the device that wil
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Concept Requirement Fulfilment Analysis}
-	\begin{tabularx}{\textwidth}{p{1.5cm} X p{4cm}}
+	\begin{tabularx}{\textwidth}{p{1cm} >{\raggedright}X >{\raggedright\arraybackslash}p{1.5cm}}
 		\toprule
-		Requirement & Proposed Solution                                     & Level of Success   \\
+		Target                 & \multicolumn{1}{c}{Proposed Solution}                                             & Level of Success \\
 		\midrule
-		1           & \capitalisefmtwords{Power delivery to platform}       & Pass  \\
-		2           & \ac{ble} with \ac{ftms} implementation                & Pass \\
-		3           & \capitalisefmtwords{User inputs and feedback to user} & Pass \\
-		4           & \capitalisefmtwords{Resistance applied to bicycle}    & Pass \\
-		5           & \capitalisefmtwords{Sensor readings of cycling data}  & Pass \\
+		FER~\ref{FR:ble}       & \ac{ble} \capitalisefmtwords{communication with device running Zwift application} & Pass             \\
+		FER~\ref{FR:wheel}     & \capitalisefmtwords{Roller trainers allow for wider range of wheel diameters}     & Pass             \\
+		FER~\ref{FR:speed}     & \capitalisefmtwords{Speed sensors implemented on rollers}                         & Pass             \\
+		PER~\ref{PR:wheelbase} & \capitalisefmtwords{Rollers allow for adjustable wheelbase lengths}               & Pass             \\
+		PER~\ref{PR:weight}    & \capitalisefmtwords{Rollers do not require heavy bicycle mounting components}     & Pass             \\
+		PER~\ref{PR:speed}     & \capitalisefmtwords{Rollers do not limit the operating speed}                     & Pass             \\
+		PER~\ref{PR:27speed}   & \capitalisefmtwords{Rollers function independent of bicycle wheel diameter}       & Pass             \\
+		PER~\ref{PR:29speed}   & \capitalisefmtwords{Rollers function independent of bicycle wheel diameter}       & Pass             \\
+		PER~\ref{PR:torque}    & \capitalisefmtwords{Eddy current brake applied to rear roller}                    & Pass             \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:eval}
 \end{table}
+
+From the evaluation in Table~\ref{tab:eval}, the concept would achieve the functional and performance requirements that were formulated in Section~\ref{sec:req}. The development of the subsequent sections of the concept into a demonstration model is detailed in the sections to follow.

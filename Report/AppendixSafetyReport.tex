@@ -1,0 +1,63 @@
+\newpage
+\appendix
+\renewcommand\thechapter{C}
+
+\chapter{Safety Report}
+
+\section*{General lab safety:}
+The following general lab safety instructions are applicable:
+\begin{enumerate}
+	\item No after hours testing may be performed without the necessary permissions
+	\item An induction is required before testing may be undertaken.
+	\item Closed shoes must be worn at all times.
+	\item Loose clothing may not be worn.
+	\item Good housekeeping practices should be kept during testing.
+	\item No food or drink is permitted in the lab.
+	\item Safety report must be visible and accessible during testing.
+	\item If uncertain, ask for help - it will be willingly provided!
+\end{enumerate}
+
+\newpage
+
+\section*{Safety measures during testing:}
+The following safety measures will be adhered to during testing.
+\begin{enumerate}
+	\item An emergency stop button will be implemented.
+	\item All rotating parts will be covered during operation of the test rig.
+\end{enumerate}
+
+\section*{Activity Based Risk Assessment}
+
+\begin{table}[H]
+	%\renewcommand{\arraystretch}{\tablestretch}
+	\centering
+	\caption{Risk Severity Scores}
+	\begin{tabularx}{\textwidth}{>{\centering}X | >{\centering}X >{\centering}X >{\centering\arraybackslash}X}
+		\toprule
+		\textbf{Likelihood} & Low & \textbf{Impact} & High \\
+		\midrule
+		High                & 2   & 3               & 4    \\
+		                    & 1   & 2               & 3    \\
+		Low                 & 1   & 1               & 2    \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:risk}
+\end{table}
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{\tablestretch}
+	\small
+	\centering
+	\caption{Risk Severity Scores}
+	\makebox[1.2\linewidth]{
+	\begin{tabularx}{\linewidth}{>{\raggedright}p{2cm} >{\raggedright}X >{\centering}p{0.9cm} >{\centering}p{1.1cm} >{\raggedright\arraybackslash}X}
+		\toprule
+		Activity                   & Risk                          & Type   & Severity & Mitigation                                                            \\
+		\midrule
+		Test Rig Assembly          & Dropping tools on feet/floor  & P \& E & 1        & Wear closed shoes at all times                                        \\
+		Mounting Motor             & Dropping the Motor            & P \& E & 3        & Ask for assistance                                                    \\
+		Handling Torque Transducer & Bumping or damaging equipment & E      & 2        & Minimize the handling of transducer. \newline Take care when handling \\
+		\bottomrule
+	\end{tabularx}}
+	\label{tab:riskEval}
+\end{table}

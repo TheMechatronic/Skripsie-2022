@@ -4,8 +4,8 @@ The top-level auxiliary file: Main.aux
 The style file: usmeg-a.bst
 Database file #1: References.bib
 I was expecting an "="---line 437 of file References.bib
- :  author   = {William R. Smythe},                                                                               ` 
- :                                                                                                                  `
+ :  author   = {William R Smythe},                                                                               ` 
+ :                                                                                                                 `
 I'm skipping whatever remains of this entry
 I was expecting an "="---line 459 of file References.bib
  :  author   = {Kapjin Lee and Kyihwan Park},                                                                               ` 
@@ -17,7 +17,7 @@ Warning--empty title in Smythe:1942
 Warning--empty journal in Smythe:1942
 You've used 23 entries,
             3324 wiz_defined-function locations,
-            805 strings with 9148 characters,
+            805 strings with 9147 characters,
 and the built_in function-call counts, 13583 in all, are:
 = -- 1242
 > -- 163
