@@ -1,6 +1,6 @@
 INFO:  latexindent.exe version 3.18, 2022-06-12, a script to indent .tex files
        latexindent.exe lives here: D:/texlive/2022/texmf-dist/scripts/latexindent/
-       Mon Sep 26 11:44:43 2022
+       Wed Sep 28 18:14:59 2022
        Filename: AppendixSafetyReport.tex
 INFO:  Processing switches:
        -s|--silent: Silent mode active (you have used either -s or --silent)

@@ -56,5 +56,4 @@
 \contentsline {section}{\numberline {6.3}Motor Control}{43}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Electronics Overview}{44}{section.6.4}%
 \contentsline {chapter}{List of References}{45}{section*.60}%
-\contentsline {chapter}{\numberline {B}Budget}{i}{appendix.A}%
-\contentsline {chapter}{\numberline {C}Safety Report}{ii}{appendix.A}%
+\contentsline {chapter}{\numberline {C}Safety Report}{i}{appendix.A}%
