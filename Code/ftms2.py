@@ -119,54 +119,17 @@ class ftms_Service(Service):
         Service.__init__(self, bus, index, self.UUID, True)
         ######
         # Add charactaristics here ...
-        # Fitness Machine Feature
+        # Speed Data
         # Power Data
         ######
-        self.add_characteristic(FitnessMachineFeatureCharacteristic(bus, 3, self))
-        self.add_characteristic(IndoorBikeDataCharacteristic(bus, 1, self))
+        self.add_characteristic(IndoorBikeData(bus, 0, self))
+        self.add_characteristic(BoilerControlCharacteristic(bus, 1, self))
         self.add_characteristic(AutoOffCharacteristic(bus, 2, self))
 
-##### Fitness Machine Characteristic #####
-class FitnessMachineFeatureCharacteristic(Characteristic):
-    uuid = uuids.CHARACTARISTICS.FITNESS_MACHINE_FEATURE
-    description = b"Fitness Machine Feature Charactaristic"
 
-    def __init__(self, bus, index, service):
-        Characteristic.__init__(
-            self, bus, index, self.uuid, ["encrypt-read", "encrypt-write"], service,
-        )
-
-        self.value = []
-        # self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
-
-    def ReadValue(self, options):
-        logger.info("boiler read: " + repr(self.value))
-        res = None
-        try:
-            res = requests.get(VivaldiBaseUrl + "/vivaldi")
-            self.value = bytearray(res.json()["boiler"], encoding="utf8")
-        except Exception as e:
-            logger.error(f"Error getting status {e}")
-
-        return self.value
-
-    def WriteValue(self, value, options):
-        logger.info("boiler state Write: " + repr(value))
-        cmd = bytes(value).decode("utf-8")
-
-        # write it to machine
-        logger.info("writing {cmd} to machine")
-        data = {"cmd": "setboiler", "state": cmd.lower()}
-        try:
-            res = requests.post(VivaldiBaseUrl + "/vivaldi/cmds", json=data)
-            logger.info(res)
-        except Exceptions as e:
-            logger.error(f"Error updating machine state: {e}")
-            raise
-
-class IndoorBikeDataCharacteristic(Characteristic):
+class IndoorBikeData(Characteristic):
     uuid = uuids.CHARACTARISTICS.INDOOR_BIKE_DATA
-    description = b"Indoor Bike data - "
+    description = b"Indoor Bike data - Notify"
 
     class State(Enum):
         on = "ON"
@@ -215,6 +178,45 @@ class IndoorBikeDataCharacteristic(Characteristic):
             raise NotPermittedException
 
         self.value = value
+
+
+class BoilerControlCharacteristic(Characteristic):
+    uuid = uuids.CHARACTARISTICS.FITNESS_MACHINE_FEATURE
+    description = b"Get/set boiler power state can be `on` or `off`"
+
+    def __init__(self, bus, index, service):
+        Characteristic.__init__(
+            self, bus, index, self.uuid, ["encrypt-read", "encrypt-write"], service,
+        )
+
+        self.value = []
+        self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
+
+    def ReadValue(self, options):
+        logger.info("boiler read: " + repr(self.value))
+        res = None
+        try:
+            res = requests.get(VivaldiBaseUrl + "/vivaldi")
+            self.value = bytearray(res.json()["boiler"], encoding="utf8")
+        except Exception as e:
+            logger.error(f"Error getting status {e}")
+
+        return self.value
+
+    def WriteValue(self, value, options):
+        logger.info("boiler state Write: " + repr(value))
+        cmd = bytes(value).decode("utf-8")
+
+        # write it to machine
+        logger.info("writing {cmd} to machine")
+        data = {"cmd": "setboiler", "state": cmd.lower()}
+        try:
+            res = requests.post(VivaldiBaseUrl + "/vivaldi/cmds", json=data)
+            logger.info(res)
+        except Exceptions as e:
+            logger.error(f"Error updating machine state: {e}")
+            raise
+
 
 class AutoOffCharacteristic(Characteristic):
     uuid = "9c7dbce8-de5f-4168-89dd-74f04f4e5842"
@@ -283,8 +285,10 @@ class CharacteristicUserDescriptionDescriptor(Descriptor):
 class FTMSAdvertisement(Advertisement):
     def __init__(self, bus, index):
         Advertisement.__init__(self, bus, index, "peripheral")
-        self.add_service_uuid(ftms_Service.UUID)
-        self.add_local_name("22623906 FTMS")
+        self.add_service_uuid(ftms_Service.UUID) # UUID for FTMS service
+        # self.add_data("Flags", 0x01) # Flag for active machine
+
+        self.add_local_name("ftms")
         self.include_tx_power = True
 
 # Successfull registration call back
@@ -306,11 +310,9 @@ def main():
 
     # get the system bus
     bus = dbus.SystemBus()
-    logger.info(bus.get_object)
 
-    # get the ble controller location from system bus
+    # get the ble controller from system bus
     adapter = find_adapter(bus)
-    logger.info(adapter)
 
     # system configuration error
     if not adapter:
@@ -318,15 +320,11 @@ def main():
         return
 
     adapter_obj = bus.get_object(BLUEZ_SERVICE_NAME, adapter)
-    # logger.info(adapter_obj)
 
     adapter_props = dbus.Interface(adapter_obj, "org.freedesktop.DBus.Properties")
-    # logger.info(adapter_props)
 
     # powered property on the controller to on
     adapter_props.Set("org.bluez.Adapter1", "Powered", dbus.Boolean(1))
-
-
 
     # Get manager objs
     service_manager = dbus.Interface(adapter_obj, GATT_MANAGER_IFACE)
@@ -363,12 +361,9 @@ def main():
 
     agent_manager.RequestDefaultAgent(AGENT_PATH)
 
+    mainloop.run()
     # ad_manager.UnregisterAdvertisement(advertisement)
     # dbus.service.Object.remove_from_connection(advertisement)
-
-    mainloop.run()
-    ad_manager.UnregisterAdvertisement(advertisement)
-    dbus.service.Object.remove_from_connection(advertisement)
 
 
 if __name__ == "__main__":
