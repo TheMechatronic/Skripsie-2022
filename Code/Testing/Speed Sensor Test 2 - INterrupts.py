@@ -1,25 +1,33 @@
 import RPi.GPIO as GPIO
 import time
+import threading
 
 class SpeedSensor:
-    Count = 0
+
     def __init__(self, pin, segments, debounce_ms):
         self.pin = pin
         self.segments = segments
         self.debounce = debounce_ms
+        self.Count = 0
+
         GPIO.setup(self.pin, GPIO.IN, pull_up_down = GPIO.PUD_OFF)
-        GPIO.add_event_detect(self.pin, GPIO.BOTH, self.Count += 1)
-        self.lastRead = time.time()
-        
+        GPIO.add_event_detect(self.pin, GPIO.BOTH, self.add_Detect(self)) 
+
+    def add_Detect(self):
+        self.Count += 1
+
     def get_RPM(self):
         period = time.time() - self.lastRead
         rpm = spd*60/(period*self.segments)
         return rpm
 
 class FrontSensor(SpeedSensor):
-    pin = 27
-    segments = 10
-    debounce_ms = 20
+    GPIO_pin = 27
+    WHEEL_segments = 10
+    debounce = 20
+    def __init__(self):
+        SpeedSensor.__init__(self,self.GPIO_pin,self.WHEEL_segments,self.debounce)
+
 # Speed sensor GPIO pins
 SPD_PIN_R = 17
 SPD_R_DB = 40

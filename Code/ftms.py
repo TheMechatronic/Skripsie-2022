@@ -15,7 +15,8 @@ __version__ = "0.0.1"
 # Includes
 ####################################################
 import logging
-import uuid
+import uuids
+import trainerProperties
 
 import dbus
 import dbus.exceptions
@@ -40,6 +41,7 @@ import requests
 import array
 from enum import Enum
 import sys
+import threading
 
 ##### Initialize GLib
 MainLoop = None
@@ -70,6 +72,7 @@ BLUEZ_SERVICE_NAME = "org.bluez"
 GATT_MANAGER_IFACE = "org.bluez.GattManager1"
 LE_ADVERTISEMENT_IFACE = "org.bluez.LEAdvertisement1"
 LE_ADVERTISING_MANAGER_IFACE = "org.bluez.LEAdvertisingManager1"
+GATT_CHRC_IFACE = "org.bluez.GattCharacteristic1"
 
 ####################################################
 # Exception and Error Handlers
@@ -122,80 +125,48 @@ class ftms_Service(Service):
         # Fitness Machine Feature
         # Power Data
         ######
-        self.add_characteristic(FitnessMachineFeatureCharacteristic(bus, 3, self))
-        self.add_characteristic(IndoorBikeDataCharacteristic(bus, 1, self))
-        self.add_characteristic(AutoOffCharacteristic(bus, 2, self))
+        # self.add_characteristic(FitnessMachineFeatureCharacteristic(bus, 3, self))
+        # slf.add_characteristic(IndoorBikeDataCharacteristic(bus, 1, self))
+        # self.add_characteristic(AutoOffCharacteristic(bus, 2, self))
 
-##### Fitness Machine Characteristic #####
-class FitnessMachineFeatureCharacteristic(Characteristic):
+class FitnessMachineFeatureCharadctaristic(Characteristic):
+    """
+    Information on the supported features on the fitness machine.
+    see https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/fmf-0000001050145124
+    """
     uuid = uuids.CHARACTARISTICS.FITNESS_MACHINE_FEATURE
     description = b"Fitness Machine Feature Charactaristic"
 
     def __init__(self, bus, index, service):
-        Characteristic.__init__(
-            self, bus, index, self.uuid, ["encrypt-read", "encrypt-write"], service,
-        )
-
-        self.value = []
-        # self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
-
-    def ReadValue(self, options):
-        logger.info("boiler read: " + repr(self.value))
-        res = None
-        try:
-            res = requests.get(VivaldiBaseUrl + "/vivaldi")
-            self.value = bytearray(res.json()["boiler"], encoding="utf8")
-        except Exception as e:
-            logger.error(f"Error getting status {e}")
-
-        return self.value
-
-    def WriteValue(self, value, options):
-        logger.info("boiler state Write: " + repr(value))
-        cmd = bytes(value).decode("utf-8")
-
-        # write it to machine
-        logger.info("writing {cmd} to machine")
-        data = {"cmd": "setboiler", "state": cmd.lower()}
-        try:
-            res = requests.post(VivaldiBaseUrl + "/vivaldi/cmds", json=data)
-            logger.info(res)
-        except Exceptions as e:
-            logger.error(f"Error updating machine state: {e}")
-            raise
-
-class IndoorBikeDataCharacteristic(Characteristic):
-    uuid = uuids.CHARACTARISTICS.INDOOR_BIKE_DATA
-    description = b"Indoor Bike data - "
-
-    class State(Enum):
-        on = "ON"
-        off = "OFF"
-        unknown = "UNKNOWN"
-
-        @classmethod
-        def has_value(cls, value):
-            return value in cls._value2member_map_
-
-    power_options = {"ON", "OFF", "UNKNOWN"}
-
-    def __init__(self, bus, index, service):
-        Characteristic.__init__(
-            self, bus, index, self.uuid, ["notify"], service,
-        )
-
-        self.value = [0xFF]
+        Characteristic.__init__(self, bus, index, self.uuid, ["read"], service)
+        self.value = [0x00000000]
         self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
 
     def ReadValue(self, options):
-        logger.debug("Indoor Bike Data Read:" + repr(self.value))
-        res = None
-        try:
-            res = requests.get(VivaldiBaseUrl + "/vivaldi")
-            self.value = bytearray(res.json()["machine"], encoding="utf8")
-        except Exception as e:
-            logger.error(f"Error getting status {e}")
-            self.value = bytearray(self.State.unknown, encoding="utf8")
+        logger.debug("Fitness Machine Feature read:" + repr(self.value))
+        return self.value
+
+class IndoorBikeDataCharacteristic(Characteristic):
+    uuid = uuids.CHARACTARISTICS.INDOOR_BIKE_DATA
+    description = b"Indoor Bike Data Charactaristic "
+
+
+    def __init__(self, bus, index, service):
+        Characteristic.__init__(self, bus, index, self.uuid, ["notify"], service,)
+        self.flags = [0x0000 | 0b1000000] # Change for new supported features ...
+        # 0b1000000 = Power and speed
+        self.value = [0x0000, 0x0000] # size depends on number of set params
+        self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
+        self.notifying = False
+
+    def notify_bike_data(self):
+        if not self.notifying:
+            return
+        self.PropertiesChanged(GATT_CHRC_IFACE,)
+
+    def StartNotify(self, options):
+        
+        logger.debug("Indoor Bike Data Notify:" + repr(self.value))
 
         return self.value
 
@@ -216,44 +187,44 @@ class IndoorBikeDataCharacteristic(Characteristic):
 
         self.value = value
 
-class AutoOffCharacteristic(Characteristic):
-    uuid = "9c7dbce8-de5f-4168-89dd-74f04f4e5842"
-    description = b"Get/set autoff time in minutes"
-
-    def __init__(self, bus, index, service):
-        Characteristic.__init__(
-            self, bus, index, self.uuid, ["secure-read", "secure-write"], service,
-        )
-
-        self.value = []
-        self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
-
-    def ReadValue(self, options):
-        logger.info("auto off read: " + repr(self.value))
-        res = None
-        try:
-            res = requests.get(VivaldiBaseUrl + "/vivaldi")
-            self.value = bytearray(struct.pack("i", int(res.json()["autoOffMinutes"])))
-        except Exception as e:
-            logger.error(f"Error getting status {e}")
-
-        return self.value
-
-    def WriteValue(self, value, options):
-        logger.info("auto off write: " + repr(value))
-        cmd = bytes(value)
-
-        # write it to machine
-        logger.info("writing {cmd} to machine")
-        data = {"cmd": "autoOffMinutes", "time": struct.unpack("i", cmd)[0]}
-        try:
-            res = requests.post(VivaldiBaseUrl + "/vivaldi/cmds", json=data)
-            logger.info(res)
-        except Exceptions as e:
-            logger.error(f"Error updating machine state: {e}")
-            raise
-
-
+#class AutoOffCharacteristic(Characteristic):
+#    uuid = "9c7dbce8-de5f-4168-89dd-74f04f4e5842"
+#    description = b"Get/set autoff time in minutes"
+#
+#    def __init__(self, bus, index, service):
+#        Characteristic.__init__(
+#            self, bus, index, self.uuid, ["secure-read", "secure-write"], service,
+#        )
+#
+#        self.value = []
+#        self.add_descriptor(CharacteristicUserDescriptionDescriptor(bus, 1, self))
+#
+#    def ReadValue(self, options):
+#        logger.info("auto off read: " + repr(self.value))
+#        res = None
+#        try:
+#            res = requests.get(VivaldiBaseUrl + "/vivaldi")
+#            self.value = bytearray(struct.pack("i", int(res.json()["autoOffMinutes"])))
+#        except Exception as e:
+#            logger.error(f"Error getting status {e}")
+#
+#        return self.value
+#
+#    def WriteValue(self, value, options):
+#        logger.info("auto off write: " + repr(value))
+#        cmd = bytes(value)
+#
+#        # write it to machine
+#        logger.info("writing {cmd} to machine")
+#        data = {"cmd": "autoOffMinutes", "time": struct.unpack("i", cmd)[0]}
+#        try:
+#            res = requests.post(VivaldiBaseUrl + "/vivaldi/cmds", json=data)
+#            logger.info(res)
+#        except Exceptions as e:
+#            logger.error(f"Error updating machine state: {e}")
+#            raise
+#
+#
 class CharacteristicUserDescriptionDescriptor(Descriptor):
     """
     Writable CUD descriptor.
@@ -282,9 +253,9 @@ class CharacteristicUserDescriptionDescriptor(Descriptor):
 #####
 class FTMSAdvertisement(Advertisement):
     def __init__(self, bus, index):
-        Advertisement.__init__(self, bus, index, "peripheral")
+        Advertisement.__init__(self, bus, index, "peripheral",base_path = "/com/trainer/advertisement/roller")
         self.add_service_uuid(ftms_Service.UUID)
-        self.add_local_name("22623906 FTMS")
+        self.add_local_name("FTMS")
         self.include_tx_power = True
 
 # Successfull registration call back
@@ -296,7 +267,7 @@ def register_ad_error_cb(error):
     mainloop.quit()
 
 
-AGENT_PATH = "/com/punchthrough/agent"
+AGENT_PATH = "/com/trainer/agent"
 
 
 def main():
