@@ -3,29 +3,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Zwift Connection Overview\relax }}{6}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \ac {ble} Star Network Topology\relax }}{11}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \ac {ble} Specification Structure\relax }}{12}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Eddy Current Brake Dimensions (To be changed ...)\relax }}{18}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Zwift Connection Overview\relax }}{6}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \ac {ble} Star Network Topology\relax }}{11}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \ac {ble} Specification Structure\relax }}{12}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Bicycle Dimensions\relax }}{16}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Eddy Current Brake Dimensions (To be changed ...)\relax }}{18}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Concept Boundary of Interest\relax }}{21}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Concept Boundary of Interest\relax }}{22}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{25}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Roller Development\relax }}{26}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Torque Requirement Curve\relax }}{27}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Disk Magnet\relax }}{27}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Flux Distribution\relax }}{28}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Figure 7\relax }}{29}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Figure 8\relax }}{29}{figure.caption.50}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{26}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roller Development\relax }}{27}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Torque Requirement Curve\relax }}{28}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Disk Magnet\relax }}{29}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Flux Distribution\relax }}{30}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Figure 7\relax }}{31}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Figure 8\relax }}{31}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of General Software Structure\relax }}{31}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{32}{figure.caption.52}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of General Software Structure\relax }}{33}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{34}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensor Design\relax }}{40}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Motor Control Components\relax }}{41}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Nema-23 Wiring\relax }}{42}{figure.caption.57}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensor Design\relax }}{42}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Motor Control Components\relax }}{43}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Nema-23 Wiring\relax }}{44}{figure.caption.58}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Structural Lab Escape Route\relax }}{vii}{figure.caption.72}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Structural Lab Escape Route\relax }}{vii}{figure.caption.71}%

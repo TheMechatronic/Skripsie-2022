@@ -23,8 +23,6 @@ The review starts by investigating the utilization of Zwift and to identify the 
 
 The review then continues to investigate and identify the technical requirements of the training platform that was developed. This is achieved by identifying and investigating commonly used products and technology offered on the market.
 
-\newpage
-
 \section{Zwift Technical Requirements}
 
 \subsection{Basic Requirements}
@@ -71,8 +69,6 @@ The minimum requirement for full utilization of the platform is a speed sensor w
 \subsubsection{Cycling Cadence}
 Cadence is the rotation rate of the pedals of the bike and is usually measured in \ac{rpm}. Zwift does not require any cadence data for interacting with the platform, as it does not take the cadence into account for controlling the virtual avatar. Cadence data is often used by cyclists as a gauge of how hard the given exercise is. A higher cadence means that the cyclists is cycling faster and experiencing a more intense workout, where a slower cadence might mean that there is more load on the cyclists legs, but at a lower intensity.
 
-
-
 \section{\ac{ble} vs ANT+}
 \label{sec:ant}
 
@@ -117,7 +113,7 @@ Zwift will use the commands above to control the training platform depending on 
 
 Lastly, the user can adjust the resistance on their trainer from within the Zwift software, enabling Zwift to then send that specific command to the trainer when the user would like to change the immediate resistance level.
 
-\section{\ac{ble} Communication}
+\section{\acf{ble} Communication}
 \label{sec:ble}
 
 \ac{ble} works by forming pico - and scatternet networks between various master and slave devices. Each device in the network is either a master or a slave, but never both. The devices then form a piconet when one or more slaves connect and synchronize with a single master device. The role of the master device is then to manage the slave devices through the protocol. This forms a 'star' network topology which is illustrated in Figure \ref{fig:ble}. \citep{Townsend:2014}
@@ -150,11 +146,7 @@ Specifications from the \ac{ble} specification sheet is shown in Table \ref{tab:
 	\label{tab:ble}
 \end{table}
 
-\vspace{-0.65 cm}
-
 The \ac{ble} \ac{gatt} profile consists of 138 active service specifications that can be found on the official website of \ac{bsig}. Each service specification the defines and specifies various sub-services and characteristics that focus on some specific application. Each characteristic forms a collection of values and descriptors that contain specific data in a specified format. Figure \ref{fig:serv} gives an overview of the specification structure. Each step in the structure contains an \ac{uuid}, grants certain permissions and has a specified value. \citep{BLSIG:2017}
-
-\vspace{-0.3 cm}
 
 \begin{figure}[H]
 	\begin{center}
@@ -165,11 +157,9 @@ The \ac{ble} \ac{gatt} profile consists of 138 active service specifications tha
 	\end{center}
 \end{figure}
 
-\vspace{-0.7 cm}
-
 When a connection with the Zwift application is established over \ac{ble}, the \ac{ftms} service is implemented for communicating with training platforms and was thus investigated in further detail.
 
-\subsubsection{\ac{ftms} Protocol}\label{sec:ftms}
+\subsubsection{\acf{ftms} Protocol}\label{sec:ftms}
 
 As mentioned in section \ref{sec:ble}, \acf{ftms} is a service specification under the \acf{gatt} with a \ac{uuid} of 0x1826. The \ac{ftms} service specification contains 15 different characteristics, of which 7 are related to cycling training platforms. These characteristics are listed in table \ref{tab:ftmsft}, along with their \acp{uuid} and required properties. \cite[section ~4.9]{BLSIG:2017}.
 
@@ -196,9 +186,7 @@ As mentioned in section \ref{sec:ble}, \acf{ftms} is a service specification und
 	\label{tab:ftmsft}
 \end{table}
 
-\vspace{-0.5 cm}
-
-\subsubsection{\ac{sim} mode}
+\subsubsection{\acf{sim} mode}
 \label{sec:sim}
 
 \color{red}
@@ -228,16 +216,10 @@ The \textit{Grade} indicates the gradient of the road that the avatar is travell
 
 \color{black}
 
-\vspace{-0.5cm}
-
-\newpage
-
 \section{Existing Trainer Technology}
 \label{sec:train}
 
 There are four types of bicycle trainers that are commonly used for indoor cycling. \textit{Roller trainers} consists of roller drums on which a bicycle's wheels may spin freely (\ref{fig:roller}). \textit{Wheel-on resistance trainers} (aka. turbo trainers) allow for the bicycle to be fixed into a stationary position with some resistance applied to the rotation of the rear wheel (\ref{fig:wheelon}). \textit{Direct-drive trainers} are similar to wheel-on trainers where the bicycle is fixed in a stationary position, but with at least the rear wheel removed. This allows the resistance to be applied directly to the bicycle's drivetrain (\ref{fig:directdrive}). The fourth type consists of a completely independent platform that does not require a bicycle to operate. \citep{Alff:2011}
-
-\vspace{-0.5cm}
 
 \begin{figure}[H]
 	\centering
@@ -266,11 +248,10 @@ There are four types of bicycle trainers that are commonly used for indoor cycli
 	\citep{Zwift:2022}
 \end{figure}
 
-\newpage
-
 \section{Bicycle Specifications}
 \label{sec:specs}
 % Section showing expected bicycle specifications of most popular models
+
 The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight as illustrated in Figure \ref{fig:bikeDim}.
 
 \begin{figure}[H]
@@ -290,8 +271,6 @@ The two most common types of bicycles that are expected to be used on the traine
 	\caption{Bicycle Dimensions}
 	\label{fig:bikeDim}
 \end{figure}
-
-\vspace{-0.6 cm}
 
 Although these dimensions vary between brands, models and sizes, a general overview of common dimensions can be found by comparing the dimensions of the largest and smallest size offerings from the best selling models in each category in Table \ref{tab:bikes}. \citep{Lin:2021} 
 
@@ -367,13 +346,10 @@ These circulating currents are called "Eddy-currents", and the interaction of th
 	\end{center}
 \end{figure}
 
-\newpage
-
 \section{Sensor Technology}
 % Tachometer
 % Torque Transducer
 
-\newpage
 
 % \section{Conclusion}
 % Section summerizing the literature review
