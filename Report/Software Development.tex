@@ -6,11 +6,18 @@
 % Version: 2.0
 
 \chapter{Software Development}
-The software that was developed for this project was written in Python 3, using Visual Studio Code \ac{ide}. The software was then deployed on a Raspberry Pi 3 B+ computer. 
+\label{ch:software}
+The software that was developed for this project was written in object orientated Python 3, using Visual Studio Code code editor. The software was then deployed on a Raspberry Pi 3 B+ single-board computer. 
 
 \newpage
 
 \section{Structure}
+
+A Raspberry Pi has been selected as micro-controller base for the trainer. This means that the application will run on Raspberry Pi OS (previously called Raspbian), which is a 32-bit Unix-like operating system based on the Debian Linux distribution that was specifically developed for the Raspberry Pi. Subsequently, the application software was developed to work with standard Linux system architecture to achieve the required functionality.
+
+The subsystems that were leveraged for this project were the Bluez Library, dBus manager, 
+
+\color{red}
 
 The software for the project has been written to form a very modular structure with separate "handlers" being written/developed for different functions of the greater application. There are some exceptions where existing libraries and servers were used, but these are referenced in the relevant sections later in this chapter.\\
 Figure \ref{fig:soft} below shows the modular structure that was implemented for the control of the Raspberry Pi 3B+ single-board computer
@@ -46,6 +53,14 @@ The \ac{ftms} and \ac{dis} Interpreters receive and send various \ac{ble} comman
 \newpage
 
 \section{Power Calculations}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{SIM.jpg}
+		\caption{Cycling Physics Illustration}
+		\label{fig:sim}
+	\end{center}
+\end{figure}
 
 \newpage
 

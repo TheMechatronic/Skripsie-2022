@@ -11,25 +11,27 @@
 % Background on the topic - Try to keep to single page
 % Opening statement
 % Why cycling as focus area:
-Cycling has been practised as a sport from as early as 1868 \citep{Britannica:2022} and has only increased in popularity as more people seek ways to stay healthy and active with busy modern lifestyles. It is not uncommon to see many cyclists out on the road during early morning hours or late afternoon, trying to get their exercise in for the day.
-The modern city lifestyle is not without it's drawbacks however, and this is especially true for someone who is passionate about staying active by cycling. Busy streets that are full of stationary and moving hazards have proven to be very dangerous for cyclists, especially during rush times when most people are commuting to and from work. Other factors, such as shortened days in the winter reducing the amount of time available for training, while cold weather keeps cyclists off the roads all together in many European countries.\\
+Cycling has been practised as a sport from as early as 1868 \citep{Britannica:2022} and has only increased in popularity as more people seek ways to stay healthy and active with busy modern lifestyles. It is not uncommon to see many cyclists out on the road during the early morning hours or late afternoon, trying to get their exercise in for the day. The modern city lifestyle is not without its drawbacks, however, and this is especially true for someone passionate about staying active by cycling.
 
 % Why trainers are needed:
-Indoor trainers provide cyclists with the opportunity to train indoors in a safer and more controlled environment. This has revolutionized the modern cycling lifestyle, allowing cyclists to continue their training when it is too cold or dark outside. Although this has proven to be an acceptable solution to most competitive cyclists, it does not appeal to many new cyclists who are attracted to the excitement and social interaction of the modern cycling lifestyle, as indoor training can often be lonely and non-stimulating.\\
+Indoor trainers provide cyclists with the opportunity to train indoors in a safer and more controlled environment. This has revolutionized the modern cycling lifestyle, allowing cyclists to continue their training when it is too cold or dark outside. Although this has proven to be an acceptable solution to most competitive cyclists, it does not appeal to many new cyclists who are attracted to the excitement and social interaction of the modern cycling lifestyle, as indoor training can often be lonely and non-stimulating.
+
+\newpage
 
 % What is Zwift:
-This has given rise to online virtual training platforms such as Zwift, that aim to fill the gap connecting indoor cycling and the excitement of competitive cycling. Zwift is an interactive racing and training platform that allows cyclists to see immediate feedback as they pedal their training bike in the form of a personal, in-game avatar. The platform also allows users to socialize and compete with other users in real-time training rides or races. This adds the excitement and social aspect that is needed for indoor cycling to appeal to a wider range of people in modern times.\\
+This need for a more entertaining and stimulating solution has given rise to online virtual training platforms such as Zwift, which aims to fill the gap connecting indoor cycling and the excitement of competitive cycling. Zwift is an interactive racing and training platform that allows cyclists to see immediate feedback as they pedal their training bike in the form of a personal, in-game avatar. The platform also allows users to socialize and compete with other users in real-time training rides or races. This adds the excitement and social aspect that is needed for indoor cycling to appeal to a wider range of people in modern times.
 
 % Why is project needed
-In order to use the Zwift platform, you need a compatible trainer or training device in order to send riding information to Zwift and to receive feedback that will adjust the riding experience based on the virtual circumstances in order to simulate a realistic riding experience. These trainers are very expensive and thus not very accessible to many consumers. This project aims to demonstrate the development, design and testing of an inexpensive smart bicycle trainer that is compatible with the Zwift platform.\\
+To use the Zwift platform, you need a compatible trainer or training device to send riding information to Zwift and to receive feedback that will adjust the riding experience based on the virtual circumstances to simulate a realistic riding experience. These trainers are expensive and thus not accessible to many consumers.
+
+This project aims to demonstrate the development, design and testing of an inexpensive smart bicycle trainer that is compatible with the Zwift platform.
 
 % Final closing statement
 The project, conducted by Mr D.C. Eksteen as part of Mechatronic Project 475 for the Department of Mechanical and Mechatronic Engineering at Stellenbosch University, stems from a proposal by Dr G. Venter, who oversaw the project under his guiding supervision.
 
 \section{Aim and Objectives}
 
-This project aims to demonstrate the development, building and testing of a smart bicycle trainer, with a specific focus on compatibility with Zwift.\\
-The objectives are presented in Table \ref{tab:obj}.
+This project aims to demonstrate the development, building and testing of a smart bicycle trainer, with a specific focus on compatibility with the Zwift application. Table \ref{tab:obj} presents the objectives that the project set out to achieve.
 
 \begin{table}[H]
 	\centering
@@ -38,31 +40,38 @@ The objectives are presented in Table \ref{tab:obj}.
 		\toprule
 		\multicolumn{2}{c}{Hardware Objectives}                                       \\
 		\midrule
-		HO: 1 & Provide an inexpensive indoor training platform                       \\
-		HO: 2 & Monitor and measure rider inputs                                      \\
-		HO: 3 & Change the training experience based on Zwift feedback                \\
+		HO: 1 & Provide an inexpensive indoor training platform.                       \\
+		HO: 2 & Monitor and measure rider inputs.                                      \\
+		HO: 3 & Change the training experience based on Zwift feedback.                \\
 		      &                                                                       \\
 		\toprule
 		\multicolumn{2}{c}{Software Objectives}                                       \\
 		\midrule
-		SO: 1 & Collect and process the rider inputs                                  \\
-		SO: 2 & Communicate and interact with Zwift platform                          \\
-		SO: 3 & Control the training experience through hardware utilization          \\
+		SO: 1 & Collect and process the rider inputs.                                  \\
+		SO: 2 & Communicate and interact with the Zwift platform.                          \\
+		SO: 3 & Control the training experience through hardware utilization.          \\
 		      &                                                                       \\
 		\toprule
 		\multicolumn{2}{c}{Final Deliverable Objectives}                              \\
 		\midrule
-		DO: 1 & Smart training platform that is accessible to a wide consumer range   \\
-		DO: 2 & Comparable features to similar available trainers at lower cost point \\
+		DO: 1 & A smart training platform that is accessible to a wide consumer range.   \\
+		DO: 2 & Comparable features to similar available trainers at a lower cost point. \\
+		DO: 3 & Provide source material and resources that would enable future development of home-made trainers.\\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:obj}
 \end{table}
 
+\vspace*{-0.5cm}
+
 \section{Motivation}
 
-Zwift is a popular training platform that cyclists use to train and compete, and improves the overall experience of training on an indoor bicycle trainer. These indoor bicycle trainers have seen a large increase in demand in recent years as an increasing number of consumers turn to cycling as a means of staying active.
+Many consumers face the grim reality of being unable to cycle outdoors due to health risks or a lack of available infrastructure and facilities. Busy city streets that are full of stationary and moving hazards have proven to be very dangerous for cyclists, especially during rush times when most people are commuting to and from work. 
 
-These trainers are often very expensive, and thus not accessible to many consumers who might want start participating in interactive virtual cycling experiences. This will promote more people to take up cycling as a means of staying active, and contribute to the promotion of an active and healthy lifestyle in general.
+Other factors, such as shortened days in the winter reduce the amount of time available for training, while cold weather keeps cyclists off the roads altogether in many European countries. Indoor trainers with supporting training applications aim to provide an enjoyable experience for indoor training and promote an active and healthy lifestyle. 
 
-This can be achieved by firstly developing the required software to interact with the Zwift platform and making this available to other developers hoping to develop similar products, and secondly, by demonstrating the development of a robust training platform that has comparable features to trainers that are available on the market at a lower cost point.
+Zwift is a popular training platform that cyclists use to train and compete and improves the overall experience of training on an indoor bicycle trainer. Smart indoor bicycle trainers have seen a large increase in demand in recent years as an increasing number of consumers have looked to cycling as a means of staying active as well as entertainment. These smart trainers are often very expensive, however, and thus not accessible to many consumers who might want to start participating in interactive virtual cycling experiences.
+
+Around the world, there are a large number of people interested in creating projects as DIY and self-repair trends have been on the rise around the world along with a general shift towards data transparency and open-sourced software. Providing an open-source software solution along with a development demonstration of a Zwift compatible smart trainer would provide many enthusiasts with a platform from which to create smart trainers, or convert existing dumb trainers into Zwift compatible smart trainers.
+
+The successful implementation of such a platform might prove to promote the creation of more affordable smart trainers and thus allow more consumers to access an interactive indoor cycling experience. Over the long term, initiatives such as this hope to promote the creation and adoption of more open-sourced projects that empower consumers and improve universal living standards.

@@ -28,17 +28,23 @@ afrikaans,english, 						%.. Global lang drivers
 \input{Literature Review.tex}
 \input{Concept Design.tex}
 \input{Hardware Development.tex}
-\input{Software Development.tex}
 \input{Electronics Development.tex}
+\input{Software Development.tex}
+\input{Testing.tex}
 % \pagenumbering{gobble} 
 \bibliography{References.bib}
 
+\color{black}
 \newpage
 \appendix
-\pagenumbering{roman} 
-\setcounter{page}{1}
+%\pagenumbering{roman} 
+%\setcounter{page}{1}
 \renewcommand\thechapter{A}
-%\input{AppendixA.tex}
+\input{AppendixA.tex}
+\renewcommand\thechapter{B}
 \input{AppendixBudget.tex}
+\renewcommand\thechapter{C}
 \input{AppendixSafetyReport.tex}
+\renewcommand\thechapter{D}
+\input{AppendixDefinitions.tex}
 \end{document}

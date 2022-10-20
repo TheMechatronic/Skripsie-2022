@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{30}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -31,6 +31,13 @@
 \newblock \newline Availible at:
   \url{https://bicycletouringpro.com/bicycle-trainers/}.
 
+\bibitem[{Alibaba.com()}]{Alibaba:2022}
+Alibaba.com (2022).
+\newblock Classic style 20kg vliegwiel spinning fiets keiser cycle trainer
+  indoor estatica bike used exercise bikes.
+\newblock \newline Availible at:
+  \url{https://www.alibaba.com/product-detail/Classic-Style-20Kg-Vliegwiel-Spinning-Fiets_1600269786002.html}.
+
 \bibitem[{\citenamefont{Baum} \protect\BIBand{}
   \citenamefont{Eberhardt}(2016)}]{Baum:2016}
 \bibnamefont{Baum}, \bibfnamefont{E.} \protect\BIBand{}
@@ -43,7 +50,7 @@
 \bibitem[{Bluetooth\textsuperscript \textregistered \space Service
   Specification()}]{BLSIG:2017}
 Bluetooth\textsuperscript \textregistered \space Service Specification (2017).
-\newblock Fitness machine service v1.0 [online].
+\newblock Fitness machine service v1.0.
 \newblock \newline Availible at:
   \url{https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=423422}.
 
@@ -52,6 +59,12 @@ Communica (2022).
 \newblock Hkd tb6600 stepper driver 4.5a.
 \newblock \newline Availible at:
   \url{https://www.communica.co.za/products/hkd-tb6600-stepper-driver-4-5a}.
+
+\bibitem[{ElectronicsTutorial()}]{electronics:2022}
+ElectronicsTutorial (2022).
+\newblock Electronics tutorial: Magnetism.
+\newblock \newline Availible at:
+  \url{https://www.electronics-tutorials.ws/electromagnetism/magnetism.html}.
 
 \bibitem[{\citenamefont{Gay}(2005)}]{Gay:2005}
 \bibnamefont{Gay}, \bibfnamefont{S.E.} (2005).
@@ -72,7 +85,7 @@ Huawei (2022).
 
 \bibitem[{\citenamefont{Lee}(2020)}]{Lee:2020}
 \bibnamefont{Lee}, \bibfnamefont{A.} (2020).
-\newblock Creating a ble peripheral with bluez [online].
+\newblock Creating a ble peripheral with bluez.
 \newblock \newline Availible at:
   \url{https://punchthrough.com/creating-a-ble-peripheral-with-bluez}.
 
@@ -81,6 +94,19 @@ Huawei (2022).
 \newblock The pro's closet.
 \newblock \newline Availible at:
   \url{https://www.theproscloset.com/blogs/news/best-selling-bikes-2021}.
+
+\bibitem[{\citenamefont{Masuzawa}
+  \emph{\bbletal{}}(2018)\citenamefont{Masuzawa}, \citenamefont{Osa}
+  \protect\BIBand{} \citenamefont{Mapley}}]{MASUZAWA2018335}
+\bibnamefont{Masuzawa}, \bibfnamefont{T.}, \bibnamefont{Osa}, \bibfnamefont{M.}
+  \protect\BIBand{} \bibnamefont{Mapley}, \bibfnamefont{M.} (2018).
+\newblock Chapter 11 - motor design and impeller suspension.
+\newblock \capitalize\bblin{}: \bibnamefont{Gregory}, \bibfnamefont{S.D.},
+  \bibnamefont{Stevens}, \bibfnamefont{M.C.} \protect\BIBand{}
+  \bibnamefont{Fraser}, \bibfnamefont{J.F.} (\bbleds{}), \emph{Mechanical
+  Circulatory and Respiratory Support}, \bblpp{} 335--377. Academic Press.
+\newblock ISBN 978-0-12-810491-0.
+\newline\bblurlpre\url{https://www.sciencedirect.com/science/article/pii/B9780128104910000114}
 
 \bibitem[{Micro Robotics()}]{Robotics:2022}
 Micro Robotics (2022).
@@ -94,10 +120,17 @@ Montague Bikes (2019 \bbljun{}~17).
   \url{https://www.montaguebikes.com/folding-bikes-blog/2019/06/bicycle-wheel-sizes-explained/}.
 
 \bibitem[{\citenamefont{Morozev}(2017)}]{Morozev:2017}
-\bibnamefont{Morozev}, \bibfnamefont{M.} (2017 \bbldec{}~30).
+\bibnamefont{Morozev}, \bibfnamefont{M.} (2017).
 \newblock Grabcad.
 \newblock \newline Availible at:
   \url{https://grabcad.com/library/road-bike-12}.
+
+\bibitem[{\citenamefont{Parsons}(2018)}]{Parsons:2018}
+\bibnamefont{Parsons}, \bibfnamefont{R.} (2018).
+\newblock The advantages and disadvantages of using a halbach array with a bldc
+  (pmsm) motor.
+\newblock \newline Availible at:
+  \url{https://things-in-motion.blogspot.com/2018/12/}.
 
 \bibitem[{\citenamefont{Pratama}(2021)}]{Pratama:2021}
 \bibnamefont{Pratama}, \bibfnamefont{M.R.R.} (2021).
@@ -117,6 +150,12 @@ RPR-220 (2017).
 \newblock \newline Availible at:
   \url{https://zwiftinsider.com/erg-mode-in-zwift/}.
 
+\bibitem[{\citenamefont{Schweber}(2018)}]{analogic:2018}
+\bibnamefont{Schweber}, \bibfnamefont{B.} (2018).
+\newblock Rotary encoder basics and applications, part 1: Optical encoders.
+\newblock \newline Availible at:
+  \url{https://www.analogictips.com/rotary-encoders-part-1-optical-encoders/}.
+
 \bibitem[{\citenamefont{Smythe}(1942)}]{Smythe:1942}
 \bibnamefont{Smythe}, \bibfnamefont{W.R.} (1942).
 \newblock On eddy currents in a rotating disk.
@@ -128,7 +167,7 @@ RPR-220 (2017).
 \newblock \emph{IEE Proceedings}, \bblpp{} 162--165.
 
 \bibitem[{Supermagnete()}]{Supermagnete:2010}
-Supermagnete (2010 \bbljan{}~1).
+Supermagnete (2010).
 \newblock Faq: How do you calculate the magnetic flux density?
 \newblock \newline Availible at:
   \url{https://www.supermagnete.de/eng/faq/How-do-you-calculate-the-magnetic-flux-density}.
@@ -145,6 +184,12 @@ Supermagnete (2010 \bbljan{}~1).
   \url{https://www.oreilly.com/library/view/getting-started-with/9781491900550/ch04.html}.
 \newblock ISBN 9781491949511.
 
+\bibitem[{\citenamefont{von Bromley}(2022)}]{Bromley:2022}
+\bibnamefont{von Bromley}, \bibfnamefont{S.} (2022).
+\newblock Zwift: your complete guide: Everything you need to know.
+\newblock \newline Availible at:
+  \url{https://www.bikeradar.com/features/zwift-your-complete-guide}.
+
 \bibitem[{\citenamefont{Wouterse}(1991)}]{Wouterse:1991}
 \bibnamefont{Wouterse}, \bibfnamefont{J.} (1991).
 \newblock Critical torque and speed of eddy current brake with widely separated
@@ -152,15 +197,21 @@ Supermagnete (2010 \bbljan{}~1).
 \newblock \emph{IEE Proceedings-B}, \bblvol{} 138, \bblno{}~4, \bblpp{}
   153--158.
 
-\bibitem[{Zwift()}]{Zwift:2022}
-Zwift (2022).
-\newblock Official zwift website.
-\newblock \newline Availible at: \url{https://www.zwift.com/}.
+\bibitem[{Yamaha-motor()}]{yamaha:2022}
+Yamaha-motor (2022).
+\newblock E-bike systems: Interface x.
+\newblock \newline Availible at:
+  \url{https://global.yamaha-motor.com/business/e-bike-systems/products/interface-x/}.
 
-\bibitem[{Zwift Forums()}]{Jeremy:2021}
-Zwift Forums (2022).
-\newblock Improvements to ftms controllable trainers [online].
+\bibitem[{Zwift Forum()}]{Jeremy:2021}
+Zwift Forum (2022).
+\newblock Improvements to ftms controllable trainers.
 \newblock \newline Availible at:
   \url{https://forums.zwift.com/t/bluetooth-improvements-for-controllable-trainers-treadmills-january-2022/569781/38?page=4}.
+
+\bibitem[{Zwift.com()}]{Zwift:2022}
+Zwift.com (2022).
+\newblock Official zwift website.
+\newblock \newline Availible at: \url{https://www.zwift.com/}.
 
 \end{thebibliography}

@@ -1,15 +1,19 @@
 \newpage
-\appendix
-\renewcommand\thechapter{C}
 
-% \chapter*{Safety Report}
+\chapter{Safety Analysis}
 
 \section*{Overview}
 
-This final year project demonstrated the development of a smart bicycle trainer that can be controlled from virtual cycling exercise applications such as Zwift. The trainer has been manufactured and a torque characteristic and calibration test needs to be performed on the trainer and the brake. An existing master's student, Mr C Loedolff (21878439@sun.ac.za) has agreed that the his existing test setup in the Structures Laboratory may be used to perform the required tests.
+This final year project demonstrated the development of a smart bicycle trainer that can be controlled from virtual cycling exercise applications such as Zwift. The trainer has been manufactured and a torque characteristic and calibration test needed to be performed on the trainer and the brake. An existing master's student, Mr C Loedolff consented that his existing test setup in the Structures Laboratory may be used to perform the required tests.
+
+\section*{Fire Safety}
+
+There was no direct fire risk associated with the work to be performed as there is no use of highly flammable liquids/gases or explosive material. To reduce the risk of serious injury or fatalities, all exits were kept unobstructed, and the use of earphone/headphones was prohibited while working in the laboratory so that warning and emergency alarms could be heard clearly.
+
+\newpage
 
 \section*{General lab safety:}
-The following general lab safety instructions are applicable:
+The following general lab safety instructions were applicable:
 \begin{enumerate}
 	\item No after hours testing may be performed without the necessary permissions
 	\item An induction is required before testing may be undertaken.
@@ -21,15 +25,11 @@ The following general lab safety instructions are applicable:
 	\item If uncertain, ask for help - it will be willingly provided!
 \end{enumerate}
 
-\section*{Fire Safety}
-
-There is no direct fire risk associated with the work to be performed as there is no use of highly flammable liquids/gases or explosive material. However, in the case of an emergency, the evacuation route for the laboratory can be found in Figure \ref{fig:safe}.  To reduce the risk of serious injury or fatalities, all exits will remain unobstructed, and the use of earphone/headphones is prohibited while working in the laboratory so that warning and emergency alarms can be heard clearly.
-
 \section*{Assembly Overview}
 
-The assembly of the frame will include fastening of mechanical equipment, connecting and insulating electrical wires as well as light processing of mechanical components (grinding, drilling and cutting). The assembly of an existing test frame will also be required, where components will need to be mounted together with fasteners. The mounting of an existing motor will be required, which includes fastening it to the existing frame.
+The assembly of the frame included fastening of mechanical equipment, connecting and insulating electrical wires as well as light processing of mechanical components (grinding, drilling and cutting). The assembly of an existing test frame also required, where components needed to be mounted with fasteners.
 
-Equipment that will be used in the lab during assembly are:
+Equipment that was be used in the lab during assembly:
 \begin{multicols}{2}
 	\begin{itemize}
 		\item Drill
@@ -45,22 +45,6 @@ Equipment that will be used in the lab during assembly are:
 \end{multicols}
 
 \subsection*{Activity Based Risk Assessment}
-
-\begin{table}[H]
-	%\renewcommand{\arraystretch}{\tablestretch}
-	\centering
-	\caption{Risk Severity Scores}
-	\begin{tabularx}{\textwidth}{>{\centering}X | >{\centering}X >{\centering}X >{\centering\arraybackslash}X}
-		\toprule
-		\textbf{Likelihood} & Low & \textbf{Impact} & High \\
-		\midrule
-		High                & 2   & 3               & 4    \\
-		                    & 1   & 2               & 3    \\
-		Low                 & 1   & 1               & 2    \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:risk}
-\end{table}
 
 \renewcommand{\arraystretch}{1.5}
 \setlength{\LTleft}{-20cm plus -1fill}
@@ -90,16 +74,18 @@ Equipment that will be used in the lab during assembly are:
 	Turing Off Equipment       & Electrical shock                            & P      & 2        & Ensure that all equipment wires are secure and insulated                         \\
 	Tidying workstation        & Tripping                                    & P      & 2        & Be careful when tidying and keep space uncluttered                               \\
 	                           & Cutting body parts                          & P      & 2        & Beware of sharp edges and tools. \newline Wear safety gloves                     \\
-	Leaving the lab            & Theft                                       & E      & 3        & Ensure that all doors are locked and that all valuable equipment is stored away  \\
-	\hline
+	Leaving the lab            & Theft                                       & E      & 3        & Ensure that all doors are locked and that all valuable equipment is stored away
+	\label{tab:assrisk}
 \end{longtable}
 
+\vspace*{-01cm}
 
 \section*{Testing Overview}
 
-Testing will consist of running a servo motor that is attached to the trainer through a torque transducer. The motor will then be driven at various speeds and the torque reading will be collected. The motor will be mounted to an existing frame, and the trainer frame will attach to the existing setup with a custom built shaft.
+Testing consisted of operating a servo motor that was attached to the trainer through a torque transducer. The motor was then be driven at various speeds and the torque reading were be collected. The motor was be mounted to an existing frame, and the trainer frame was attached to the existing setup with a custom fabricated shaft.
 
-Equipment that will be used in the lab during assembly are:
+Equipment that was be used in the lab during testing:
+
 \begin{multicols}{2}
 	\begin{itemize}
 		\item Laptop
@@ -112,13 +98,13 @@ Equipment that will be used in the lab during assembly are:
 \end{multicols}
 
 \subsection*{Safety measures during testing:}
-The following safety measures will be adhered to during testing.
-\begin{enumerate}
-	\item An emergency stop button will be implemented.
-	\item All rotating parts will be covered during operation of the test rig.
-\end{enumerate}
 
-\newpage
+The following safety measures will be adhered to during testing.
+
+\begin{enumerate}
+	\item An emergency stop button was implemented.
+	\item All rotating parts were covered during operation of the test rig.
+\end{enumerate}
 
 \subsection*{Activity Based Risk Assessment}
 
@@ -144,17 +130,24 @@ The following safety measures will be adhered to during testing.
 	Collecting test data           & Electrical shorts / Over-voltage      & E      & 2        & Ensure compatibility between testing equipment and data acquisition devices                                                                               \\
 	                               & Data loss                             & E      & 2        & Regular saving and backing up of data on computer and server/cloud                                                                                        \\
 	Storing test rig               & Theft                                 & E      & 3        & Ensure that all valuable equipment is stored away                                                                                                         \\
-	                               & Injury or damage to surroundings      & P \& E & 2        & Ensure that testing facilities are tidy and safe                                                                                                          \\
-	\hline
+	                               & Injury or damage to surroundings      & P \& E & 2        & Ensure that testing facilities are tidy and safe
+	\label{tab:testrisk}
 \end{longtable}
 
-\section*{Escape Route}
+The Severity scores given in Table~\ref{tab:assrisk} and Table~\ref{tab:testrisk} are determined using Table~\ref{tab:risk}.
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=\textwidth]{EscapeRoute.jpg}
-		\caption{Structural Lab Escape Route}
-		\label{fig:safe}
-	\end{center}
-\end{figure}
-
+\begin{table}[H]
+	%\renewcommand{\arraystretch}{\tablestretch}
+	\centering
+	\caption{Risk Severity Scores}
+	\begin{tabularx}{\textwidth}{>{\centering}X | >{\centering}X >{\centering}X >{\centering\arraybackslash}X}
+		\toprule
+		\textbf{Likelihood} & Low & \textbf{Impact} & High \\
+		\midrule
+		High                & 2   & 3               & 4    \\
+		                    & 1   & 2               & 3    \\
+		Low                 & 1   & 1               & 2    \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:risk}
+\end{table}

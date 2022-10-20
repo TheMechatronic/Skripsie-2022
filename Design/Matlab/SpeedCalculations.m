@@ -13,7 +13,7 @@ figure_linewidth = 2;
 figure_fontsize = 14;
 
 % Velocity of Cyclist between 10 km/h and 60 km/h
-v = linspace(10,65,50);
+v = linspace(10,50,50);
 
 % Drum Diameters that were considered:
 % 10mm increments between 70mm and 110mm diameter
@@ -29,32 +29,91 @@ drum_RPM = drum_Omega.*(30/pi);
 figure1 = figure;
 hold on 
 grid off
-xlabel('Velocity (km/h)', 'FontSize', figure_fontsize)
-ylabel('Angular Velocity (rpm)', 'FontSize', figure_fontsize)
-plot(v,drum_RPM(1,:), 'LineWidth', figure_linewidth)
-plot(v,drum_RPM(2,:), 'LineWidth', figure_linewidth)
-plot(v,drum_RPM(3,:), 'LineWidth', figure_linewidth)
-plot(v,drum_RPM(4,:), 'LineWidth', figure_linewidth)
-plot(v,drum_RPM(5,:), 'LineWidth', figure_linewidth)
-legend('70 mm', '80 mm', '90 mm', '100 mm', '110 mm', ...
-    'Location', 'eastoutside')
+xlabel('Cycling Speed (km/h)', 'FontSize', figure_fontsize)
+ylabel('Roller Speed (rpm)', 'FontSize', figure_fontsize)
+plot(v,drum_RPM(1,:), 'LineWidth', figure_linewidth, 'Color', 'black')
+plot(v,drum_RPM(2,:), 'LineWidth', figure_linewidth, 'Color', 'red')
+plot(v,drum_RPM(3,:), 'LineWidth', figure_linewidth, 'Color', 'blue')
+plot(v,drum_RPM(4,:), 'LineWidth', figure_linewidth, 'Color', 'green')
+plot(v,drum_RPM(5,:), 'LineWidth', figure_linewidth, 'Color', 'magenta')
 exportgraphics(figure1, ...
     '..\..\Report\graphics\SpeedCalculations.jpg', ...
     'Resolution', 600)
 close(figure1)
 
+figureother = figure;
+hold on 
+grid off
+xlabel('Cycling Speed (km/h)', 'FontSize', figure_fontsize)
+ylabel('Required Braking Torque (Nm)', 'FontSize', figure_fontsize)
+plot(v,400./drum_Omega(1,:), 'LineWidth', figure_linewidth, 'Color', 'black')
+plot(v,400./drum_Omega(2,:), 'LineWidth', figure_linewidth, 'Color', 'red')
+plot(v,400./drum_Omega(3,:), 'LineWidth', figure_linewidth, 'Color', 'blue')
+plot(v,400./drum_Omega(4,:), 'LineWidth', figure_linewidth, 'Color', 'green')
+plot(v,400./drum_Omega(5,:), 'LineWidth', figure_linewidth, 'Color', 'magenta')
+
+exportgraphics(figureother, ...
+    '..\..\Report\graphics\SpeedCalculations2.jpg', ...
+    'Resolution', 600)
+% close(figureother)
+
+% Figure for legend
+legendFigure = figure;
+hold on;
+line(nan, nan, 'LineWidth', figure_linewidth, ...
+    'Color', 'black');
+line(nan, nan, 'LineWidth', figure_linewidth, ...
+    'Color', 'red');
+line(nan, nan, 'LineWidth', figure_linewidth, ...
+    'Color', 'blue');
+line(nan, nan, 'LineWidth', figure_linewidth, ...
+    'Color', 'green');
+line(nan, nan, 'LineWidth', figure_linewidth, ...
+    'Color', 'magenta')
+set(gca, 'Visible', 'off');
+hold off
+legend('70 mm', '80 mm', '90 mm', '100 mm', '110 mm')
+% Save figure in Report File
+exportgraphics(legendFigure, ...
+    '..\..\Report\graphics\SpeedLegend.jpg', ...
+    'Resolution', 600)
+close(legendFigure)
+
+
 % Plot Torque curve for 100 and 200 W
 figure2 = figure;
 hold on
 grid off
-plot(v, 100./drum_Omega(3,:), 'LineWidth', figure_linewidth);
-plot(v, 200./drum_Omega(3,:), 'LineWidth', figure_linewidth);
-plot(v, 400./drum_Omega(3,:), 'LineWidth', figure_linewidth);
-xlabel('Velocity (km/h)', 'FontSize', figure_fontsize)
-ylabel('Torque (Nm)', 'FontSize', figure_fontsize)
+plot(25 / (3 * pi * 90e-3/2) * v, 100./drum_Omega(3,:), 'LineWidth', figure_linewidth);
+plot(25 / (3 * pi * 90e-3/2) * v, 200./drum_Omega(3,:), 'LineWidth', figure_linewidth);
+plot(25 / (3 * pi * 90e-3/2) * v, 400./drum_Omega(3,:), 'LineWidth', figure_linewidth);
+xlabel('Roller Speed (rpm)', 'FontSize', figure_fontsize)
+ylabel('Braking Torque (Nm)', 'FontSize', figure_fontsize)
+xlim([500 3000])
 legend('100 W', '200 W', '400 W', ...
-    'Location', 'eastoutside')
+    'Location', 'northeast')
 exportgraphics(figure2, ...
     '..\..\Report\graphics\TorqueCalculations.jpg', ...
     'Resolution', 600)
 close(figure2)
+
+speeds27 = linspace(82, 408, 20);
+speeds29 = linspace(76, 379, 20);
+
+min_force27 = 80 ./ speeds27;
+max_force27 = 400 ./ speeds27;
+
+min_force29 = 80 ./ speeds29;
+max_force29 = 400 ./ speeds29;
+
+f = figure;
+hold on;
+plot(speeds27, min_force27, 'LineWidth', figure_linewidth)
+plot(speeds27, max_force27, 'LineWidth', figure_linewidth)
+xlabel('Wheel Speed (rpm)', 'FontSize', figure_fontsize)
+ylabel('Applied Braking Force (N)', 'FontSize', figure_fontsize)
+legend('80 W', '400 W')
+exportgraphics(f, ...
+    '..\..\Report\graphics\BrakingForce.jpg', ...
+    'Resolution', 600)
+close(f)

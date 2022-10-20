@@ -1,16 +1,14 @@
 \newpage
 
 \chapter{Electronics Design}
-
-Electronics section overview ...
-
+\label{ch:electronics}
+%Electronics section overview ...
+%
 \newpage
-
-\section{Raspberry Pi setup}
-
-Pi voltage range = 1.8V to 3.3V (High)
-
-\newpage
+%
+%\section{Raspberry Pi setup}
+%
+%Pi voltage range = 1.8V to 3.3V (High)
 
 \section{Speed Sensor Design}
 
@@ -37,6 +35,14 @@ Speed sensors are required to measure the rotational speed of the two rear drums
 \end{table}
 
 The Raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{MeasureWheel.jpg}
+		\caption{Measuring Wheel}
+		\label{fig:measwheel}
+	\end{center}
+\end{figure}
 
 The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\ohm} resistor. The circuit is powered through the CKCY Buck03 \SI{5}{\volt} buck converter. The \acs{led} is powered by an external power source to avoid damaging Raspberry Pi's \acs{gpio} pins, and to allow for it to operate at \SI{5}{\volt}. The phototransistor lets \SI{0.8}{\milli\ampere} pass if \SI{100}{\percent} of the transmitted light is reflected. A voltage divider circuit was used to achieve a \SI{3.3}{\volt} reading on the output to the Raspberry Pi \ac{gpio} pin, where the resistance value was determined with equation \ref{eq:ohm}. 
 

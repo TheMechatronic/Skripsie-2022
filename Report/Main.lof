@@ -4,27 +4,50 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Zwift Connection Overview\relax }}{6}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \ac {ble} Star Network Topology\relax }}{11}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \ac {ble} Specification Structure\relax }}{12}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.25}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Bicycle Dimensions\relax }}{15}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Eddy Current Brake Dimensions (To be changed ...)\relax }}{18}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Bluetooth and ANT+ Logos\relax }}{9}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \ac {ble} Star Network Topology\relax }}{11}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \ac {ble} Specification Structure\relax }}{12}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bicycle Trainer Types\relax }}{15}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Traditional Indoor Bike Trainer\relax }}{15}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Bicycle Dimensions\relax }}{16}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Eddy Current Brake Working Principle\relax }}{17}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Eddy Current Brake Dimensions\relax }}{18}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Eddy Current Brake Characteristic Curve\relax }}{19}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Optical Rotary Encoder Tachometer\relax }}{20}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Concept Boundary of Interest\relax }}{21}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Concept Boundary\relax }}{24}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotational Speed of Roller Size Comparison\relax }}{25}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roller Development\relax }}{26}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Torque Requirement Curve\relax }}{27}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Disk Magnet\relax }}{27}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Flux Distribution\relax }}{28}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Figure 7\relax }}{29}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Figure 8\relax }}{29}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Roller Drum Size Comparison\relax }}{28}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Designed Roller Assembly\relax }}{29}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Idle Roller\relax }}{30}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Power Roller Cross Section\relax }}{30}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Torque Requirement Curve\relax }}{31}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Alternating Polarity Permanent Magnet Array\relax }}{32}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Attracting and Repelling Magnetic Flux Lines\relax }}{32}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Braking Torque Control Design\relax }}{33}{figure.caption.58}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Disk Magnet\relax }}{34}{figure.caption.59}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Built Eddy Current Brake\relax }}{34}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Eddy Current Brake Design Results\relax }}{35}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Rear Frame Section Design\relax }}{35}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Rear Frame Section Construction\relax }}{36}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Rear Frame Section Construction\relax }}{37}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Rear Frame Section Construction\relax }}{37}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Rear Frame Section Construction\relax }}{38}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Rear Frame Section Construction\relax }}{38}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Rear Frame Section Construction\relax }}{39}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Rear Frame Section Construction\relax }}{39}{figure.caption.69}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of General Software Structure\relax }}{31}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{32}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Measuring Wheel\relax }}{42}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor Design\relax }}{42}{figure.caption.72}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Motor Control Components\relax }}{44}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Nema-23 Wiring\relax }}{45}{figure.caption.75}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensor Design\relax }}{40}{figure.caption.54}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Motor Control Components\relax }}{41}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Nema-23 Wiring\relax }}{42}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of General Software Structure\relax }}{47}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \ac {ble} Protocol Stack\relax }}{48}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Cycling Physics Illustration\relax }}{51}{figure.caption.78}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Structural Lab Escape Route\relax }}{vii}{figure.caption.71}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Required Braking Force Range\relax }}{66}{figure.caption.95}%

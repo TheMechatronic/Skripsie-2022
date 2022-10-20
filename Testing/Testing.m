@@ -1,5 +1,5 @@
-clear;
-clc;
+% clear;
+% clc;
 format bank
 
 speed_kph = linspace(10, 50, 9);
@@ -100,10 +100,16 @@ maxSpd = [max(work520), max(work785), max(work1045), max(work1305), max(work1565
 minSpd = [min(work520), min(work785), min(work1045), min(work1305), min(work1565), min(work1825), min(work2085), min(work2350), min(work2610)];
 Spd = [10, 15, 20, 25, 30, 35, 40, 45, 50];
 
+bottom = 25 / (3 * pi * 90e-3/2) * 10;
+top = 25 / (3 * pi * 90e-3/2) * 50;
+
 fig5 = figure;
 hold on
-plot(Spd, maxSpd)
-plot(Spd, minSpd)
+plot(25 / (3 * pi * 90e-3/2) * Spd, maxSpd)
+plot(25 / (3 * pi * 90e-3/2) * Spd, minSpd)
+fplot(T0(x/9.54929658551372), ...
+    [bottom top], ...
+    'red');
 %close(fig5)
 
 powMax = Spd/0.09/2 .* maxSpd ;

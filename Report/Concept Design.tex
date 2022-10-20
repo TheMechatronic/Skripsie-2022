@@ -6,11 +6,14 @@
 % Version: 2.0
 
 \chapter{Concept Design and Evaluation}
+\label{ch:concept}
 % Section overview:
 
-This section aims to identify and refine any requirements that were required of the training platform, and then demonstrate and analyse a concept solution that will be expanded into the final delivered demonstration model in further sections.
+In this chapter the engineering requirements are identified and refined. The final selected concept is then proposed and analysed against the determined requirements. The content presented in this chapter has been refined through many iterations and present the final outcome of the conceptualisation process.
 
-Table \ref{tab:conditions} shows the user requirements that were derived from the project objectives and literature review. These user requirements are then analysed in Section \ref{sec:req} to determine the performance and functional engineering requirements.
+In order to avoid confusion, some commonly used terms are defined in Appendix~\ref{sec:defs3}.
+
+Table~\ref{tab:conditions} presents the user requirements that were derived from the project objectives and the literature review.
 
 \begin{table}[H]
 	%\renewcommand{\arraystretch}{\tablestretch}
@@ -32,130 +35,141 @@ Table \ref{tab:conditions} shows the user requirements that were derived from th
 	\label{tab:conditions}
 \end{table}
 
-\setcounter{reqCount}{0}
+\vspace*{-0.5cm}
 
-\newpage
+\setcounter{reqCount}{0}
 
 \section{Requirement Analysis}
 \label{sec:req}
+
+Table~\ref{tab:funcreq} shows the functional requirements that were determined from the user requirements in Table~\ref{tab:conditions}.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Functional Engineering Requirements}
-	\begin{tabularx}{\textwidth}{>{\raggedright FER~}p{0.8 cm} X >{\centering\arraybackslash}p{1.7cm}}
+	\begin{tabularx}{\textwidth}{>{\raggedright FR~}p{0.8 cm} X >{\centering\arraybackslash}p{1.7cm}}
 		\toprule
 		\multicolumn{2}{c}{Functional Requirement} & Reference                                                                                 \\
 		\midrule
 		\newR{FR:ble}                              & Have \ac{ble} or ANT+ Connectivity                                  & UR \ref{UR:zwift}   \\
 		\newR{FR:wheel}                            & \capitalisefmtwords{Accommodate both 27.5' and 29' wheel diameters} & UR \ref{UR:range}   \\
 		\newR{FR:speed}                            & \capitalisefmtwords{Be Able to Determine Wheel Speed}               & UR \ref{UR:measure} \\
+		\newR{FR:func}                             & \capitalisefmtwords{perform training sessions on Zwift application} & UR \ref{UR:sim}     \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:funcreq}
 \end{table}
 
+\vspace*{-0.5cm}
+
 \setcounter{reqCount}{0}
+
+Table~\ref{tab:perfreq} contains the performance measures that are used to measure the success of developed concepts.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Performance Engineering Requirements}
-	\begin{tabularx}{\textwidth}{>{\raggedright PER~}p{0.8 cm} X p{1.1cm} p{1.6cm} p{1cm} >{\centering\arraybackslash}p{1.7cm}}
+	\begin{tabularx}{\textwidth}{>{\raggedright PR~}p{0.8 cm} X p{1.1cm} p{1.6cm} p{1cm} >{\centering\arraybackslash}p{1.7cm}}
 		\toprule
-		\multicolumn{2}{c}{Performance Requirement} & Target                  & Value & Unit     & Reference                                      \\
+		\multicolumn{2}{c}{Performance Requirement} & Target                 & Value & Unit     & Reference                                      \\
 		\midrule
-		\newR{PR:wheelbase}                         & Allowable Wheelbase     & Range & 900-1200 & \si{\milli\meter}         & UR~\ref{UR:range}  \\
-		\newR{PR:weight}                            & Weight                  & Max   & 8        & \si{\kilogram}            & UR~\ref{UR:weight} \\
-		\newR{PR:speed}                             & Simulated Moving Speed  & Max   & 60       & \si{\kilo\meter\per\hour} & UR~\ref{UR:sim}    \\
-		\newR{PR:27speed}                           & Wheel Speed (27.5')     & Max   & 2900     & \ac{rpm}                  & UR \ref{UR:sim}    \\
-		\newR{PR:29speed}                           & Wheel Speed (29')       & Max   & 3500     & \ac{rpm}                  & UR \ref{UR:sim}    \\
-		\newR{PR:torque}                            & Torque Applied to Wheel & Min   & 12       & \si{\newton\meter}        & UR \ref{UR:sim}    \\
+		\newR{PR:wheelbase}                         & Allowable Wheelbase    & Range & 900-1200 & \si{\milli\meter}         & UR~\ref{UR:range}  \\
+		\newR{PR:weight}                            & Weight                 & Max   & 8        & \si{\kilogram}            & UR~\ref{UR:weight} \\
+		\newR{PR:speed}                             & Simulated Moving Speed & Range & 10-50    & \si{\kilo\meter\per\hour} & UR~\ref{UR:sim}    \\
+		\newR{PR:27speed}                           & Wheel Speed (27.5')    & Range & 82-408   & \ac{rpm}                  & UR \ref{UR:sim}    \\
+		\newR{PR:29speed}                           & Wheel Speed (29')      & Range & 76-379   & \ac{rpm}                  & UR \ref{UR:sim}    \\
+		\newR{PR:power}                             & Braking Force          & Range & 0.5-4.5  & \si{\newton}              & UR \ref{UR:sim}    \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:perfreq}
 \end{table}
 
+\vspace*{-0.5cm}
+
 \label{sec:opspeedc}
 
-\subsubsection{PER \ref{PR:27speed} \& \ref{PR:29speed}:}
 
-The typical speed of a cyclist typically ranges from \SI{10}{\kilo\meter\per\hour} to \SI{50}{\kilo\meter\per\hour} when cycling on reasonably flat ground. For the design of the platform, a speed of maximum required speed of \SI{60}{\kilo\meter\per\hour} was assumed. Considering the two wheel sizes that were identified in Section~\ref{sec:specs}, the expected wheel rotational speeds are determined by Equation~\ref{eq:omega}.
-
-\begin{equation}
-	\ac{omega} = \frac{2 \ac{v}}{D_{wheel}}
-	\label{eq:omega}
-\end{equation}
-
-\subsubsection{PER \ref{PR:torque}:}
-
-Typically, amateur cyclists maintain an average power output between \SI{75}{\watt} and \SI{100}{\watt}, and pro cyclists can maintain up to \SI{400}{\watt}, during a 1 hour workout. As the cyclist's speed increases, less torque is required to maintain the same power output. The relation is expressed as Equation~\ref{eq:pow} and can be used to determine the torque that would need to be applied at different wheel speeds to achieve these power outputs.
-
-\section{Concept Design}
+\section{System Context}
 \label{sec:conc}
 
-A general overview of the concept starts by distinguishing what falls within the \acf{nsoi}, \acf{wsoi} and the outside environment. Elements in the \ac{wsoi} are not part of the scope of the concept, yet interact directly with the proposed system during normal operation. Elements in the outside Environment may have an influence on the system, but will not be affected by the platform during normal operation. Figure~\ref{fig:soi} shows the boundaries between the \ac{nsoi}, \ac{wsoi} and Environment for the concept that was developed.
+The distinction between the \ac{nsoi}, \ac{wsoi} and the environment was defined in order to determine the scope and boundaries of the project.
+
+Elements contained within the \ac{wsoi} are independent of the concept and cannot be changed by the solution. These \ac{wsoi} elements interact directly with the \ac{nsoi} during its normal operation cycle. Elements are classified as the environment when they may have an influence on the \ac{nsoi}, but will not be affected by the \ac{nsoi} during normal operation. The proposed boundaries between the system elements is shown in Figure~\ref{fig:soi}.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=\textwidth]{SOI.jpg}
-		\caption{Concept Boundary of Interest}
+		\caption{Concept Boundary}
 		\label{fig:soi}
 	\end{center}
 \end{figure}
 
-The interfaces between elements shown in Figure~\ref{fig:soi} are explained in Table~\ref{tab:links}, and clarified in the following subsections.
+Table~\ref{tab:links} defines the interfaces between the elements in Figure~\ref{fig:soi}. At this point Interface 2 defines that \ac{ble} technology will be used as communication protocol. This aims to achieve a more robust solution that will allow for far more development potential in the future and the decision is explained in more detail in Appendix~\ref{sec:defs3}
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Concept Boundary Interfaces}
-	\begin{tabularx}{\textwidth}{p{1.5cm} X p{4cm}}
+	\begin{tabularx}{\textwidth}{p{1.5cm} X p{3.5cm}}
 		\toprule
-		Interface & Description                                           & Type               \\
+		Interface & Description                             & Type              \\
 		\midrule
-		1         & \capitalisefmtwords{Power delivery to platform}       & Electrical Energy  \\
-		2         & \ac{ble} with \ac{ftms} implementation                & Communication Info \\
-		3         & \capitalisefmtwords{User inputs and feedback to user} & User Info          \\
-		4         & \capitalisefmtwords{Resistance applied to bicycle}    & Energy Losses      \\
-		5         & \capitalisefmtwords{Sensor readings of cycling data}  & Sensor Info        \\
+		1         & Power delivery to platform              & Electrical Energy \\
+		2         & \ac{ble} with \ac{ftms} implementation  & Information       \\
+		3         & Communication between user and platform & User Info         \\
+		4         & Resistance applied to bicycle           & Energy Losses     \\
+		5         & Sensor readings of cycling data         & Sensor Info       \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:links}
 \end{table}
 
-\subsubsection{2: \ac{ble} with \ac{ftms} implementation}
-It was decided to keep the platform completely separate from the device that will be running the Zwift application, as this will allow th platform to easily be used by any other device without requiring any additional modifications.\ac{ble} was chosen as the communication protocol as this is what is available on most consumer electronic devices that Zwift is expected to operate on, and will thus not need an external unit to communicate with the platform.
+\section{\ac{nsoi} Selection}
 
-\subsubsection{\ac{nsoi} Design}
+After considering all types of trainers mentioned in Section~\ref{sec:train}, roller trainers were selected as the platform that will achieve the most desirable outcome. For applying the controllable resistance, an eddy current brake was selected to be implemented on the roller trainers. Speed sensors on the rollers would allow the system to determine the cycling speed and a \ac{ble} transceiver module would enable communication with the device hosting the Zwift application.
 
-In order to meet the requirements specified above, a \textit{roller trainer} was identified as the platform that would achieve the most desirable outcome. Roller trainers would allow for use with any existing bicycle configuration and a wider range of wheel diameters and wheelbases, without requiring the cyclist to buy or attach any additional components. The solution does however add some complexity to the use of the platform, as it requires additional skill and experience in order to efficiently use roller trainer platforms.
+\subsubsection{Roller Trainer}
 
-The resistance of the platform will be controlled by an \ac{ecb}, as this would allow for repeatable and frictionless braking torque applied to the rear roller of the trainer. This will accurately simulate outside rolling conditions, as smooth acceleration would be required at high braking torques to avoid the bicycle wheel slipping, similar to what would happen in outside riding conditions.
+Roller trainers are the most robust platform, allowing any type of bicycle to be used on them. It is not required to remove, alter or add to any parts of existing bicycles. Roller trainers have the added benefit of being less complicated to manufacture than other types of trainers, and are maintainable without requiring proprietary parts. There are many examples of consumers creating their own roller trainers on the internet, yet there are a very limited amount of commercially available roller trainers with smart connectivity.
+
+Roller trainers require a higher level of skill to use, as the bicycle is not fixed to the trainer and the cyclist thus needs to balance the bicycle during operation. The trainer can be designed to be compact to store, easy to operate and inexpensive to manufacture and maintain. Most of the components of the trainer can be manufactured or assembled using commonly available materials and parts.
+
+\subsubsection{Eddy Current Brake}
+
+The resistance of the platform will be controlled by an eddy current brake attached to one of the rollers of the trainer. An eddy current brake was selected for its maintenance free operation and repeatable control.
+
+The diameter ratio between the bicycle wheels and the rollers will also allow for higher operating speeds of the eddy current brake. The braking torque applied by the brake will be converted into heat. Active cooling might be required if the excess heat cannot be dissipated into the environment rapidly enough.
+
+\subsubsection{Software Overview}
+
+Control and communication functions of the system will be handled by a Raspberry Pi micro controller. This will allow for integration between the selected hardware and electronics with the developed communications software. Since the software was developed independently of the selected system, some integration would be required to allow compatibility with the Zwift application.
 
 \section{Concept Evaluation}
 \label{sec:eval}
+
+In order to ensure that all engineering requirements are met by the proposed concept, Table~\ref{tab:eval} indicates the proposed solution to each of the requirements that have been identified in Table~\ref{tab:funcreq} and Table~\ref{tab:perfreq}.
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
 	\centering
 	\caption{Concept Requirement Fulfilment Analysis}
-	\begin{tabularx}{\textwidth}{p{1cm} >{\raggedright}X >{\raggedright\arraybackslash}p{1.5cm}}
+	\begin{tabularx}{\textwidth}{p{2cm} >{\raggedright\arraybackslash}X}
 		\toprule
-		Target                 & \multicolumn{1}{c}{Proposed Solution}                                             & Level of Success \\
+		Target                & \multicolumn{1}{c}{Proposed Solution}                                                   \\
 		\midrule
-		FER~\ref{FR:ble}       & \ac{ble} \capitalisefmtwords{communication with device running Zwift application} & Pass             \\
-		FER~\ref{FR:wheel}     & \capitalisefmtwords{Roller trainers allow for wider range of wheel diameters}     & Pass             \\
-		FER~\ref{FR:speed}     & \capitalisefmtwords{Speed sensors implemented on rollers}                         & Pass             \\
-		PER~\ref{PR:wheelbase} & \capitalisefmtwords{Rollers allow for adjustable wheelbase lengths}               & Pass             \\
-		PER~\ref{PR:weight}    & \capitalisefmtwords{Rollers do not require heavy bicycle mounting components}     & Pass             \\
-		PER~\ref{PR:speed}     & \capitalisefmtwords{Rollers do not limit the operating speed}                     & Pass             \\
-		PER~\ref{PR:27speed}   & \capitalisefmtwords{Rollers function independent of bicycle wheel diameter}       & Pass             \\
-		PER~\ref{PR:29speed}   & \capitalisefmtwords{Rollers function independent of bicycle wheel diameter}       & Pass             \\
-		PER~\ref{PR:torque}    & \capitalisefmtwords{Eddy current brake applied to rear roller}                    & Pass             \\
+		FR~\ref{FR:ble}       & {Raspberry Pi with integrated or external \ac{ble} module.}                             \\
+		FR~\ref{FR:wheel}     & {Roller trainers allow for wide range of wheel diameters.}                              \\
+		FR~\ref{FR:speed}     & {Speed sensors implemented on rollers.}                                                 \\
+		FR~\ref{FR:func}      & {Rollers are proven technology. Smart connectivity will allow for Zwift compatibility.} \\
+		PR~\ref{PR:wheelbase} & {Rollers often allow for adjustable wheelbase lengths.}                                 \\
+		PR~\ref{PR:weight}    & {Rollers do not require any bicycle mounting components.}                               \\
+		PR~\ref{PR:speed}     & {Rollers do not limit the operating speed.}                                             \\
+		PR~\ref{PR:27speed}   & {Rollers function independent of bicycle wheel diameter.}                               \\
+		PR~\ref{PR:29speed}   & {Rollers function independent of bicycle wheel diameter.}                               \\
+		PR~\ref{PR:power}     & {Eddy current brake applied to rear roller controller from Raspberry~Pi.}               \\
 		\bottomrule
 	\end{tabularx}
 	\label{tab:eval}
 \end{table}
-
-From the evaluation in Table~\ref{tab:eval}, the concept would achieve the functional and performance requirements that were formulated in Section~\ref{sec:req}. The development of the subsequent sections of the concept into a demonstration model is detailed in the sections to follow.
