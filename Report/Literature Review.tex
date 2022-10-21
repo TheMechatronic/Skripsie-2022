@@ -23,7 +23,7 @@ The review starts by investigating the utilization of Zwift and to identify the 
 
 The review then continues to investigate and identify the technical requirements of the training platform that was developed. This is achieved by identifying and investigating commonly used products and technology offered on the market.
 
-Since this literature review was performed over the entire progress of the project, it does not necessarily serve as a chronological or otherwise ordered list of utilised information but rather a overview of the technology and reference material that was investigated and found to be essential to achieve the project goals.
+Since this literature review was performed over the entire progress of the project, it does not necessarily serve as a chronological or otherwise ordered list of utilised information but rather an overview of the technology and reference material that was investigated and found to be essential to achieve the project goals.
 
 \section{Zwift Technical Requirements}
 
@@ -47,7 +47,7 @@ The Zwift application provides support for many different training platform type
 
 The training platform serves three main purposes: to facilitate the training session by providing the cyclist with a means of cycling, to measure, process and transmit the data that is required by Zwift and to adjust the training experience based on feedback from the Zwift application. Figure~\ref{fig:zwift} shows that the training platform sends and receives data from the device where the Zwift application is installed and running. This is achieved using \ac{ble} or ANT+ technology. \citep{Zwiftinsider:2022}
 
-If the connected training platform utilizes ANT+, the \ac{fec} protocol is implemented for communication, where a \ac{ble} connection will utilize the \ac{ftms} protocol. These protocols are investigated in more depth in Section~\ref{sec:ant}. The Zwift application also provides the option to connect to speed, cadence and power sensors in addition to smart trainers. The supported and required measurement data are explained in the following subsections.
+If the connected training platform utilizes ANT+, the \ac{fec} protocol is implemented for communication, where a \ac{ble} connection will utilize the \ac{ftms} protocol. These protocols are investigated in more depth in Chapter~\ref{sec:ant}. The Zwift application also provides the option to connect to speed, cadence and power sensors in addition to smart trainers. The supported and required measurement data are explained in the following subsections.
 
 \subsubsection{Cycling Power}
 The most important parameter that is required for experiencing the Zwift application is the Power ($P$) input by the cyclist (\si{\watt}). This can be measured using power sensors, or calculated from other measurements. Power sensors measure the input torque provided by the user, and multiply this by the cadence to find the input power using Equation~\ref{eq:pow}. 
@@ -75,12 +75,12 @@ The minimum requirement for full utilization of the platform is a speed sensor w
 \subsubsection{Cycling Cadence}
 Cadence is the rotation rate of the pedals of the bike and is usually measured in \ac{rpm}. Zwift does not require any cadence data for interacting with the platform, as it does not take the cadence into account for controlling the virtual avatar. 
 
-Cadence data is often used by cyclists as a gauge of how hard the given exercise is. A higher cadence means that the cyclists is cycling faster and experiencing a more intense workout, where a slower cadence might mean that there is more load on the cyclists legs, but at a lower intensity. \citep[2022]{Zwift:2022}
+Cadence data is often used by cyclists as a gauge of how hard the given exercise is. A higher cadence means that the cyclist is cycling faster and experiencing a more intense workout, where a slower cadence might mean that there is more load on the cyclist's legs, but at a lower intensity. \citep[2022]{Zwift:2022}
 
 \section{\acf{ble} vs ANT+}
 \label{sec:ant}
 
-\ac{ble} and ANT+ are wireless communication technologies that are both widely used in consumer products across many industries. Both \ac{ble} and ANT+ devices communicate over \ac{uhf} electromagnetic waves with frequencies around \SI{2.4}{\giga\hertz}. This communication takes place over small distances and requires both transmitting and receiving device to have supporting hardware in order to communicate. Figure~\ref{fig:bleant} shows the logos that indicate compatibility with Bluetooth and ANT+ on many consumer products. \citep{Bromley:2022}
+\ac{ble} and ANT+ are wireless communication technologies that are both widely used in consumer products across many industries. Both \ac{ble} and ANT+ devices communicate over \ac{uhf} electromagnetic waves with frequencies around \SI{2.4}{\giga\hertz}. This communication takes place over small distances and requires both a transmitting and receiving device to have supporting hardware in order to communicate. Figure~\ref{fig:bleant} shows the logos that indicate compatibility with Bluetooth and ANT+ on many consumer products. \citep{Bromley:2022}
 
 \begin{figure}[H]
 	\begin{center}
@@ -93,7 +93,7 @@ Cadence data is often used by cyclists as a gauge of how hard the given exercise
 
 \subsection{ANT+ \acl{fec} Protocol}
 
-ANT+ was developed and marketed by ANT Wireless. It is a sensor network technology that allows for communication between sensors and monitors, and is primarily used for activity tracking. The propriety nature of the ANT+ technology, meaning that a specific ANT+ dongle is required for implementation, makes this protocol less ideal for this project as it limits the accessibility of some possible future development and implementation. \citep{Bromley:2022}
+ANT+ was developed and marketed by ANT Wireless. It is a sensor network technology that allows for communication between sensors and monitors, and is primarily used for activity tracking. The propriety nature of the ANT+ technology, meaning that a specific ANT+ dongle is required for implementation, makes this protocol less ideal for this project as it limits the accessibility for possible future development and implementation. \citep{Bromley:2022}
 
 The ANT+ \ac{fec} protocol was developed specifically for smart training equipment from the ground up, and thus provides a good low energy solution to many manufacturers. The \ac{fec} protocol is the only ANT+ protocol that is supported by the Zwift application at the time of writing. ANT+ hardware is required by both the device where Zwift is installed, as well as the training platform.
 
@@ -102,7 +102,7 @@ The ANT+ \ac{fec} protocol was developed specifically for smart training equipme
 
 When Zwift was initially launched, all of the Bluetooth communication was performed using proprietary protocols provided by the manufacturers of trainers and training equipment as there has not yet been a standard protocol defined to specify Bluetooth communication of controllable sports equipment.
 
-In February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. In late 2021 Zwift announced support for \ac{ftms} in their latest update, and thus many new trainer that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol. \citep[2021]{Jeremy:2021}
+In February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{gatt}. In late 2021 Zwift announced support for \ac{ftms} in their latest update, and thus many new trainers that would like to interact with the Zwift platform would be required to follow the \ac{ftms} protocol. \citep[2021]{Jeremy:2021}
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{\tablestretch}
@@ -114,7 +114,7 @@ In February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{g
 		\midrule
 		Resistance Level & Sends the desired resistance level to the trainer                        \\
 		Target Power     & Sends the targeted power (Watts) that the trainer should aim to maintain \\
-		Start or Resume  & Starts or resumes a training session on the trainer                      \\
+		Start or Resume  & Start or resume a training session on the trainer                      \\
 		Stop or Pause    & Stop or pause a training session on the trainer                          \\
 		\ac{sim}         & Set the simulation parameters on the trainer                             \\
 		\bottomrule
@@ -124,11 +124,11 @@ In February 2017, \ac{bsig} adopted the \ac{ftms} protocol to the \ac{ble} \ac{g
 
 \vspace*{-0.5cm}
 
-Zwift does not implement the full \ac{ftms} protocol, as this would add unnecessary complexity to equipment manufacturers. Table \ref{tab:blreq} shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This was deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums. \citep[2021]{Jeremy:2021}
+Zwift does not implement the full \ac{ftms} protocol, as this would add unnecessary complexity to equipment manufacturers. Table~\ref{tab:blreq} shows the different commands within the \ac{ftms} protocol that Zwift uses to control connected trainers. This was deducted from the control modes that are available on the platform, and have been confirmed by a Zwift engineer on the official support forums. \citep[2021]{Jeremy:2021}
 
-Zwift will use the commands in Table~\ref{tab:blreq} above to control the training platform depending on the mode that is set and used within the application. The two main modes that can be chosen within Zwift is the \acf{erg} mode or \acf{sim} mode. \ac{erg} stems from the Greek word ``Ergasia'', which means work, and is implemented using the Target Power command and requires the training platform to adjust the resistance in reaction to the rider speed in order to maintain the target power level. \ac{sim} mode utilizes a separately defined control point within the \ac{ftms} standard.  \citep{Zwiftinsider:2022}
+Zwift will use the commands in Table~\ref{tab:blreq} above to control the training platform depending on the mode that is set and used within the application. The two main modes that can be chosen within Zwift is the \acf{erg} mode or \acf{sim} mode. \ac{erg} stems from the Greek word ``Ergasia'', which means work, and is implemented using the Target Power command and requires the training platform to adjust the resistance in reaction to the rider speed to maintain the target power level. \ac{sim} mode utilizes a separately defined control point within the \ac{ftms} standard.  \citep{Zwiftinsider:2022}
 
-Lastly, the user can adjust the resistance on their trainer from within the Zwift software, enabling Zwift to then send that specific command to the trainer when the user would like to change the immediate resistance level.
+Lastly, the user can adjust the resistance on their trainer from within the Zwift software, enabling Zwift to send that specific command to the trainer when the user would like to change the immediate resistance level.
 
 \section{\acf{ble} Communication}
 \label{sec:ble}
@@ -180,7 +180,7 @@ Figure~\ref{fig:serv} gives an overview of the specification structure. Each ste
 
 \subsubsection{\acf{ftms} Protocol}\label{sec:ftms}
 
-As mentioned in Section~\ref{sec:ble}, \acf{ftms} is a service specification under the \acf{gatt} with a \ac{uuid} of 0x1826. The \ac{ftms} service specification contains 15 different characteristics, of which 7 are related to cycling training platforms. These characteristics are listed in table \ref{tab:ftmsft}, along with their \acp{uuid} and required properties. \cite[2017]{BLSIG:2017}.
+As mentioned in Chapter~\ref{sec:ble}, \acf{ftms} is a service specification under the \acf{gatt} with a \ac{uuid} of 0x1826. The \ac{ftms} service specification contains 15 different characteristics, of which 7 are related to cycling training platforms. These characteristics are listed in table \ref{tab:ftmsft}, along with their \acp{uuid} and required properties. \cite[2017]{BLSIG:2017}.
 
 \footnotetext[1]{\acl{fm}}
 
@@ -252,14 +252,14 @@ Direct-drive trainers are similar to wheel-on trainers where the bicycle is fixe
 	\begin{subfigure}{.3\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{Trainer_WheelOn.jpg}
-		\caption{Wheel On Trainer}
+		\caption{Wheel-On Trainer}
 		\label{fig:wheelon}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{.3\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{Trainer_DirectDrive.jpg}
-		\caption{Direct Drive Trainer}
+		\caption{Direct-Drive Trainer}
 		\label{fig:directdrive}
 	\end{subfigure}
 	\caption{Bicycle Trainer Types}
@@ -285,7 +285,7 @@ The fourth type consists of a completely independent platform that does not requ
 \label{sec:specs}
 % Section showing expected bicycle specifications of most popular models
 
-The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and road bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight as illustrated in Figure \ref{fig:bikeDim}.
+The two most common types of bicycles that are expected to be used on the trainer are \acp{mtb} and Road Bicycles. For the design of a bike trainer, the relevant dimensions to consider are the wheelbase wheel diameter and weight as illustrated in Figure \ref{fig:bikeDim}.
 
 \begin{figure}[H]
 	\centering
@@ -377,11 +377,11 @@ These circulating currents are called ``Eddy currents'', and the interaction of 
 
 \subsubsection{Mathematical Model}
 
-\citet{Smythe:1942} first proposed a mathematical model that includes two distinct operating regions. Below the critical speed, the torque vs. speed relation is approximately linear, and the high speed region approaches some constant. This model was the further expanded and improved by \cite{Smythe:1950}.
+\citet{Smythe:1942} first proposed a mathematical model that includes two distinct operating regions. Below the critical speed, the torque vs. speed relation is approximately linear, and the high speed region approaches some constant. This model was further expanded and improved by \cite{Smythe:1950}.
 
 \cite{Wouterse:1991} proposed a model for the induced torque at the critical speed, as the torque in this region cannot be expressed simply as a function of magnetic flux and disk speed. 
 
-Figure~\ref{fig:EB} shows the dimensions used in the mathematical models that were identified in literature. The red and blue indicate the orientation of the magnets, and the dark plates backing the magnets represents a ferrous back plate that aims to contain and concentrate the magnetic fields induces by the permanent magnets. \citep{Gay:2005}
+Figure~\ref{fig:EB} shows the dimensions used in the mathematical models that were identified in literature. The red and blue indicate the orientation of the magnets, and the dark plates backing the magnets represents a ferrous back plate that aims to contain and concentrate the magnetic fields induced by the permanent magnets. \citep{Gay:2005}
 
 \begin{figure}[H]
 	\centering
@@ -394,14 +394,14 @@ Figure~\ref{fig:EB} shows the dimensions used in the mathematical models that we
 
 \cite{Baum:2016} proposed a model for the performance of an eddy current brake with $n_{pairs}$ number of pole pairs on a rotating conductive disk with conductivity $\sigma$. This model builds on the work of \cite{Smythe:1950} and \cite{Wouterse:1991} to take into account the saturation of the disk and the demagnetization effect of the induced magnetic flux on the magnets. \citep{Gay:2005}
 
-Equation~\ref{eq:low} was thus proposed for the low speed region, where $B_0$ is the initial magnetic flux density of the magnets, $A_{magnet}$ is the area of the magnetic pole and $t_{disk}$ is the thickness of the conductive disk. The velocity of the element moving under directly under the magnetic pole is denoted by $v$.
+Equation~\ref{eq:low} was thus proposed for the low speed region, where $B_0$ is the initial magnetic flux density of the magnets, $A_{magnet}$ is the area of the magnetic pole and $t_{disk}$ is the thickness of the conductive disk. The velocity of the element moving directly under the magnetic pole is denoted by $v$.
 
 \begin{equation}
 	\ac{F}_{Low Speed} = n_{pairs} \cdot \ac{condDisk} \cdot \ac{v} \cdot {\ac{B}_0}^2 \cdot A_{magnet} \cdot t_{disk}
 	\label{eq:low}
 \end{equation}
 
-and Equation~\ref{eq:high} for the high speed region where $\acs{permeability}_0$ is the magnetic permeability of the disk. The critical speed ($v_{critical}$) is  where the braking Force ($F_{critical}$) is at a maximum, and can be found by equating Equation~\ref{eq:low} and Equation~\ref{eq:high},
+Equation~\ref{eq:high} was proposed for the high speed region where $\acs{permeability}_0$ is the magnetic permeability of the disk. The critical speed ($v_{critical}$) is  where the braking Force ($F_{critical}$) is at a maximum, and can be found by equating Equation~\ref{eq:low} and Equation~\ref{eq:high}.
 
 \begin{equation}
 	\ac{F}_{High Speed} = n_{pairs} \cdot \frac{1}{\ac{v}} \cdot t_{magnet}^2 \cdot \frac{\ac{B}_0^2}{\acs{permeability}_0^2} \cdot \frac{1}{\ac{condDisk}} \cdot \frac{2 D_{magnet}}{t_{disk} \cdot \delta d_{magnets}}
@@ -428,11 +428,11 @@ Figure~\ref{fig:EddyCurrentBrakeProfile} shows the resulting braking characteris
 \section{Digital Tachometers}
 % Tachometer
 % Torque Transducer
-A tachometer is an instrument that measures the rotational speed of a shaft or disk. The work tachometer is derived from the Greek words ``tachos'' (speed) and ``metron'' (measure). The device works by measuring and/or counting some signal generated by the rotation of the shaft or disk. \citep{analogic:2018} 
+A tachometer is an instrument that measures the rotational speed of a shaft or disk. The word tachometer is derived from the Greek words ``tachos'' (speed) and ``metron'' (measure). The device works by measuring and/or counting some signal generated by the rotation of the shaft or disk. \citep{analogic:2018} 
 
 \subsubsection{Rotary Encoders}
 
-The most common type of digital tachometer is an optical rotary encoder shown in Figure~\ref{fig:RotaryEncoder}. The device generates a pre-determined amount of pulses for every revolution of the shaft based on slits or markings made in disc that rotates rigidly with the shaft.
+The most common type of digital tachometer is an optical rotary encoder shown in Figure~\ref{fig:RotaryEncoder}. The device generates a pre-determined amount of pulses for every revolution of the shaft based on slits or markings made in the disk that rotates rigidly with the shaft.
 
 \begin{figure}[H]
 	\begin{center}
@@ -450,9 +450,9 @@ As the opening in the encoder disk allows light to reach the photo-sensor, a pul
 Tachometers can be further classified based on the measurement technique utilised. The two common techniques are time measurement and frequency measurement. 
 
 \subsubsection{Time Measurement Tachometers}
-Time-based tachometers calculate the rotational speed by measuring the time between incoming pulses. This means that the speed measurement is independent of sampling intervals and is thus more accurate for low speed applications.\citep{analogic:2018}
+Time-based tachometers calculate the rotational speed by measuring the time between incoming pulses. This means that the speed measurement is independent of sampling intervals and is thus more accurate for low speed applications. \citep{analogic:2018}
 
 \subsubsection{Frequency Measurement Tachometers}
-Frequency-based tachometers count the amount of pulses in received in a given sampling interval. This method is is dependant on the selection of the sampling interval time and is considered more accurate for high speed applications. \citep{analogic:2018}
+Frequency-based tachometers count the amount of pulses received in a given sampling interval. This method is dependant on the selection of the sampling interval time and is considered more accurate for high speed applications. \citep{analogic:2018}
 % \section{Conclusion}
 % Section summerizing the literature review

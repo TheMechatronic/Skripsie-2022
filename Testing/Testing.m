@@ -1,5 +1,5 @@
-% clear;
-% clc;
+clear;
+clc;
 format bank
 
 speed_kph = linspace(10, 50, 9);
@@ -85,15 +85,19 @@ work = [work520; work785; work1045; work1305; work1565; work1825; work2085; work
 
 fig4 = figure;
 hold on
-plot(linspace(0,45,10),work520)
-plot(linspace(0,45,10),work785) 
-plot(linspace(0,45,10),work1045)
-plot(linspace(0,45,10),work1305)
-plot(linspace(0,45,10),work1565)
-plot(linspace(0,45,10),work1825)
-plot(linspace(0,45,10),work2085)
-plot(linspace(0,45,10),work2350)
-plot(linspace(0,45,10),work2610)
+plot(linspace(0,45,10),work520, 'LineWidth', 2)
+plot(linspace(0,45,10),work785, 'LineWidth', 2) 
+plot(linspace(0,45,10),work1045, 'LineWidth', 2)
+plot(linspace(0,45,10),work1305, 'LineWidth', 2)
+plot(linspace(0,45,10),work1565, 'LineWidth', 2)
+plot(linspace(0,45,10),work1825, 'LineWidth', 2)
+plot(linspace(0,45,10),work2085, 'LineWidth', 2)
+plot(linspace(0,45,10),work2350, 'LineWidth', 2)
+plot(linspace(0,45,10),work2610, 'LineWidth', 2)
+legend('520 rpm', '785 rpm', '1045 rpm', '1305 rpm', '1565 rpm', '1825 rpm', '2085 rpm', '2610 rpm')
+xlabel('Magnet Array Phase ( ^{o})', 'FontSize', 15)
+ylabel('Braking Torque (Nm)', 'FontSize', 15)
+exportgraphics(fig4, '..\..\Report\graphics\TestGraph.jpg', 'Resolution', 600)
 %close(fig4)
 
 maxSpd = [max(work520), max(work785), max(work1045), max(work1305), max(work1565), max(work1825), max(work2085), max(work2350), max(work2610)];
@@ -105,8 +109,8 @@ top = 25 / (3 * pi * 90e-3/2) * 50;
 
 fig5 = figure;
 hold on
-plot(25 / (3 * pi * 90e-3/2) * Spd, maxSpd)
-plot(25 / (3 * pi * 90e-3/2) * Spd, minSpd)
+scatter(25 / (3 * pi * 90e-3/2) * Spd, maxSpd)
+% plot(25 / (3 * pi * 90e-3/2) * Spd, minSpd)
 fplot(T0(x/9.54929658551372), ...
     [bottom top], ...
     'red');
@@ -138,13 +142,13 @@ vect = [vect1, vect2, vect3] ;
 figg = figure;
 hold on
 grid on
-surf(x,y,work,'FaceAlpha',0.5)
+% surf(x,y,work,'FaceAlpha',0.5)
 %scatter3(zeros(1,10) + 10, angles, rot90(work520))
 %scatter3(zeros(1,10) + 15, angles, rot90(work785))
 %plot3(zeros(1,10) + 10, angles, rot90(work520))
 %plot3(zeros(1,10) + 15, angles, rot90(work785))
-plot(surffit, [vect1,vect2],vect3)
-view(45, 45)
+%plot(surffit, [vect1,vect2],vect3)
+scatter3(vect1,vect2,vect3)
 zlabel = 'Torque (Nm)';
 ylabel = 'Angle (degrees)';
 xlabel = 'Speed (kph)';

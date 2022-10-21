@@ -8,27 +8,6 @@
 \chapter{Hardware Development}
 % Section overview: Hardware development.
 \label{ch:hardware}
-For the project, hardware was developed with the aim of achieving the objectives shown in \ref{tab:devgoals} below:
-
-\begin{table}[H]
-	\renewcommand{\arraystretch}{\tablestretch}
-	\centering
-	\caption{Objectives of Hardware Development}
-	\begin{tabularx}{\textwidth}{p{3.2cm} >{\raggedright}X >{\raggedright\arraybackslash}p{2cm}}
-		\toprule
-		      & Description & Reference \\
-		\midrule
-		HDO 1 &             & ER x      \\
-		HDO 2 &             & ER x      \\
-		HDO 3 &             & ER x      \\
-		HDO 4 &             & ER x      \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:devgoals}
-\end{table}
-
-\newpage
-
 \section{Roller Design}
 \label{sec:opspeed}
 
@@ -38,7 +17,7 @@ Roller trainers require smooth and constant cycling for stable operation. The mo
 
 %For the development in this project, an operating range between \SI{10}{\kilo\meter\per\hour} and \SI{50}{\kilo\meter\per\hour} is considered according to PR~\ref{PR:speed}.
 
-Figure~\ref{fig:Speed2} shows a comparison of the rotational speeds expected for the designed operating conditions of different drum sizes. Figure~\ref{fig:Speed} shows the braking torque required to achieve \SI{400}{\watt} of braking power for each of the considered drum diameters.
+Figure~\ref{fig:Speed2} shows a comparison of the rotational speed expected for the designed operating conditions of different drum sizes. Figure~\ref{fig:Speed} shows the braking torque required to achieve \SI{400}{\watt} of braking power for each of the considered drum diameters.
 
 \begin{figure}[H]
 	\centering
@@ -65,11 +44,11 @@ Figure~\ref{fig:Speed2} shows a comparison of the rotational speeds expected for
 
 \vspace*{-0.5cm}	
 
-Selection of the drum diameter to be used for the rollers was dominated by considerations for the eddy current brake discussed in Section~\ref{sec:Eddy}. Rollers with a smaller diameter drum will rotate at a higher angular velocity leading to higher braking torques achievable by the eddy current brake. Higher angular velocities also lead to a higher operating power floor however, as a higher rotational velocity leads to higher rolling resistance within the bearings.
+Selection of the drum diameter to be used for the rollers was dominated by considerations for the eddy current brake discussed in Chapter~\ref{sec:Eddy}. Rollers with a smaller diameter drum will rotate at a higher angular velocity leading to higher braking torques achievable by the eddy current brake. Higher angular velocities also lead to a higher operating power floor as a higher rotational velocity leads to higher rolling resistance within the bearings.
 
 \subsubsection{General Roller Design}
 
-A diameter of \SI{90}{\milli\meter} was selected for the drum size as a good compromise between the advantages of higher and lower rotational velocities. The rollers were designed to consist of class-12 \acf{upvc} pipes at this is a much more affordable option than aluminium. Class-12 \ac{upvc} pipes are typically used in high pressure applications and are thus designed to handle higher loads than normal store-bought PVC pipes. 
+A diameter of \SI{90}{\milli\meter} was selected for the drum size as a good compromise between the advantages of higher and lower rotational velocities. The rollers were designed to consist of class-12 \acf{upvc} pipes as this is a much more affordable option than aluminium. Class-12 \ac{upvc} pipes are typically used in high pressure applications and are thus designed to handle higher loads than normal store-bought PVC pipes. 
 
 The roller shafts are constructed out of EN-8 engineering steel. Figure~\ref{fig:rollerGen} shows the general design of the rollers that will be used for the trainer.
 
@@ -80,21 +59,17 @@ The roller shafts are constructed out of EN-8 engineering steel. Figure~\ref{fig
 	\label{fig:rollerGen}
 \end{figure}
 
-\vspace*{-0.7cm}
-
 Three rollers were needed for the trainer and two types of rollers were designed for this project. The two front rollers would serve as idle rollers and the rear roller will be used to apply the braking force. 
 
 \subsubsection{Bearing Selection}
 
-690-2RS deep groove ball bearings with rubber shields on both sides were selected for the rollers. The bearings have a rated operating temperature range between \SI{-80}{\degreeCelsius} and \SI{300}{\degreeCelsius} with a rated maximum operating speed of 36000 \ac{rpm}. The rubber shields serve to keep contaminants out of the bearings, leading to a longer usable operational life. 
+690-2RS deep groove ball bearings with rubber shields on both sides were selected for the rollers. The bearings have a rated operating temperature range between \SI{-80}{\degreeCelsius} and \SI{300}{\degreeCelsius} with a rated maximum operating speed of 36,000 \ac{rpm}. The rubber shields serve to keep contaminants out of the bearings, leading to a longer usable operational life. 
 
 \subsection{Idle Roller Design}
 
-Figure~\ref{fig:idlecut} is a cross sectional representation of the designed idle roller where the final result seen in Figure~\ref{fig:rollerBuild} shows the addition of a segmented sticker used by the rotary encoder tachometer measuring the drum speeds.
+Figure~\ref{fig:idlecut} is a cross sectional representation of the designed idle roller where the final result seen in Figure~\ref{fig:rollerBuild} shows the addition of a segmented sticker used by the rotary encoder tachometer measuring the roller speed.
 
 The idle roller drums are mounted on two pairs of bearings at each end cap. This allows for even distribution of radial loads and will lead to a higher expected operational life. 
-
-\vspace*{-0.4cm}
 
 \begin{figure}[H]
 	\centering
@@ -118,13 +93,9 @@ The idle roller drums are mounted on two pairs of bearings at each end cap. This
 
 The roller assembly is held together with a lock nut on each side allowing for easy disassembly for maintenance or replacement of parts in the future. The idle rollers are attached to the trainer frame using M8 bolts threaded into each end of the shaft.
 
-\vspace*{-0.5cm}
-
 \subsection{Power Roller Design}
 
-Figure~\ref{fig:rollerCAD} shows a cross sectional sketch of the designed power roller. The eddy current brake was implemented on the one end of the power roller, allowing for variable resistance to be applied to the cyclist during a training session.
-
-\vspace*{-0.4cm}
+Figure~\ref{fig:rollerCAD} shows a cross sectional sketch of the designed power roller. The eddy current brake was implemented on the one end of the power roller, allowing for variable resistance to be applied to the bicycle during a training session.
 
 \begin{figure}[H]
 	\centering
@@ -154,9 +125,11 @@ Figure~\ref{fig:torqueCalc} shows the braking torque requirements for achieving 
 	\end{center}
 \end{figure}
 
+\vspace{-0.9cm}
+
 \subsection{Iron Backing}
 
-The eddy current brake implemented in this project consists of two permanent magnet arrays with a conductive braking disk between them. The permanent magnets have an iron backing that serves to contain and concentrate the magnetic field lines between the magnets. This effect is demonstrated in Figure~\ref{fig:magconf}, where Figure~\ref{fig:magiron} showing an array with iron backing indicates more concentrated magnetic field lines than Figure~\ref{fig:magnoiron} without the iron backing. 
+The eddy current brake implemented in this project consists of two permanent magnet arrays with a conductive braking disk between them. The permanent magnets have an iron backing that serves to contain and concentrate the magnetic field lines between the magnets. This effect is demonstrated in Figure~\ref{fig:magconf}, where Figure~\ref{fig:magiron} shows an array with iron backing indicated by more concentrated magnetic field lines than in Figure~\ref{fig:magnoiron} showing an array with no iron backing. 
 
 \begin{figure}[H]
 	\centering
@@ -181,7 +154,7 @@ The eddy current brake implemented in this project consists of two permanent mag
 
 \subsection{Braking Torque Control}
 
-Figure~\ref{fig:Electro} demonstrates that the total magnetic flux density between two permanent magnets can be found by superimposing the magnetic flux density of each magnet at a given point. If magnets face each other with opposing poles, the magnetic flux density will add, and if the magnets face each other with the same pole, the magnetic density will cancel.
+Figure~\ref{fig:Electro} demonstrates that the total magnetic flux density between two permanent magnets can be found by super-imposing the magnetic flux density of each magnet at a given point. If magnets face each other with opposing poles, the magnetic flux density will add, and if the magnets face each other with the same pole, the magnetic density will cancel.
 
 \begin{figure}[H]
 	\centering
@@ -225,7 +198,7 @@ The aluminium disk will experience maximum braking torque when the arrays are or
 
 \subsection{Parameter Selection}
 
-Using the mathematical model demonstrated in Section~\ref{sec:ecb}, the final parameters for the eddy current brake were determined through many iterations. Rare earth magnets were used as they provide the highest magnetic flux density of any permanent magnets.
+Using the mathematical model demonstrated in Chapter~\ref{sec:ecb}, the final parameters for the eddy current brake were determined through many iterations. Rare earth magnets were used as they provide the highest magnetic flux density of any permanent magnets.
 
 For the final brake design, 18 N38 Neodymium disc magnets with a diameter ($2r$) of \SI{15}{\milli\meter}, thickness ($t$) of \SI{5}{\milli\meter} and Bremenance field ($B_r$) of \SI{1.3}{\tesla} were used. Figure~\ref{fig:magN} is an example of the selected disk magnets. 
 
@@ -240,13 +213,14 @@ Equation~\ref{eq:B} was used to determine the magnetic field density ($B$) passi
 	\centering
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=0.7\linewidth]{magnetD.jpg}
+		\includegraphics[height=0.6\linewidth]{magnetD.jpg}
 		\caption{Neodymium Disk Magnet}
 		\label{fig:magN}
 	\end{subfigure}%
+\hfill
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{magnetBr.jpg}
+		\includegraphics[height=0.6\linewidth]{magnetBr.jpg}
 		\caption{\ac{B} Field Calculation}
 		\label{fig:B0}
 	\end{subfigure}
@@ -263,14 +237,14 @@ The magnets are arranged in an alternating pole array as shown in Figure~\ref{fi
 	\centering
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{BrakeArray.jpg}
+		\includegraphics[height=0.8\linewidth]{BrakeArray.jpg}
 		\caption{Built Magnet Array}
 		\label{fig:magarr}
 	\end{subfigure}%
 	\hfill
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=0.5\linewidth]{BrakeView.jpg}
+		\includegraphics[height=0.8\linewidth]{BrakeView.jpg}
 		\caption{Built Brake Configuration}
 		\label{fig:brakefin}
 	\end{subfigure}
@@ -312,11 +286,11 @@ Figure~\ref{fig:RearDesign} is the designed rear section of the trainer. The edd
 
 The rollers are spaced much wider than on conventional roller trainers. This reduces the chance of the bicycle rolling forward off the trainer when braking torque is applied to the rear wheel.
 
-Figure~\ref{fig:RearBuilt} shows the final assembly of the rear section of the frame with both the power roller and the idle roller attached. In Figure~\ref{fig:RearBuilt} the exposed end of the power shaft is clearly visible. This is where the test setup discussed in Section~\ref{ch:testing} attaches to the trainer.
+Figure~\ref{fig:RearBuilt} shows the final assembly of the rear section of the frame with both the power roller and the idle roller attached. In Figure~\ref{fig:RearBuilt} the exposed end of the power shaft is clearly visible. This is where the test setup discussed in Chapter~\ref{ch:testing} attaches to the trainer.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{RearFrameBuilt.jpg}
+	\includegraphics[width=0.5\textwidth]{RearFrameBuilt.jpg}
 	\caption{Rear Frame Section Construction}
 	\label{fig:RearBuilt}
 \end{figure}
@@ -329,12 +303,12 @@ The speed of both rear rollers is being measured by optical tachometers. The idl
 
 \subsection{Front Frame Section}
 
-The front section of the frame is where the other idle roller is mounted. This is also where support for multiple wheelbase lengths was added, by providing multiple mounting options where the front idle roller can be attached to the frame pieces. The two sides of the front section is also connected by an aluminium rod that adds stability and rigidity to the trainer. Figure~\ref{fig:FrontDesign} shows the design that was created for the front section of the frame.
+The front section of the frame is where the other idle roller is mounted. This is also where support for multiple wheelbase lengths was added, by providing multiple mounting options where the front idle roller can be attached to the frame pieces. The two sides of the front section are also connected by an aluminium rod that adds stability and rigidity to the trainer. Figure~\ref{fig:FrontDesign} shows the design that was created for the front section of the frame.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{FrontFrameDesign.jpg}
-	\caption{Rear Frame Section Construction}
+	\caption{Front Frame Section Design}
 	\label{fig:FrontDesign}
 \end{figure}
 
@@ -345,50 +319,36 @@ Figure~\ref{fig:FrontBuilt} shows the final constructed front section of the tra
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{FrontFrameBuilt.jpg}
-	\caption{Rear Frame Section Construction}
+	\caption{Front Frame Section Construction}
 	\label{fig:FrontBuilt}
 \end{figure}
 
 \vspace*{-0.5cm}
 
-Figure~\ref{fig:FrontBuilt} also shows the addition of numbered stickers that serve as a reference for positioning the roller on both sides of the frame. This also allows the user to easily configure the trainer for different bicycles after the correct length number has been found during the initial setup for that bicycle.
+Figure~\ref{fig:FrontBuilt} also shows the addition of numbered stickers that serve as a reference for positioning the roller on both sides of the frame. This also allows the user to easily configure the trainer for different bicycles after the correct length number has been found during the initial setup for that specific bicycle.
 
 \section{Complete Frame}
 
-text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+Figure~\ref{fig:1} shows the final trainer that was designed and built in this project. The length is easy to adjust by moving the front idle roller to different mounting positions.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Frame.jpg}
-	\caption{Rear Frame Section Construction}
+	\includegraphics[width=0.6\textwidth]{FrameFull.jpg}
+	\caption{Final Assembled Trainer}
 	\label{fig:1}
 \end{figure}
 
-text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+\vspace*{-0.5cm}
+
+Figure~\ref{fig:2} shows the final model folded into the compact storage configuration. This allows for easy transport and storage of the trainer while also protecting the speed sensors when the trainer is not in use.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Frame.jpg}
-	\caption{Rear Frame Section Construction}
+	\includegraphics[width=0.5\textwidth]{FrameFold.jpg}
+	\caption{Compact Folded Trainer Assembly}
 	\label{fig:2}
 \end{figure}
 
-text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+\vspace*{-0.5cm}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Frame.jpg}
-	\caption{Rear Frame Section Construction}
-	\label{fig:3}
-\end{figure}
-
-text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Frame.jpg}
-	\caption{Rear Frame Section Construction}
-	\label{fig:4}
-\end{figure}
-
-text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+The aluminium frame and rollers prove to be very stable even while supporting the weight of a cyclist with a bicycle.

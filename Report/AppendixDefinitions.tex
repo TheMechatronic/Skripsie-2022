@@ -18,7 +18,7 @@
 
 \subsubsection{Performance Requirements \ref{PR:27speed} \& \ref{PR:29speed}:}
 
-The typical speed of a cyclist typically ranges from \SI{10}{\kilo\meter\per\hour} to \SI{50}{\kilo\meter\per\hour} when cycling on reasonably flat ground. For the design of the platform, a speed of maximum required speed of \SI{50}{\kilo\meter\per\hour} was assumed. Considering the two wheel sizes that were identified in Section~\ref{sec:specs}, the expected wheel rotational speeds are determined by Equation~\ref{eq:omega}.
+The typical speed of a cyclist typically ranges from \SI{10}{\kilo\meter\per\hour} to \SI{50}{\kilo\meter\per\hour} when cycling on reasonably flat ground. For the design of the platform, a maximum required speed of \SI{50}{\kilo\meter\per\hour} was assumed. Considering the two wheel sizes that were identified in Chapter~\ref{sec:specs}, the expected wheel rotational speeds are determined by Equation~\ref{eq:omega}.
 
 \begin{equation}
 	\ac{omega} = \frac{2 \ac{v}}{D_{wheel}}
@@ -77,3 +77,62 @@ In order to achieve Design Objective 3, requiring the development of software th
 %	\caption{Flux Distribution}
 %	\label{fig:Flux}
 %\end{figure}
+
+\section{Chapter~\ref{ch:electronics}}
+
+\subsubsection{RPR-220 Data Summery}
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{\tablestretch}
+	\centering
+	\caption{RPR-220 Data Sheet Parameter Summary}
+	\citep[2015]{RPR:2015}
+	\begin{tabularx}{\textwidth}{X >{\raggedright}p{3cm} >{\raggedright\arraybackslash}p{2cm} }
+		\toprule
+		Parameter                       & Condition & Value                   \\
+		\midrule
+		LED Current                     & Maximum   & \SI{50}{\milli\ampere}  \\
+		LED Voltage                     & Rated     & \SI{5}{\volt}           \\
+		Phototransistor Current (Dark)  & Rated     & \SI{0.5}{\micro\ampere} \\
+		Phototransistor Current (Light) & Rated     & \SI{0.8}{\milli\ampere} \\
+		Phototransistor Current         & Maximum   & \SI{}{\milli\ampere}    \\
+		Phototransistor Response Time   & Rated     & \SI{10}{\micro\second}  \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:rprdata}
+\end{table}
+
+\subsubsection{Nema-23 Wiring}
+
+Determining the correct wiring of the stepper motor requires determining where on the coils the wires are connected. Figure~\ref{fig:motorWire} shows a schematic of the wire colors and coil orientations that were determined for this project.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{MotorWire.jpg}
+		\caption{Nema-23 Wiring}
+		\label{fig:motorWire}
+	\end{center}
+\end{figure}
+
+After testing the resistance level between the wires on the Nema-23 stepper motor, the results are shown in Figure~\ref{tab:nemaTest}. From Table \ref{tab:nemaTest}, the wires associated with each coil can be identified. A resistance of > \SI{1}{\mega\ohm} indicates that the wires are not connected to the same coil. For the wires on the same coil, a larger resistance indicates that there is more coiled wire between the connections, and they are thus further apart.
+
+\begin{table}[H]
+	\renewcommand{\arraystretch}{\tablestretch}
+	\centering
+	\caption{Stepper Motor Wire Resistance Measurement Results}
+	\begin{tabularx}{\textwidth}{X X X X X X  }
+		\toprule
+		& Black               & Green                 & Red                   & Yellow                & White                 \\
+		\midrule
+		Blue   & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{41.2}{\ohm}       & > \SI{1}{\mega\ohm}   & \SI{20.7}{\ohm}       \\
+		White  & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{20.8}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} \\
+		Yellow & \SI{20.7}{\ohm}     & \SI{20.5}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} \\
+		Red    & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
+		Green  & \SI{40.5}{\ohm}     & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:nemaTest}
+\end{table}
+
+
+

@@ -1,68 +1,32 @@
-\newpage
-
 \chapter{Electronics Design}
 \label{ch:electronics}
 %Electronics section overview ...
-%
-\newpage
-%
-%\section{Raspberry Pi setup}
-%
-%Pi voltage range = 1.8V to 3.3V (High)
-
-\section{Speed Sensor Design}
-
-Speed sensors are required to measure the rotational speed of the two rear drums. For the application, RPR-220 infrared photoreflectors were used as they allow for reliable contactless speed measurements. The RPR-220 unit was also readily available, inexpensive and would work with the Raspberry Pi's \acs{gpio} pins.
-
-\begin{table}[H]
-		\renewcommand{\arraystretch}{\tablestretch}
-	\centering
-	\caption{RPR-220 Data Sheet Parameter Summary}
-	\citep{RPR:2015}
-	\begin{tabularx}{\textwidth}{X >{\raggedright}p{3cm} >{\raggedright\arraybackslash}p{2cm} }
-		\toprule
-		Parameter                       & Condition & Value                   \\
-		\midrule
-		LED Current                     & Maximum   & \SI{50}{\milli\ampere}  \\
-		LED Voltage                     & Rated     & \SI{5}{\volt}           \\
-		Phototransistor Current (Dark)  & Rated     & \SI{0.5}{\micro\ampere} \\
-		Phototransistor Current (Light) & Rated     & \SI{0.8}{\milli\ampere} \\
-		Phototransistor Current         & Maximum   & \SI{}{\milli\ampere}    \\
-		Phototransistor Response Time   & Rated     & \SI{10}{\micro\second}  \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:rprdata}
-\end{table}
-
-The Raspberry Pi is capable of measuring inputs using the standard Rpi.GPIO library up to \SI{5}{\kilo\hertz}. Since the maximum expected drum rotation speed is 3500 \acs{rpm}, which equates to \SI{66.6}{\hertz}, the sensors would be capable of handling up to 75 segments per revolution. Considering a safety factor and in order to reduce the data burden, a sensor system implementing 60 segments was selected to ensure high enough resolution at low speeds.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.3\textwidth]{MeasureWheel.jpg}
-		\caption{Measuring Wheel}
-		\label{fig:measwheel}
+		\includegraphics[width=0.9\textwidth]{Circuit.jpg}
+		\caption{Electronics Circuit Diagram}
+		\label{fig:circ}
 	\end{center}
 \end{figure}
 
-The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\ohm} resistor. The circuit is powered through the CKCY Buck03 \SI{5}{\volt} buck converter. The \acs{led} is powered by an external power source to avoid damaging Raspberry Pi's \acs{gpio} pins, and to allow for it to operate at \SI{5}{\volt}. The phototransistor lets \SI{0.8}{\milli\ampere} pass if \SI{100}{\percent} of the transmitted light is reflected. A voltage divider circuit was used to achieve a \SI{3.3}{\volt} reading on the output to the Raspberry Pi \ac{gpio} pin, where the resistance value was determined with equation \ref{eq:ohm}. 
+\section{Speed Sensor Design}
 
-\begin{equation}
-	R = \frac{V}{I}
-	\label{eq:ohm}
-\end{equation}
+Optical rotary encoder tachometers are used to measure the speed of the rollers on the rear section of the frame. Figure~\ref{fig:rpr} shows the RPR-220 infrared photo-transceiver units that were used. These units consist of an infrared lamp and a phototransistor in a plastic housing. The configuration can be seen in Figure~\ref{fig:sensorD}.
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[t]{.315\textwidth}
+	\begin{subfigure}[t]{.35\textwidth}
 		\centering
-		\includegraphics[width = \linewidth]{RPR220.jpg}
-		\caption{RPR-220 Photoreflector}
-		\citep{RPR:2015}
+		\includegraphics[width = 0.8\linewidth]{RPR220.jpg}
+		\caption{RPR-220 Photo-Transceiver}
+		\citep[2015]{RPR:2015}
 		\label{fig:rpr}
 	\end{subfigure}
-	\begin{subfigure}[t]{.65\textwidth}
+\hfill
+	\begin{subfigure}[t]{.6\textwidth}
 		\centering
-		\includegraphics[width = \linewidth]{SensorCircuit.JPG}
+		\includegraphics[width = 0.8\linewidth]{SensorCircuit.JPG}
 		\caption{Sensor Biasing and Filter Circuit}
 		\label{fig:sensorD}
 	\end{subfigure}
@@ -70,17 +34,58 @@ The LED circuit limits the current to \SI{42}{\milli\ampere} with a \SI{120}{\oh
 	\label{fig:Sensor}
 \end{figure}
 
-Thus, with the \SI{3.3}{\volt} source and \SI{0.8}{\milli\ampere} of current, the resistor value can be calculated using equation \ref{eq:ohm} as \SI{4125}{\ohm}. This, however, is for the ideal case, and a much lower percentage can be expected to reflect when the sensor is implemented. For the design, a reflection of \SI{90}{\percent} at a distance of \SI{6}{\milli\meter} where the data sheet indicates the current will be \SI{0.3}{\milli\ampere}. Following the same calculation, a resistor value of \SI{11}{\kilo\ohm} is determined.
+\vspace*{-1cm}
+
+\subsection{Transistor Biasing}
+
+The phototransistor has a rated collector current ($I_c$) of \SI{0.3}{\milli\ampere} if \SI{90}{\percent} reflection is achieved at a distance of \SI{6}{\milli\meter}. A voltage divider circuit was used to achieve a \SI{3.3}{\volt} reading on the output to the Raspberry Pi \ac{gpio} pin allowing for the signals to be read as a digital input. This eliminates the need for an analog to digital conversion channel. Equation~\ref{eq:ohm} is used to determine the required resistance.
+
+\begin{equation}
+	R = \frac{V}{I}
+	\label{eq:ohm}
+\end{equation}
+
+Using Equation~\ref{eq:ohm}, a resistance ($R$) of \SI{11}{\kilo\ohm} was determined. Figure~\ref{fig:sensorD} shows how a \SI{10}{\kilo\ohm} variable resistance potentiometer was placed in series with a \SI{1}{\kilo\ohm} resistor, allowing for tuning of the biasing circuit based on individual transistor fluctuations or operating conditions. 
+
+In order to produce more reliable readings, a first-order low-pass RC filter was implemented. Designing for a cut-off frequency ($f_c$) of \SI{10}{\kilo\hertz}, Equation~\ref{eq:freq} is used to determine the required capacitance value ($C$) of \SI{10}{\micro\farad}.
 
 \begin{equation}
 	f_c = \frac{1}{2 R C}
+	\label{eq:freq}
 \end{equation}
 
-\newpage
+\subsection{Encoder Design}
+
+The ``Rpi.GPIO'' library on the Raspberry Pi allows for interrupt activated measurements up to \SI{5}{\kilo\hertz}. The maximum expected speed of the rollers is determined to be 3000 \ac{rpm} or \SI{50}{\hertz}. Since a digital input is used to measure the rotations, there will be some bounce cases where a single input might be measured more than once. 
+
+In order to eliminate this, software de-bouncing is implemented with a delay of \SI{1}{\milli\second}. This means that the readable frequency is reduced to \SI{1}{\kilo\hertz}. An encoder disk with 10 segments would allow for a safety factor of 2. Figure~\ref{fig:spdDisk} shows the encoder disk that was used to create the tachometers.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.3\textwidth}
+		\centering
+		\includegraphics[width = \linewidth]{MeasureWheel.jpg}
+		\caption{Rotary Encoder Disk}
+		\label{fig:spdDisk}
+	\end{subfigure}
+\hfill
+	\begin{subfigure}[t]{.65\textwidth}
+		\centering
+		\includegraphics[width = 0.9\linewidth]{speedSensor.jpg}
+		\caption{Constructed Speed Sensor}
+		\label{fig:spdSensor}
+	\end{subfigure}
+	\caption{Speed Sensor}
+	\label{fig:spd}
+\end{figure}
+
+\vspace*{-0.5cm}
+
+Figure~\ref{fig:spdSensor} shows the final constructed tachometer with the wires routed inside of the trainer frame.
 
 \section{Motor Control}
 
-For controlling the phase of the magnets of the Eddy Current brake, a stepper motor was chosen for it's accuracy and the ability to control it's operation with the Raspberry Pi's \acs{gpio} pins.
+In order to change the phase alignment of the magnet arrays of the eddy current brake, one magnet array is mounted to a stepper motor. In order to handle the torque requirements and provide a larger degree of control for the brake, a Nema-23 motor with a 15:1 reduction gearbox was used. The motor and gearbox, shown in Figure~\ref{fig:stepper}, is driven by a TB660 stepper motor driver shown in Figure\ref{fig:motorDriver}.
 
 \begin{figure}[H]
 	\centering
@@ -98,40 +103,23 @@ For controlling the phase of the magnets of the Eddy Current brake, a stepper mo
 		\citep{Communica:2022}
 		\label{fig:motorDriver}
 	\end{subfigure}
-	\caption{Motor Control Components}
+	\caption{Motor Components}
 	\label{fig:Motor}
 \end{figure}
 
-
-
-After testing the resistance level between the wires on the Nema-23 stepper motor, the results were:
-
-\begin{table}[H]
-		\renewcommand{\arraystretch}{\tablestretch}
-	\centering
-	\caption{Stepper Motor Wire Resistance Measurement Results}
-	\begin{tabularx}{\textwidth}{X X X X X X  }
-		\toprule
-		       & Black               & Green                 & Red                   & Yellow                & White                 \\
-		\midrule
-		Blue   & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{41.2}{\ohm}       & > \SI{1}{\mega\ohm}   & \SI{20.7}{\ohm}       \\
-		White  & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \SI{20.8}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} \\
-		Yellow & \SI{20.7}{\ohm}     & \SI{20.5}{\ohm}       & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} \\
-		Red    & > \SI{1}{\mega\ohm} & > \SI{1}{\mega\ohm}   & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
-		Green  & \SI{40.5}{\ohm}     & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} & \cellcolor{lightgray} \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:nemaTest}
-\end{table}
-
-From Table \ref{tab:nemaTest} above, the wires associated with each coil can be identified. A resistance of > \SI{1}{\mega\ohm} indicates that the wires are not connected to the same coil. For the wires on the same coil, a larger resistance indicates that there is more coiled wire between the connections, and they are thus farther apart. This results in the :
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.3\textwidth]{MotorWire.jpg}
-		\caption{Nema-23 Wiring}
-		\label{fig:motorWire}
-	\end{center}
-\end{figure}
+\vspace*{-0.5cm}
 
 \section{Electronics Overview}
+
+Figure~\ref{fig:circ} is the circuit diagram that was designed and implemented for the trainer. A LRS \SI{100}{\watt}, \SI{12}{\volt} power supply is used to supply the entire circuit with DC power. The \SI{12}{\volt} supply is then stepped down to \SI{5.5}{\volt} and \SI{3}{\volt} by LM2596S and CKCY Buck03 voltage regulators respectively before being distributed to the remaining circuit.
+
+Figure~\ref{fig:elecAll} shows the final construction of the electronics of the trainer. The components are mounted on cardboard cut-outs that serve as insulation between the aluminium frame and the components. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{electronics.jpg}
+	\caption{Electronics Construction}
+	\label{fig:elecAll}
+\end{figure}
+
+Since the developed model serves as a proof of concept, components were not permanently mounted. This allows for rapid testing and replacing of components.

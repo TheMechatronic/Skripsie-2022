@@ -42,10 +42,10 @@
 \contentsline {subsubsection}{Software Overview}{26}{section*.46}%
 \contentsline {section}{\numberline {3.4}Concept Evaluation}{26}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Hardware Development}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Roller Design}{28}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Design Considerations}{28}{subsection.4.1.1}%
-\contentsline {subsubsection}{General Roller Design}{29}{section*.50}%
-\contentsline {subsubsection}{Bearing Selection}{29}{section*.52}%
+\contentsline {section}{\numberline {4.1}Roller Design}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Design Considerations}{27}{subsection.4.1.1}%
+\contentsline {subsubsection}{General Roller Design}{28}{section*.49}%
+\contentsline {subsubsection}{Bearing Selection}{29}{section*.51}%
 \contentsline {subsection}{\numberline {4.1.2}Idle Roller Design}{29}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Power Roller Design}{30}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}Eddy Current Brake Design}{31}{section.4.2}%
@@ -56,23 +56,33 @@
 \contentsline {subsection}{\numberline {4.3.1}Rear Frame Section}{35}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Front Frame Section}{36}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Complete Frame}{38}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Electronics Design}{40}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Speed Sensor Design}{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Motor Control}{44}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Electronics Overview}{45}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Software Development}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Structure}{47}{section.6.1}%
-\contentsline {section}{\numberline {6.2}\ac {ble} Handler}{48}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Sensor Data Measuring and Logging}{50}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Power Calculations}{51}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Motor Control}{52}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Testing and Refinement}{53}{chapter.7}%
-\contentsline {chapter}{List of References}{54}{section*.80}%
-\contentsline {chapter}{\numberline {A}ap a}{57}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Techno-economic Analysis}{58}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Safety Analysis}{59}{appendix.C}%
+\contentsline {chapter}{\numberline {5}Electronics Design}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Speed Sensor Design}{40}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Transistor Biasing}{40}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Encoder Design}{41}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Motor Control}{42}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Electronics Overview}{42}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Software Development}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Structure}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}\acl {ble} Communication}{45}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Application Outline}{46}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Testing Results}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusion}{49}{chapter.8}%
+\contentsline {subsubsection}{Recommendation for Future Work}{50}{section*.77}%
+\contentsline {chapter}{List of References}{51}{section*.79}%
+\contentsline {chapter}{\numberline {A}End Of Life Analysis}{54}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Techno-Economic Analysis}{55}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Budget}{55}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Time Management}{56}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Technical Impact}{57}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Return on Investment}{57}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Potential for Commercialization}{57}{section.B.5}%
+\contentsline {chapter}{\numberline {C}Risk Analysis}{59}{appendix.C}%
 \contentsline {chapter}{\numberline {D}Definitions, Clarifications and Explanations}{65}{appendix.D}%
 \contentsline {section}{\numberline {D.1}Chapter \ref {ch:concept}}{65}{section.D.1}%
-\contentsline {subsubsection}{Performance Requirements \ref {PR:27speed} \& \ref {PR:29speed}:}{65}{section*.93}%
-\contentsline {subsubsection}{Performance Requirement \ref {PR:power}:}{66}{section*.94}%
-\contentsline {subsubsection}{System Interface 2: \ac {ble} with \ac {ftms} implementation}{66}{section*.96}%
+\contentsline {subsubsection}{Performance Requirements \ref {PR:27speed} \& \ref {PR:29speed}:}{65}{section*.95}%
+\contentsline {subsubsection}{Performance Requirement \ref {PR:power}:}{66}{section*.96}%
+\contentsline {subsubsection}{System Interface 2: \ac {ble} with \ac {ftms} implementation}{66}{section*.98}%
+\contentsline {section}{\numberline {D.2}Chapter~\ref {ch:electronics}}{67}{section.D.2}%
+\contentsline {subsubsection}{RPR-220 Data Summery}{67}{section*.99}%
+\contentsline {subsubsection}{Nema-23 Wiring}{67}{section*.101}%
